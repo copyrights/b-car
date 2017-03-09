@@ -7,18 +7,8 @@
 #define PIN 0
 #define NUM_LEDS 50
 
-//100kOhm -> GND
 #define BUTTONS A1
-//10kOhm
-#define BUTTON1 895
-//22kOhm
-#define BUTTON2 831
-//47kOhm
-#define BUTTON3 687
-//69kOhm
-#define BUTTON4 603
-//79kOhm
-#define BUTTON5 567
+
 
 #define TURNLIGHT 0xffc000
 #define LOWBEAM 0x3f3f3f
