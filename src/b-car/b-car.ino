@@ -1,11 +1,10 @@
 #include <Adafruit_NeoPixel.h>
-
 #ifdef __AVR__
   #include <avr/power.h>
 #endif
 
 #define PIN 0
-#define NUM_LEDS 50
+#define NUM_LEDS 32
 
 #define BUTTONS A1
 
@@ -13,20 +12,26 @@
 #define TURNLIGHT 0xffc000
 #define LOWBEAM 0x3f3f3f
 #define HIGHBEAM 0x7f7f7f
-#define KRR 0x7f
-#define KRG 0x00
-#define KRB 0x00
+#define BACKLIGHT 0x3f0000
 
-byte turn_light_frontleft[]={0};
-byte low_beam_left[] ={1};
-byte high_beam_left[] = {2};
-byte front_row[] = {3,4,5,6,7};
-byte low_beam_right[] ={9};
-byte high_beam_right[] = {8};
-byte turn_light_frontright[]={10};
+const byte turn_light_left[]={17,27};
+const byte low_beam_row[] ={1,2,16,15};
+const byte high_beam_row[] = {1,2,16,15};
+const byte front_row[] = {3,4,5,13,14};
+const byte tacho_row[] = {12,11,10,9,8,7,6};
+const byte turn_light_right[]={0,30};
+const byte down_left_row[] = {18,19,20,21};
+const byte down_right_row[] = {22,23,24,25};
+const byte back_light_row[] = {26,28,29,31};
 
-unsigned long time;
+static volatile unsigned long time;
 bool modified;
+byte mode=0;
+bool tooglebutton = false;
+uint16_t pressed;
+
+
+
 
 Adafruit_NeoPixel strip = Adafruit_NeoPixel(NUM_LEDS, PIN, NEO_RGB + NEO_KHZ800);
 
@@ -42,20 +47,39 @@ void setup() {
   strip.begin();
   strip.show();
   //low_beam(true);
+  setup_interrupt();
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
-  uint16_t pressed =  pressedButtons();
+  pressed =  pressedButtons();
   modified=false;
   
   time = millis();
+  if(mode == 0){
+    normalmode();
+  }
+  else if (mode == 1)
+  {
+    rainbowmode();
+  }                                                     
+  //Button5
+  if((pressed & (1<<4)) == 0){
+    tooglebutton = false;
+  }else if(!tooglebutton){
+    tooglebutton = true;
+    mode=(mode+1)%2;
+  }
+  if(modified) strip.show();
+}
+
+
+void normalmode(){
+  unsigned long beamstate=0;
   //Button1
   if((pressed & 1) > 0){
-    low_beam(true);
-  }else{
-    low_beam(false);
+    beamstate=LOWBEAM;  
   }
+  
   //Button2
   if((pressed & (1<<1)) > 0){
     turn_right(true);
@@ -63,26 +87,22 @@ void loop() {
     turn_right(false);
   }
   
+  
+  //Button4
+  if((pressed & (1<<3)) > 0){
+    beamstate=HIGHBEAM;
+  }
+  
+  beam(beamstate);
+  
   //Button3
   if((pressed & (1<<2)) > 0){
     turn_left(true);
   }else{
     turn_left(false);
   }
-  //Button4
-  if((pressed & (1<<3)) > 0){
-    high_beam(true);
-  }else{
-    high_beam(false);
-  }
+  knightrider();
+  tacho();
+  underbody_rb();
   
-  //Button5
-  if((pressed & (1<<4)) > 0){
-    noknightrider();
-  }else{
-    knightrider();
-  }
-  if(modified) strip.show();
 }
-
-
