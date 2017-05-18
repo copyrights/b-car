@@ -8,25 +8,20 @@ unsigned long dtime = 0;
 
 uint16_t pressedButtons()
 {
-  uint16_t reading, rest;
-  uint32_t correct;
-  reading =  analogRead(BUTTONS);
-  if (reading > 14)
-    reading = reading-14;
-  else
-    reading = 0;
-  correct = (((reading*4)/3) & 0x3fe)>>1;
-  correct = (correct*31)/30;
-  reading = (uint16_t) correct;/**/
-  
-  //reading = (reading << 1);
-  rest = reading & 0xf;
-  if (rest > 7)
-    reading = reading + 16;
-  max(reading, 0x1ff);
-  reading = reading & 0x1f0;
-  reading = reading >> 4;
+  uint16_t reading = readr2r(BUTTONS1) + (readr2r(BUTTONS2)<<5);
   reading = debounce(reading);
+  return reading;
+}
+
+uint16_t readr2r(int pin)
+{
+  uint16_t reading =  analogRead(pin);
+  uint16_t rest;
+  rest = reading & 0x1f;
+  reading = reading & 0x3e0;
+  if (rest > 0xf)
+    reading = reading  + 32;
+  reading = reading >> 5;
   return reading;
 }
 

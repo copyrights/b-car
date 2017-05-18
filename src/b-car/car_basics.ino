@@ -78,28 +78,85 @@ void high_beam(bool on){
   }
   modified=true;
 }
-
 void tacho()
 {
+  byte pit = ((time % (sizeof(tacho_row)*600))/200);
+  uint32_t color;
+  if (pit<=sizeof(tacho_row))
+  {
+     color=0x001100;
+     for( byte i = 0;i<sizeof(tacho_row);i++) strip.setPixelColor(tacho_row[i], 0);
+  }
+  else if (pit<=(sizeof(tacho_row)*2))
+  {
+    color=0x110800;
+    pit = pit - sizeof(tacho_row);
+  }
+  else //if (pit<=(sizeof(tacho_row)*3))
+  {
+    color=0x110000;
+    pit = pit - 2*sizeof(tacho_row);
+  /*}else{
+    color=0x000000;
+    pit = pit - 3*sizeof(tacho_row);
+  */}
+  
+  for( byte i = 0;i<sizeof(tacho_row);i++){
+      if( i<pit){
+        strip.setPixelColor(tacho_row[i], Wheel());
+        //strip.show();
+      }/*else{
+        strip.setPixelColor(tacho_row[i], 0);
+      }*/
+    }
+}
+/*
+void tacho()
+{
+  
+  unsigned int leds = getspeedidx();//(cur_speed*sizeof(tacho_row))/400;
   unsigned int cur_speed = getspeed();
-  int leds = getspeedidx();//(cur_speed*sizeof(tacho_row))/236;
   byte color = 0;
+  uint32_t c;
   //cur_speed = (cur_speed >>1);
+  *//*
+  if (cur_speed < 5000)
+  {
+    c = 0x002222;
+  }
+  else if (cur_speed < 10000)
+  {
+    c = 0x005500;
+  }
+  else if (cur_speed < 15000)
+  {
+    c = 0x000055;
+  }
+  else
+  {
+    c = 0x550000;
+  }
+  *//*
   for( byte i = 0;i<sizeof(tacho_row);i++) strip.setPixelColor(tacho_row[i], 0);
+  
   while (leds > 0)
   {
-    for( byte i = 0;i<sizeof(tacho_row);i++){
-      if( i<leds){
-        strip.setPixelColor(tacho_row[i], Wheel(color));
-        //strip.show();
-      }else{
-        strip.setPixelColor(tacho_row[i], 0);
+    if(leds<=sizeof(tacho_row))
+    {
+      for( byte i = 0;i<sizeof(tacho_row);i++){
+        if( i<leds){
+          strip.setPixelColor(tacho_row[i], Wheel(color));
+          //strip.show();
+        }else{
+          strip.setPixelColor(tacho_row[i], 0);
+        }
       }
     }
     leds = max(0,leds-sizeof(tacho_row));
     color = (color+1)%0xff;
   }
-  /*
+  
+  *//*
   uint16_t slot = time % 4000;
   uint16_t pos = time % 1000;
   uint32_t color;
@@ -118,5 +175,23 @@ void tacho()
      strip.setPixelColor(tacho_row[i],color);
   }
   modified=true;
-  */
+  *//*
 }
+*/
+
+void flash(){
+  for(byte i=0;i<sizeof(high_beam_row);i++)
+  {
+    strip.setPixelColor(high_beam_row[i],HIGHBEAM);
+  }
+  for(byte i=0;i<sizeof(front_row);i++)
+  {
+    strip.setPixelColor(front_row[i],HIGHBEAM);
+  }
+  for(byte i=0;i<sizeof(back_light_row);i++)
+  {
+    strip.setPixelColor(back_light_row[i],HIGHBEAM);
+  }
+}
+
+

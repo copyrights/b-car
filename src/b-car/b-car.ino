@@ -6,8 +6,8 @@
 #define PIN 0
 #define NUM_LEDS 32
 
-#define BUTTONS A1
-
+#define BUTTONS1 A1
+#define BUTTONS2 A2
 
 #define TURNLIGHT 0xffc000
 #define LOWBEAM 0x3f3f3f
@@ -43,7 +43,8 @@ void setup() {
     if (F_CPU == 16000000) clock_prescale_set(clock_div_1);
   #endif
   // End of trinket special code
-  pinMode(BUTTONS, INPUT);
+  pinMode(BUTTONS1, INPUT);
+  pinMode(BUTTONS2, INPUT);
   strip.begin();
   strip.show();
   //low_beam(true);
@@ -62,8 +63,8 @@ void loop() {
   {
     rainbowmode();
   }                                                     
-  //Button5
-  if((pressed & (1<<4)) == 0){
+  //Button1
+  if((pressed & 1) == 0){
     tooglebutton = false;
   }else if(!tooglebutton){
     tooglebutton = true;
@@ -75,10 +76,20 @@ void loop() {
 
 void normalmode(){
   unsigned long beamstate=0;
-  //Button1
-  if((pressed & 1) > 0){
+
+  
+
+  
+  //Button5
+  if((pressed & (1<<4)) > 0){
     beamstate=LOWBEAM;  
   }
+  //Button4
+  if((pressed & (1<<3)) > 0){
+    beamstate=HIGHBEAM;
+  }
+  
+  beam(beamstate);
   
   //Button2
   if((pressed & (1<<1)) > 0){
@@ -87,22 +98,25 @@ void normalmode(){
     turn_right(false);
   }
   
-  
-  //Button4
-  if((pressed & (1<<3)) > 0){
-    beamstate=HIGHBEAM;
-  }
-  
-  beam(beamstate);
-  
   //Button3
   if((pressed & (1<<2)) > 0){
     turn_left(true);
   }else{
     turn_left(false);
   }
-  knightrider();
-  tacho();
-  underbody_rb();
-  
+  //Button6
+  if((pressed & (1<<5)) == 0)//rot
+    knightrider();
+  //Button7
+  if((pressed & (1<<6)) == 0)//white
+    tacho();
+  //Button8
+  if((pressed & (1<<7)) == 0)//black
+    underbody_rb();
+  //Button 9 kill
+  if ((pressed & (1<<8)) > 0)
+    police();
+  //Button 10 horn
+  if ((pressed & (1<<9)) > 0)
+    flash();
 }

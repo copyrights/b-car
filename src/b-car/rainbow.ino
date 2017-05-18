@@ -5,14 +5,51 @@ const byte rainbowrow_right[] = {5, 4, 3, 0 , 2, 1,22,23,24,25,27,26,28, 9, 8, 7
 void rainbowmode()
 {
   byte pos = ((time * 255)/1000) % 255;
-  
-  for (byte i=0;i<sizeof(rainbowrow_left);i++)
+  //Button2
+  if((pressed & (1<<1)) > 0)
   {
-    rainbow(rainbowrow_left[i],pos,i);
+    for (byte i=0;i<sizeof(rainbowrow_left);i++)
+    {
+      rainbow(rainbowrow_left[i],pos,i);
+    }
+    for (byte i=0;i<sizeof(rainbowrow_right);i++)
+    {
+      rainbow(rainbowrow_right[sizeof(rainbowrow_left)-1-i],pos,i);
+    }
+  }//Button3
+  else if((pressed & (1<<2)) > 0)
+  {
+    for (byte i=0;i<sizeof(rainbowrow_left);i++)
+    {
+      rainbow(rainbowrow_left[sizeof(rainbowrow_left)-1-i],pos,i);
+    }
+    for (byte i=0;i<sizeof(rainbowrow_right);i++)
+    {
+      rainbow(rainbowrow_right[i],pos,i);
+    }
+  }  
+  //Button4
+  else if((pressed & (1<<3)) > 0)
+  {
+    for (byte i=0;i<sizeof(rainbowrow_left);i++)
+    {
+      rainbow(rainbowrow_left[sizeof(rainbowrow_left)-1-i],pos,i);
+    }
+    for (byte i=0;i<sizeof(rainbowrow_right);i++)
+    {
+      rainbow(rainbowrow_right[sizeof(rainbowrow_left)-1-i],pos,i);
+    }
   }
-  for (byte i=0;i<sizeof(rainbowrow_right);i++)
+  else
   {
-    rainbow(rainbowrow_right[i],pos,i);
+    for (byte i=0;i<sizeof(rainbowrow_left);i++)
+    {
+      rainbow(rainbowrow_left[i],pos,i);
+    }
+    for (byte i=0;i<sizeof(rainbowrow_right);i++)
+    {
+      rainbow(rainbowrow_right[i],pos,i);
+    }
   }
   modified=true;
 }

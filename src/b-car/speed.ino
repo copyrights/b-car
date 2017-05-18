@@ -4,14 +4,67 @@
 
 
 #define INTERRUPTPIN PCINT1 //this is PB1 per the schematic
-#define IPIN 1
-
+#define PCINT_VECTOR PCINT0_vect  //this step is not necessary
+#define DATADIRECTIONPIN DDB1 //Page 64 of data sheet
+#define PORTPIN PB1 //Page 64
+#define READPIN PINB1 //page 64
 //CF = 150 *Pi = 235.61944901923448
 #define CF 236
 #define INCR 4
 
 
 static volatile byte speedidx;
+unsigned long speedts;
+unsigned int curspeed;
+
+void setup_interrupt()
+{
+  speedidx = 0;
+  curspeed =0;
+  speedts=0;
+  //pinMode(IPIN,INPUT);
+  cli();//disable interrupts during setup
+  PCMSK |= _BV(INTERRUPTPIN); // Use PB1 as interrupt pin
+  GIMSK |= _BV(PCIE);   // Enable Pin Change Interrupts
+  DDRB &= ~(1 << DATADIRECTIONPIN); //cbi(DDRB, DATADIRECTIONPIN);//  set up as input  - pin2 clear bit  - set to zero
+  PORTB |= (1<< PORTPIN); //cbi(PORTB, PORTPIN);// disable pull-up. hook up pulldown resistor. - set to zero  
+  sei(); // Enable interrupts
+}
+
+ISR(PCINT_VECTOR ) {
+  //Since the PCINTn triggers on both rising and falling edge let's just looks for rising edge
+  //i.e. pin goes to 5v
+  byte pinState;
+  pinState = (PINB >> READPIN)& 1; //PINB is the register to read the state of the pins
+  if (pinState >0) //look at the pin state on the pin PINB register- returns 1 if high
+  {
+    speedidx++;
+  }
+}
+
+unsigned int getspeed()
+{
+  unsigned int s = 0;
+  if ( (time - speedts) > 500)
+  {
+     if ( speedidx > 0)
+     {
+       s = speedidx*15000/(time - speedts);
+     }
+     curspeed = s;
+     speedts = time;
+     cli();
+     speedidx = 0;
+     sei();
+  }
+  return curspeed;
+}
+
+byte getspeedidx()
+{
+  return speedidx;
+}
+/*
 static unsigned long volatile measures[INCR*2];
 
 void setup_interrupt()
@@ -56,3 +109,4 @@ byte getspeedidx()
 {
   return speedidx;
 }
+*/
