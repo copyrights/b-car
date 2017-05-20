@@ -1,8 +1,14 @@
-void knightrider(){
+void knightrider(bool on){
   uint16_t lc = sizeof(front_row);
   uint16_t s = KRPERIOD / lc;
   uint16_t pit,distance,pos;
   uint8_t f;
+  if (not on)
+  {
+    for(uint16_t i=0;i<lc;i++)
+      strip.setPixelColor(front_row[i],0);
+    return;
+  }
   pit = time % KRPERIOD;
   
   if((time % (KRPERIOD * 2)) < KRPERIOD){

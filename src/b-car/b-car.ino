@@ -9,7 +9,7 @@
 static volatile unsigned long time;
 bool modified;
 byte mode=0;
-bool tooglebutton = false;
+uint16_t buttonstore = S6|S7|S8;
 uint16_t pressed;
 
 
@@ -44,60 +44,45 @@ void loop() {
   {
     rainbowmode();
   }                                                     
-  //Button1
-  if((pressed & 1) == 0){
-    tooglebutton = false;
-  }else if(!tooglebutton){
-    tooglebutton = true;
+  if (getRising(S1)>0)
     mode=(mode+1)%2;
-  }
   if(modified) strip.show();
 }
 
 
 void normalmode(){
   unsigned long beamstate=0;
-
+  
+  buttonstore ^= getRising(S6|S7|S8);
   
 
-  
   //Button5
-  if((pressed & (1<<4)) > 0){
+  if((pressed & S5) > 0){
     beamstate=LOWBEAM;  
   }
   //Button4
-  if((pressed & (1<<3)) > 0){
+  if((pressed & S4) > 0){
     beamstate=HIGHBEAM;
   }
   
   beam(beamstate);
   
   //Button2
-  if((pressed & (1<<1)) > 0){
-    turn_right(true);
-  }else{
-    turn_right(false);
-  }
-  
+  turn_right((pressed & S2) > 0);
+    
   //Button3
-  if((pressed & (1<<2)) > 0){
-    turn_left(true);
-  }else{
-    turn_left(false);
-  }
-  //Button6
-  if((pressed & (1<<5)) == 0)//rot
-    knightrider();
-  //Button7
-  if((pressed & (1<<6)) == 0)//white
-    tacho();
-  //Button8
-  if((pressed & (1<<7)) == 0)//black
-    underbody_rb();
+  turn_left((pressed & S3) > 0);
+  
+  //Button6 red
+  knightrider((buttonstore & S6) > 0);
+  //Button7 white
+  tacho((buttonstore & S7) > 0);
+  //Button8 black
+  underbody_rb((buttonstore & S8) > 0);
   //Button 9 kill
-  if ((pressed & (1<<8)) > 0)
+  if ((pressed & S9) > 0)
     police();
   //Button 10 horn
-  if ((pressed & (1<<9)) > 0)
+  if ((pressed & S10) > 0)
     flash();
 }

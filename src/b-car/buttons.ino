@@ -4,12 +4,17 @@ R2R network
 
 uint16_t lastbuttons = 0;
 uint16_t stablebuttons = 0;
+uint16_t rising = 0;
+uint16_t falling = 0;
+uint16_t rfilter = 0;
+uint16_t ffilter = 0;
 unsigned long dtime = 0;
 
 uint16_t pressedButtons()
 {
   uint16_t reading = readr2r(BUTTONS1) + (readr2r(BUTTONS2)<<5);
   reading = debounce(reading);
+  updintr(reading);
   return reading;
 }
 
@@ -41,4 +46,29 @@ uint16_t debounce(uint16_t curbuttons)
   }
   return stablebuttons;
 }
+
+void updintr(uint16_t state)
+{
+  rfilter &= state;
+  ffilter &= ~state;
+  rising = state ^ rfilter;
+  falling = ~state ^ ffilter;
+}
+
+uint16_t getRising(uint16_t mask)
+{
+  uint16_t ret = rising & mask;
+  rfilter |= ret;
+  rising &= ~rfilter;
+  return ret;
+}
+
+uint16_t getFalling(uint16_t mask)
+{
+  uint16_t ret = falling & mask;
+  ffilter |= ret;
+  falling &= ~ffilter;
+  return ret;
+}
+
 

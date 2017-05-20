@@ -78,10 +78,15 @@ void high_beam(bool on){
   }
   modified=true;
 }
-void tacho()
+void tacho(bool on)
 {
   byte pit = ((time % (sizeof(tacho_row)*600))/200);
   uint32_t color;
+  if(not on){
+    for( byte i = 0;i<sizeof(tacho_row);i++)
+      strip.setPixelColor(tacho_row[i], 0);
+    return;
+  }
   if (pit<=sizeof(tacho_row))
   {
      color=0x001100;
