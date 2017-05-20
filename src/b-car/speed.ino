@@ -2,17 +2,6 @@
   #include <avr/interrupt.h>
 #endif
 
-
-#define INTERRUPTPIN PCINT1 //this is PB1 per the schematic
-#define PCINT_VECTOR PCINT0_vect  //this step is not necessary
-#define DATADIRECTIONPIN DDB1 //Page 64 of data sheet
-#define PORTPIN PB1 //Page 64
-#define READPIN PINB1 //page 64
-//CF = 150 *Pi = 235.61944901923448
-#define CF 236
-#define INCR 4
-
-
 static volatile byte speedidx;
 unsigned long speedts;
 unsigned int curspeed;

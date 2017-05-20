@@ -1,7 +1,7 @@
 /*
 R2R network
 */
-#define DEBOUNCE 20
+
 uint16_t lastbuttons = 0;
 uint16_t stablebuttons = 0;
 unsigned long dtime = 0;

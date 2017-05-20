@@ -1,9 +1,3 @@
-#define KRR 0x7f
-#define KRG 0x00
-#define KRB 0x00
-#define KRPERIOD 500
-#define KRDTZ 200
-
 void knightrider(){
   uint16_t lc = sizeof(front_row);
   uint16_t s = KRPERIOD / lc;

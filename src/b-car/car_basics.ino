@@ -103,7 +103,7 @@ void tacho()
   
   for( byte i = 0;i<sizeof(tacho_row);i++){
       if( i<pit){
-        strip.setPixelColor(tacho_row[i], Wheel());
+        strip.setPixelColor(tacho_row[i], color);
         //strip.show();
       }/*else{
         strip.setPixelColor(tacho_row[i], 0);

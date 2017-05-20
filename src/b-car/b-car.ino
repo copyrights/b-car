@@ -1,35 +1,16 @@
 #include <Adafruit_NeoPixel.h>
+#include "config.h"
 #ifdef __AVR__
   #include <avr/power.h>
 #endif
 
-#define PIN 0
-#define NUM_LEDS 32
 
-#define BUTTONS1 A1
-#define BUTTONS2 A2
-
-#define TURNLIGHT 0xffc000
-#define LOWBEAM 0x3f3f3f
-#define HIGHBEAM 0x7f7f7f
-#define BACKLIGHT 0x3f0000
-
-const byte turn_light_left[]={17,27};
-const byte low_beam_row[] ={1,2,16,15};
-const byte high_beam_row[] = {1,2,16,15};
-const byte front_row[] = {3,4,5,13,14};
-const byte tacho_row[] = {12,11,10,9,8,7,6};
-const byte turn_light_right[]={0,30};
-const byte down_left_row[] = {18,19,20,21};
-const byte down_right_row[] = {22,23,24,25};
-const byte back_light_row[] = {26,28,29,31};
 
 static volatile unsigned long time;
 bool modified;
 byte mode=0;
 bool tooglebutton = false;
 uint16_t pressed;
-
 
 
 

@@ -1,12 +1,3 @@
-#define PR 0x00
-#define PG 0x00
-#define PB 0xff
-#define PPERIOD 1000
-#define PDTZ 200
-#define PLFLASH 0xff0000
-#define PLLOW 0x1f0000
-#define PRFLASH 0x0000ff
-#define PRLOW 0x00001f
 
 void police(){
   byte so;
