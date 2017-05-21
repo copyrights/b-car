@@ -3,7 +3,7 @@ void rainbowmode()
 {
   byte pos = ((time * 255)/1000) % 255;
   //Button2
-  if((pressed & (1<<1)) > 0)
+  if(buttonState(S2))
   {
     for (byte i=0;i<sizeof(rainbowrow_left);i++)
     {
@@ -14,7 +14,7 @@ void rainbowmode()
       rainbow(rainbowrow_right[sizeof(rainbowrow_left)-1-i],pos,i);
     }
   }//Button3
-  else if((pressed & (1<<2)) > 0)
+  else if(buttonState(S3))
   {
     for (byte i=0;i<sizeof(rainbowrow_left);i++)
     {
@@ -26,7 +26,7 @@ void rainbowmode()
     }
   }  
   //Button4
-  else if((pressed & (1<<3)) > 0)
+  else if(buttonState(S4))
   {
     for (byte i=0;i<sizeof(rainbowrow_left);i++)
     {

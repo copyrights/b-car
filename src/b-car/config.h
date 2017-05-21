@@ -4,16 +4,18 @@
 #define BUTTONS1 A1
 #define BUTTONS2 A2
 
-#define S1 0b0000000001
-#define S2 0b0000000010
-#define S3 0b0000000100
-#define S4 0b0000001000
-#define S5 0b0000010000
-#define S6 0b0000100000
-#define S7 0b0001000000
-#define S8 0b0010000000
-#define S9 0b0100000000
+#define S1  0b0000000001
+#define S2  0b0000000010
+#define S3  0b0000000100
+#define S4  0b0000001000
+#define S5  0b0000010000
+#define S6  0b0000100000
+#define S7  0b0001000000
+#define S8  0b0010000000
+#define S9  0b0100000000
 #define S10 0b1000000000
+
+#define TOGGLEMASK 0b0011100000
 
 #define TURNLIGHT 0xffc000
 #define LOWBEAM 0x3f3f3f

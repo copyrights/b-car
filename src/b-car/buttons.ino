@@ -4,18 +4,28 @@ R2R network
 
 uint16_t lastbuttons = 0;
 uint16_t stablebuttons = 0;
+uint16_t buttonstore = TOGGLEMASK;
+uint16_t buttonstate = 0;
 uint16_t rising = 0;
 uint16_t falling = 0;
 uint16_t rfilter = 0;
 uint16_t ffilter = 0;
 unsigned long dtime = 0;
 
-uint16_t pressedButtons()
+void updateButtons()
 {
   uint16_t reading = readr2r(BUTTONS1) + (readr2r(BUTTONS2)<<5);
   reading = debounce(reading);
+  stablebuttons = reading;
   updintr(reading);
-  return reading;
+  buttonstore ^= getRising(TOGGLEMASK);
+  buttonstate = (~TOGGLEMASK) & stablebuttons;
+  buttonstate |= TOGGLEMASK & buttonstore;
+}
+
+bool buttonState(uint16_t mask)
+{
+  return ((buttonstate & mask) > 0);
 }
 
 uint16_t readr2r(int pin)
@@ -33,10 +43,11 @@ uint16_t readr2r(int pin)
 
 uint16_t debounce(uint16_t curbuttons)
 {
+  uint16_t ret = stablebuttons;
   if (curbuttons == lastbuttons)
   {
     if(stablebuttons != lastbuttons && (time-dtime) > DEBOUNCE){
-        stablebuttons = lastbuttons;
+        ret = lastbuttons;
     }
   }
   else
@@ -44,7 +55,7 @@ uint16_t debounce(uint16_t curbuttons)
     lastbuttons = curbuttons;
     dtime = time;
   }
-  return stablebuttons;
+  return ret;
 }
 
 void updintr(uint16_t state)

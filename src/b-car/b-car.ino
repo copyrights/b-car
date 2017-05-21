@@ -9,8 +9,6 @@
 static volatile unsigned long time;
 bool modified;
 byte mode=0;
-uint16_t buttonstore = S6|S7|S8;
-uint16_t pressed;
 
 
 
@@ -33,7 +31,7 @@ void setup() {
 }
 
 void loop() {
-  pressed =  pressedButtons();
+  updateButtons();
   modified=false;
   
   time = millis();
@@ -53,36 +51,33 @@ void loop() {
 void normalmode(){
   unsigned long beamstate=0;
   
-  buttonstore ^= getRising(S6|S7|S8);
-  
-
   //Button5
-  if((pressed & S5) > 0){
+  if(buttonState(S5)){
     beamstate=LOWBEAM;  
   }
   //Button4
-  if((pressed & S4) > 0){
+  if(buttonState(S4)){
     beamstate=HIGHBEAM;
   }
   
   beam(beamstate);
   
   //Button2
-  turn_right((pressed & S2) > 0);
+  turn_right(buttonState(S2));
     
   //Button3
-  turn_left((pressed & S3) > 0);
+  turn_left(buttonState(S3));
   
   //Button6 red
-  knightrider((buttonstore & S6) > 0);
+  knightrider(buttonState(S6));
   //Button7 white
-  tacho((buttonstore & S7) > 0);
+  tacho(buttonState(S7));
   //Button8 black
-  underbody_rb((buttonstore & S8) > 0);
+  underbody_rb(buttonState(S8));
   //Button 9 kill
-  if ((pressed & S9) > 0)
+  if (buttonState(S9))
     police();
   //Button 10 horn
-  if ((pressed & S10) > 0)
+  if (buttonState(S10))
     flash();
 }
