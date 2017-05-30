@@ -1,3 +1,8 @@
+void clearAll()
+{
+ for (byte i=0;i<NUM_LEDS;i++)
+   strip.setPixelColor(i,0x0);
+}
 uint8_t fade8(uint16_t distance, uint16_t dtz)
 {
   uint8_t relative;

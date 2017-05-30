@@ -60,7 +60,6 @@ void police(){
   }else{
     p_front(false,false,false);
   }
-  modified=true;
 }
 
 void p_front(boolean ls, boolean rs, boolean left)

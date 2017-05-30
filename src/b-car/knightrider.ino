@@ -1,14 +1,8 @@
-void knightrider(bool on){
+void knightrider(){
   uint16_t lc = sizeof(front_row);
   uint16_t s = KRPERIOD / lc;
   uint16_t pit,distance,pos;
   uint8_t f;
-  if (not on)
-  {
-    for(uint16_t i=0;i<lc;i++)
-      strip.setPixelColor(front_row[i],0);
-    return;
-  }
   pit = time % KRPERIOD;
   
   if((time % (KRPERIOD * 2)) < KRPERIOD){
@@ -44,16 +38,6 @@ void knightrider(bool on){
       //strip.setPixelColor(front_row[i],(byte)(KRR*fac),(byte)(KRG*fac),(byte)(KRB*fac));
     } 
   }
-  
-  modified = true;
-}
-
-void noknightrider(){
-  byte lc = sizeof(front_row);
-  for(byte i=0;i<lc;i++){
-    strip.setPixelColor(front_row[i],0x0);
-  }
-  modified = true;
 }
 
 

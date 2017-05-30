@@ -33,20 +33,30 @@ ISR(PCINT_VECTOR ) {
 
 unsigned int getspeed()
 {
-  unsigned int s = 0;
-  if ( (time - speedts) > 500)
+  unsigned int v = 0;
+  unsigned int s = (unsigned int) speedidx;
+  unsigned long dt = time - speedts;
+  
+  if (dt > 250)
   {
-     if ( speedidx > 0)
+     if ( s > 0)
      {
-       s = speedidx*15000/(time - speedts);
+       s = s<<8;
+       v = s/dt;
      }
-     curspeed = s;
-     speedts = time;
-     cli();
-     speedidx = 0;
-     sei();
+     curspeed = v;
+     resetspeed();
+
   }
   return curspeed;
+}
+
+void resetspeed()
+{
+     speedts = time;
+     //cli();
+     speedidx = 0;
+     //sei();
 }
 
 byte getspeedidx()

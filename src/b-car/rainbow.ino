@@ -48,34 +48,22 @@ void rainbowmode()
       rainbow(rainbowrow_right[i],pos,i);
     }
   }
-  modified=true;
 }
 
-void underbody_rb(bool on)
+void underbody_rb()
 {
   byte pos = ((time * 255)/1000) % 255;
   byte so;
   so=sizeof(down_left_row)-1;
   for (byte i=0;i<sizeof(down_left_row);i++)
   {
-    if (on)
-    {
-      rainbow(down_left_row[so-i],pos,i);
-    }else{
-      strip.setPixelColor(down_left_row[so-i],0);
-    }
+    rainbow(down_left_row[so-i],pos,i);
   }
   so=sizeof(down_right_row)-1;
   for (byte i=0;i<sizeof(down_right_row);i++)
   {
-    if (on)
-    {
-      rainbow(down_right_row[so-i],pos,i);
-    }else{
-      strip.setPixelColor(down_right_row[so-i],0);
-    }
+    rainbow(down_right_row[so-i],pos,i);
   }
-  modified=true;
 }
 
 void rainbow(byte led, byte pos,byte distance)

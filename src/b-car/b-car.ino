@@ -7,7 +7,6 @@
 
 
 static volatile unsigned long time;
-bool modified;
 byte mode=0;
 
 
@@ -32,8 +31,6 @@ void setup() {
 
 void loop() {
   updateButtons();
-  modified=false;
-  
   time = millis();
   if(mode == 0){
     normalmode();
@@ -43,14 +40,17 @@ void loop() {
     rainbowmode();
   }                                                     
   if (getRising(S1)>0)
+  {
     mode=(mode+1)%2;
-  if(modified) strip.show();
+    resetspeed();
+  }
+  strip.show();
 }
 
 
 void normalmode(){
   unsigned long beamstate=0;
-  
+  clearAll();
   //Button5
   if(buttonState(S5)){
     beamstate=LOWBEAM;  
@@ -59,21 +59,26 @@ void normalmode(){
   if(buttonState(S4)){
     beamstate=HIGHBEAM;
   }
-  
-  beam(beamstate);
+  //Button7 white
+  if (buttonState(S7))
+    beam(beamstate);
   
   //Button2
-  turn_right(buttonState(S2));
+  if(buttonState(S2))
+    turn_right();
     
   //Button3
-  turn_left(buttonState(S3));
+  if (buttonState(S3))
+    turn_left();
   
   //Button6 red
-  knightrider(buttonState(S6));
-  //Button7 white
-  tacho(buttonState(S7));
+  if(buttonState(S6))
+    knightrider();
+  
+  tacho();
   //Button8 black
-  underbody_rb(buttonState(S8));
+  if(buttonState(S8))
+    underbody_rb();
   //Button 9 kill
   if (buttonState(S9))
     police();
