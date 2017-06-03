@@ -1,3 +1,17 @@
+/**
+ * @file car_basics.ino
+ * @author copyrights
+ * @brief Basic car functionallity.
+ * @ingroup car
+ * @todo Write a function for brake lights.
+ */
+ 
+ /**
+  * @ingroup car
+  * @{
+  */
+
+/** @brief Activate right turn lights */
 void turn_right(){
   unsigned long t;
   t = time & 1000;
@@ -12,6 +26,7 @@ void turn_right(){
   }
 }
 
+/** @brief Activate left turn lights */
 void turn_left(){
   unsigned long t;
   t = time & 1000;
@@ -25,6 +40,10 @@ void turn_left(){
     }
   }
 }
+
+/** 
+ * @brief Activate low beam or high beam.
+ * @todo Rewrite as all LEDs get clear at the begining of the main loop */
 void beam(unsigned long state){
   if(state == HIGHBEAM){
     high_beam(true);
@@ -74,6 +93,27 @@ void high_beam(bool on){
     }
   }
 }
+
+/**
+ * @brief Display the current speed on tacho_row LEDs.
+ * 
+ * It is show from left to right in three different color.
+ * 
+ * - Green (0x001100): low speed
+ * - Orange (0x110800): medium speed
+ * - Red (0x110000): ludicrous speed
+ * 
+ * The function getspeed returns an unsigned integer with a step size of
+ * 1 equals 0.4302 km/h. As the speed is displayed in three color the
+ * maximum speed should be dividable by three. 
+ * 
+ * The integer value 30 -> 12.9 km/h. 12.9 km/h should be enough for 
+ * small children. If you have a older child or use this for different 
+ * purposes (e.g. a bycicle), the maximum speed should be higher.
+ * 
+ * 30/3 = 10 -> speed * count of tachometer LEDs / 10
+ * @see getspeed()
+ */
 void tacho()
 {
   unsigned int v = getspeed()*sizeof(tacho_row)/10;
@@ -104,6 +144,11 @@ void tacho()
     }
 }
 
+/**
+ * @brief Flash light.
+ * 
+ * Put @ref high_beam_row, @ref front_row and @ref back_light_row to @ref HIGHBEAM.
+ */
 void flash(){
   for(byte i=0;i<sizeof(high_beam_row);i++)
   {
@@ -119,4 +164,4 @@ void flash(){
   }
 }
 
-
+/**@}*/

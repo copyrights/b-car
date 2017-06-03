@@ -1,0 +1,35 @@
+\hypertarget{speed_8ino}{}\section{speed.\+ino File Reference}
+\label{speed_8ino}\index{speed.\+ino@{speed.\+ino}}
+
+
+Measure speed.  
+
+
+\begin{DoxyCompactItemize}
+\item 
+static volatile byte \hyperlink{group__speed_gaded4e91dd554c212e6c75ef7148a7845}{speedidx}
+\item 
+unsigned long \hyperlink{group__speed_ga605bafc427aaa8e9718a112441ba88a7}{speedts}
+\item 
+unsigned int \hyperlink{group__speed_ga63232e097931bc02aa65b3b7dadbb74b}{curspeed}
+\item 
+void \hyperlink{group__speed_gae87a94769934715c309733cfdf2abcb4}{setup\+\_\+interrupt} ()
+\item 
+\hyperlink{group__speed_ga44395845abd4a9c31e4fbe88ed717fa3}{I\+SR} (\hyperlink{group__speed_ga77b45027297b1ff40b5b1249afb852e5}{P\+C\+I\+N\+T\+\_\+\+V\+E\+C\+T\+OR})
+\item 
+unsigned int \hyperlink{group__speed_gafc7b1718f9b23966dfed24056f67996f}{getspeed} ()
+\begin{DoxyCompactList}\small\item\em Get current speed. \end{DoxyCompactList}\item 
+void \hyperlink{group__speed_ga2004678343c1f7b145dc10aae949a4ec}{resetspeed} ()
+\item 
+byte \hyperlink{group__speed_gaa1b4f1cc5cf5ba94e3bc38f44e0c7001}{getspeedidx} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Measure speed. 
+
+\begin{DoxyAuthor}{Author}
+copyrights 
+\end{DoxyAuthor}
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000005}{Todo}]Write a function that detects braking via negaive acceleration. \end{DoxyRefDesc}

@@ -1,0 +1,173 @@
+\hypertarget{group__police}{}\section{Police}
+\label{group__police}\index{Police@{Police}}
+
+
+Police beacon light and front flash.  
+
+
+\subsection*{Files}
+\begin{DoxyCompactItemize}
+\item 
+file \hyperlink{police_8ino}{police.\+ino}
+\begin{DoxyCompactList}\small\item\em Police beacon light and front flash. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__police_ga088f4c3612d1ab1c9f6f139234ae533b}{PR}~0x00
+\begin{DoxyCompactList}\small\item\em Red part of the police beacon light. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__police_ga037f1be1c3e45bf4d0d4f5ddc159ff30}{PG}~0x00
+\begin{DoxyCompactList}\small\item\em Green part of the police beacon light. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__police_ga2a06f3773d46878dc58f8dadd6fd0d72}{PB}~0xff
+\begin{DoxyCompactList}\small\item\em Blue part of the police beacon light. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__police_gaa5b3f73b18472f543c080194bf9c2e79}{P\+P\+E\+R\+I\+OD}~1000
+\begin{DoxyCompactList}\small\item\em Rotation period in ms of the police beacon light. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__police_ga2b9a2b71c1aa4f1c059461e2db7edf44}{P\+D\+TZ}~200
+\begin{DoxyCompactList}\small\item\em Fade out period in ms for a smooth light flow. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__police_ga6204e236d3e4ef0beb5b6fd976fecf43}{P\+L\+F\+L\+A\+SH}~0xff0000
+\begin{DoxyCompactList}\small\item\em Left side flash color of the police front row. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__police_ga98673c164f8917ff7af0016ba30e7ca8}{P\+L\+L\+OW}~0x1f0000
+\begin{DoxyCompactList}\small\item\em Left side low light color of the police front row. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__police_gac9d0142b6f8cc7735af13e6b91503b97}{P\+R\+F\+L\+A\+SH}~0x0000ff
+\begin{DoxyCompactList}\small\item\em Right side flash color of the police front row. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__police_gaf4a707e896c2e6df7a0215e4100d75aa}{P\+R\+L\+OW}~0x00001f
+\begin{DoxyCompactList}\small\item\em Right side low light color of the police front row. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__police_ga55d627c45708bc26866e27d49432eee9}{police} ()
+\item 
+void \hyperlink{group__police_ga82542db5e1a84d584a1725f36caaf71e}{p\+\_\+front} (boolean ls, boolean rs, boolean left)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Police beacon light and front flash. 
+
+
+
+\subsection{Macro Definition Documentation}
+\index{Police@{Police}!PB@{PB}}
+\index{PB@{PB}!Police@{Police}}
+\subsubsection[{\texorpdfstring{PB}{PB}}]{\setlength{\rightskip}{0pt plus 5cm}\#define PB~0xff}\hypertarget{group__police_ga2a06f3773d46878dc58f8dadd6fd0d72}{}\label{group__police_ga2a06f3773d46878dc58f8dadd6fd0d72}
+
+
+Blue part of the police beacon light. 
+
+
+
+Definition at line 89 of file config.\+h.
+
+\index{Police@{Police}!P\+D\+TZ@{P\+D\+TZ}}
+\index{P\+D\+TZ@{P\+D\+TZ}!Police@{Police}}
+\subsubsection[{\texorpdfstring{P\+D\+TZ}{PDTZ}}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+D\+TZ~200}\hypertarget{group__police_ga2b9a2b71c1aa4f1c059461e2db7edf44}{}\label{group__police_ga2b9a2b71c1aa4f1c059461e2db7edf44}
+
+
+Fade out period in ms for a smooth light flow. 
+
+
+
+Definition at line 93 of file config.\+h.
+
+\index{Police@{Police}!PG@{PG}}
+\index{PG@{PG}!Police@{Police}}
+\subsubsection[{\texorpdfstring{PG}{PG}}]{\setlength{\rightskip}{0pt plus 5cm}\#define PG~0x00}\hypertarget{group__police_ga037f1be1c3e45bf4d0d4f5ddc159ff30}{}\label{group__police_ga037f1be1c3e45bf4d0d4f5ddc159ff30}
+
+
+Green part of the police beacon light. 
+
+
+
+Definition at line 87 of file config.\+h.
+
+\index{Police@{Police}!P\+L\+F\+L\+A\+SH@{P\+L\+F\+L\+A\+SH}}
+\index{P\+L\+F\+L\+A\+SH@{P\+L\+F\+L\+A\+SH}!Police@{Police}}
+\subsubsection[{\texorpdfstring{P\+L\+F\+L\+A\+SH}{PLFLASH}}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+L\+F\+L\+A\+SH~0xff0000}\hypertarget{group__police_ga6204e236d3e4ef0beb5b6fd976fecf43}{}\label{group__police_ga6204e236d3e4ef0beb5b6fd976fecf43}
+
+
+Left side flash color of the police front row. 
+
+
+
+Definition at line 95 of file config.\+h.
+
+\index{Police@{Police}!P\+L\+L\+OW@{P\+L\+L\+OW}}
+\index{P\+L\+L\+OW@{P\+L\+L\+OW}!Police@{Police}}
+\subsubsection[{\texorpdfstring{P\+L\+L\+OW}{PLLOW}}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+L\+L\+OW~0x1f0000}\hypertarget{group__police_ga98673c164f8917ff7af0016ba30e7ca8}{}\label{group__police_ga98673c164f8917ff7af0016ba30e7ca8}
+
+
+Left side low light color of the police front row. 
+
+
+
+Definition at line 97 of file config.\+h.
+
+\index{Police@{Police}!P\+P\+E\+R\+I\+OD@{P\+P\+E\+R\+I\+OD}}
+\index{P\+P\+E\+R\+I\+OD@{P\+P\+E\+R\+I\+OD}!Police@{Police}}
+\subsubsection[{\texorpdfstring{P\+P\+E\+R\+I\+OD}{PPERIOD}}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+P\+E\+R\+I\+OD~1000}\hypertarget{group__police_gaa5b3f73b18472f543c080194bf9c2e79}{}\label{group__police_gaa5b3f73b18472f543c080194bf9c2e79}
+
+
+Rotation period in ms of the police beacon light. 
+
+
+
+Definition at line 91 of file config.\+h.
+
+\index{Police@{Police}!PR@{PR}}
+\index{PR@{PR}!Police@{Police}}
+\subsubsection[{\texorpdfstring{PR}{PR}}]{\setlength{\rightskip}{0pt plus 5cm}\#define PR~0x00}\hypertarget{group__police_ga088f4c3612d1ab1c9f6f139234ae533b}{}\label{group__police_ga088f4c3612d1ab1c9f6f139234ae533b}
+
+
+Red part of the police beacon light. 
+
+
+
+Definition at line 85 of file config.\+h.
+
+\index{Police@{Police}!P\+R\+F\+L\+A\+SH@{P\+R\+F\+L\+A\+SH}}
+\index{P\+R\+F\+L\+A\+SH@{P\+R\+F\+L\+A\+SH}!Police@{Police}}
+\subsubsection[{\texorpdfstring{P\+R\+F\+L\+A\+SH}{PRFLASH}}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+R\+F\+L\+A\+SH~0x0000ff}\hypertarget{group__police_gac9d0142b6f8cc7735af13e6b91503b97}{}\label{group__police_gac9d0142b6f8cc7735af13e6b91503b97}
+
+
+Right side flash color of the police front row. 
+
+
+
+Definition at line 99 of file config.\+h.
+
+\index{Police@{Police}!P\+R\+L\+OW@{P\+R\+L\+OW}}
+\index{P\+R\+L\+OW@{P\+R\+L\+OW}!Police@{Police}}
+\subsubsection[{\texorpdfstring{P\+R\+L\+OW}{PRLOW}}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+R\+L\+OW~0x00001f}\hypertarget{group__police_gaf4a707e896c2e6df7a0215e4100d75aa}{}\label{group__police_gaf4a707e896c2e6df7a0215e4100d75aa}
+
+
+Right side low light color of the police front row. 
+
+
+
+Definition at line 101 of file config.\+h.
+
+
+
+\subsection{Function Documentation}
+\index{Police@{Police}!p\+\_\+front@{p\+\_\+front}}
+\index{p\+\_\+front@{p\+\_\+front}!Police@{Police}}
+\subsubsection[{\texorpdfstring{p\+\_\+front(boolean ls, boolean rs, boolean left)}{p_front(boolean ls, boolean rs, boolean left)}}]{\setlength{\rightskip}{0pt plus 5cm}void p\+\_\+front (
+\begin{DoxyParamCaption}
+\item[{boolean}]{ls, }
+\item[{boolean}]{rs, }
+\item[{boolean}]{left}
+\end{DoxyParamCaption}
+)}\hypertarget{group__police_ga82542db5e1a84d584a1725f36caaf71e}{}\label{group__police_ga82542db5e1a84d584a1725f36caaf71e}
+
+
+Definition at line 79 of file police.\+ino.
+
+\index{Police@{Police}!police@{police}}
+\index{police@{police}!Police@{Police}}
+\subsubsection[{\texorpdfstring{police()}{police()}}]{\setlength{\rightskip}{0pt plus 5cm}void police (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{group__police_ga55d627c45708bc26866e27d49432eee9}{}\label{group__police_ga55d627c45708bc26866e27d49432eee9}
+
+
+Definition at line 16 of file police.\+ino.
+

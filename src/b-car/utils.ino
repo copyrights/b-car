@@ -1,8 +1,16 @@
+/**
+ * @file utils.ino 
+ * @author copyrights
+ * @brief Collection of utils.
+ */
+
+
 void clearAll()
 {
  for (byte i=0;i<NUM_LEDS;i++)
    strip.setPixelColor(i,0x0);
 }
+
 uint8_t fade8(uint16_t distance, uint16_t dtz)
 {
   uint8_t relative;
@@ -18,10 +26,12 @@ uint8_t percent8(uint8_t full, uint8_t fac)
   return (uint8_t) value;
 }
 
-/*
-sin8 and cos8 are copied from FastLED 
-https://github.com/FastLED/FastLED/blob/master/lib8tion/trig8.h
-*/
+/**
+ * @defgroup FastLED FastLED
+ * @brief @ref sin8 and @ref cos8 are copied from FastLED 
+ * @see https://github.com/FastLED/FastLED/blob/master/lib8tion/trig8.h
+ * @{
+ */
 const uint8_t b_m16_interleave[] = { 0, 49, 49, 41, 90, 27, 117, 10 };
 /// Fast 8-bit approximation of sin(x). This approximation never varies more than
 /// 2% from the floating point value you'd get by doing
@@ -59,17 +69,32 @@ uint8_t sin8( uint8_t theta)
     return y;
 }
 
+/// Fast 8-bit approximation of cos(x). This approximation never varies more than
+/// 2% from the floating point value you'd get by doing
+///
+///     float s = (cos(x) * 128.0) + 128;
+///
+/// @param theta input angle from 0-255
+/// @returns sin of theta, value between 0 and 255
 uint8_t cos8( uint8_t theta)
 {
     return sin8( theta + 64);
 }
+/**@}*/
 
-/*
-Wheel is copied from Adafruit_NeoPixel examples.
-https://github.com/adafruit/Adafruit_NeoPixel/blob/master/examples/strandtest/strandtest.ino
-*/
-// Input a value 0 to 255 to get a color value.
-// The colours are a transition r - g - b - back to r.
+/**
+ * @defgroup Adafruit Adafruit_NeoPixel examples
+ * @brief @ref Wheel is copied from Adafruit_NeoPixel examples.
+ * @see https://github.com/adafruit/Adafruit_NeoPixel/blob/master/examples/strandtest/strandtest.ino
+ * @{
+ */
+ 
+/** 
+ * @brief Input a value 0 to 255 to get a color value.
+ * The colours are a transition r - g - b - back to r.
+ * @param WheelPos Input a value 0 to 255.
+ * @return Color value.
+ */
 uint32_t Wheel(byte WheelPos) {
   WheelPos = 255 - WheelPos;
   if(WheelPos < 85) {
@@ -82,4 +107,4 @@ uint32_t Wheel(byte WheelPos) {
   WheelPos -= 170;
   return strip.Color(WheelPos * 3, 255 - WheelPos * 3, 0);
 }
-
+/**@}*/

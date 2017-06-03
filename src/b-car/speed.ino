@@ -1,3 +1,16 @@
+/**
+ * @file speed.ino 
+ * @author copyrights
+ * @brief Measure speed.
+ * @ingroup speed
+ * @todo Write a function that detects braking via negaive acceleration.
+ */
+
+/**
+ * @ingroup speed
+ * @{
+ */
+
 #ifdef __AVR__
   #include <avr/interrupt.h>
 #endif
@@ -20,7 +33,7 @@ void setup_interrupt()
   sei(); // Enable interrupts
 }
 
-ISR(PCINT_VECTOR ) {
+ISR(PCINT_VECTOR) {
   //Since the PCINTn triggers on both rising and falling edge let's just looks for rising edge
   //i.e. pin goes to 5v
   byte pinState;
@@ -30,14 +43,38 @@ ISR(PCINT_VECTOR ) {
     speedidx++;
   }
 }
-
+/**
+ * @brief Get current speed. 
+ * 
+ * The speed is measured as integral of interrupts in an interval of at 
+ * least 256ms. The smallest measurable speed is one interrupt per 
+ * 256ms. This function returns an unsigned integer, so the smallest 
+ * value above 0 should be 1. To get this result the count of interrupts
+ * is bit shifted by 8.
+ * 
+ * 1<<8 = 256; 256/256 = 1
+ * 
+ * But what does 1 represent?
+ * 
+ * I put 16 interrupt marks to tire of my Bobby Car. One interrupt every
+ * 250 ms are 15 rpm (revolutions per minute).
+ * 
+ * My Bobby Car has a tire diameter of about 153 mm. So the circumference
+ * is 478mm (d*pi).
+ * 
+ * 478mm * 15 rpm = 0.4302 km/h
+ * 
+ * @return current speed.
+ * @see ISR(PCINT_VECTOR)
+ * @see tacho()
+ */
 unsigned int getspeed()
 {
   unsigned int v = 0;
   unsigned int s = (unsigned int) speedidx;
   unsigned long dt = time - speedts;
   
-  if (dt > 250)
+  if (dt > 255)
   {
      if ( s > 0)
      {
@@ -63,6 +100,8 @@ byte getspeedidx()
 {
   return speedidx;
 }
+
+/**@}*/
 /*
 static unsigned long volatile measures[INCR*2];
 

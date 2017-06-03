@@ -1,3 +1,15 @@
+/**
+ * @file rainbow.ino
+ * @author copyrights
+ * @brief Rainbow effect functions.
+ * @ingroup rainbow
+ * @todo Make period of rainbow cycle configurable in @ref config.h
+ */
+ 
+/**
+ * @ingroup rainbow
+ * @{
+ */
 
 void rainbowmode()
 {
@@ -70,3 +82,5 @@ void rainbow(byte led, byte pos,byte distance)
 {
   strip.setPixelColor(led,Wheel((pos+distance*RBSTEP)%255));
 }
+
+/**@}*/

@@ -1,0 +1,52 @@
+\hypertarget{buttons_8ino}{}\section{buttons.\+ino File Reference}
+\label{buttons_8ino}\index{buttons.\+ino@{buttons.\+ino}}
+
+
+Use two R-\/2R resistor ladder networks to connect up to 10 buttons on two analog inputs.  
+
+
+\begin{DoxyCompactItemize}
+\item 
+uint16\+\_\+t \hyperlink{group__buttons_gac23a04180ca7609f571853499faae915}{lastbuttons} = 0
+\begin{DoxyCompactList}\small\item\em Last read of button pressed. \end{DoxyCompactList}\item 
+uint16\+\_\+t \hyperlink{group__buttons_gaca8bc953fb5340b58c9403b3bf8bbd8e}{stablebuttons} = 0
+\begin{DoxyCompactList}\small\item\em Pressed Buttons after debounce. \end{DoxyCompactList}\item 
+uint16\+\_\+t \hyperlink{group__buttons_gac52f8abe18e87b9ce8cdba2e27bbbf02}{buttonstore} = \hyperlink{group__buttons_ga77a6549a849f9a9472a367e4148289b7}{T\+O\+G\+G\+L\+E\+M\+A\+SK}
+\begin{DoxyCompactList}\small\item\em Stores push buttons as simulated toggle buttons. \end{DoxyCompactList}\item 
+uint16\+\_\+t \hyperlink{group__buttons_gafa19e52bd127439ef22ade9f91753386}{buttonstate} = 0
+\begin{DoxyCompactList}\small\item\em Stores current button state with simulated toggle buttons included. \end{DoxyCompactList}\item 
+uint16\+\_\+t \hyperlink{group__buttons_gacc4c256fa5e75c09f1b3a669d45485ec}{rising} = 0
+\begin{DoxyCompactList}\small\item\em Stores simulated interrupts for rising edge. \end{DoxyCompactList}\item 
+uint16\+\_\+t \hyperlink{group__buttons_ga1861b594f36400f6c17b1f65b2565816}{falling} = 0
+\begin{DoxyCompactList}\small\item\em Stores simulated interrupts for falling edge. \end{DoxyCompactList}\item 
+uint16\+\_\+t \hyperlink{group__buttons_ga541db091bf54e0a51180f3666e5a2ce2}{rfilter} = 0
+\begin{DoxyCompactList}\small\item\em Filter for simulated interrupts for rising edge. \end{DoxyCompactList}\item 
+uint16\+\_\+t \hyperlink{group__buttons_gaaa75cede053f94cf46d7420556af1505}{ffilter} = 0
+\begin{DoxyCompactList}\small\item\em Filter for simulated interrupts for falling edge. \end{DoxyCompactList}\item 
+unsigned long \hyperlink{group__buttons_ga94921f7ca95d518d3deabb1da432c2fb}{dtime} = 0
+\begin{DoxyCompactList}\small\item\em Store the time of the last debounce to calculate delta time to next debounce. \end{DoxyCompactList}\item 
+void \hyperlink{group__buttons_gaf32fa88edc93b34e25f058e331ea1134}{update\+Buttons} ()
+\begin{DoxyCompactList}\small\item\em Read button state and calculate stable button state. \end{DoxyCompactList}\item 
+bool \hyperlink{group__buttons_gad4a8f6035320735a6ed69364c0f29d63}{button\+State} (uint16\+\_\+t mask)
+\begin{DoxyCompactList}\small\item\em Returns the state of a button as boolean. \end{DoxyCompactList}\item 
+uint16\+\_\+t \hyperlink{group__buttons_ga5421761bb5d1c3470d3b17196a438c80}{readr2r} (int pin)
+\begin{DoxyCompactList}\small\item\em Calculated the current button state as a 5 bit mask. \end{DoxyCompactList}\item 
+uint16\+\_\+t \hyperlink{group__buttons_ga0ce7c5a698df341a0f3882378518f562}{debounce} (uint16\+\_\+t curbuttons)
+\begin{DoxyCompactList}\small\item\em Debounce button presses of the R-\/2R resistor ladder network. \end{DoxyCompactList}\item 
+void \hyperlink{group__buttons_ga66c6a02c014dc9acd3af0c816a70fad8}{updintr} (uint16\+\_\+t state)
+\begin{DoxyCompactList}\small\item\em Update the simulated interrupts of the R-\/2R resistor ladder network. \end{DoxyCompactList}\item 
+uint16\+\_\+t \hyperlink{group__buttons_ga9b1decfe9116af4b8853a02aebfa1d14}{get\+Rising} (uint16\+\_\+t mask)
+\begin{DoxyCompactList}\small\item\em Get simulated rising edge interrupt(s) for simulated interrupt service routine. \end{DoxyCompactList}\item 
+uint16\+\_\+t \hyperlink{group__buttons_ga2971d62e0d7420f71836fb86e0fce92f}{get\+Falling} (uint16\+\_\+t mask)
+\begin{DoxyCompactList}\small\item\em Get simulated falling edge interrupt(s) for simulated interrupt service routine. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Use two R-\/2R resistor ladder networks to connect up to 10 buttons on two analog inputs. 
+
+\begin{DoxyAuthor}{Author}
+copyrights
+\end{DoxyAuthor}
+\begin{DoxySeeAlso}{See also}
+\href{https://en.wikipedia.org/wiki/Resistor_ladder#R.E2.80.932R_resistor_ladder_network_.28digital_to_analog_conversion.29}{\tt https\+://en.\+wikipedia.\+org/wiki/\+Resistor\+\_\+ladder\#\+R.\+E2.\+80.\+932\+R\+\_\+resistor\+\_\+ladder\+\_\+network\+\_\+.\+28digital\+\_\+to\+\_\+analog\+\_\+conversion.\+29} 
+\end{DoxySeeAlso}

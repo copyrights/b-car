@@ -1,0 +1,494 @@
+\hypertarget{group__buttons}{}\section{Buttons}
+\label{group__buttons}\index{Buttons@{Buttons}}
+
+
+Use R-\/2R resistor ladder network for more buttons.  
+
+
+\subsection*{Files}
+\begin{DoxyCompactItemize}
+\item 
+file \hyperlink{buttons_8ino}{buttons.\+ino}
+\begin{DoxyCompactList}\small\item\em Use two R-\/2R resistor ladder networks to connect up to 10 buttons on two analog inputs. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__buttons_gab47d09cf51ee6fbdc1b7b255f57ec896}{B\+U\+T\+T\+O\+N\+S1}~A1
+\begin{DoxyCompactList}\small\item\em Define analog input for first five buttons. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__buttons_gac3f0a90f8f8169f919f346be1ea485db}{B\+U\+T\+T\+O\+N\+S2}~A2
+\begin{DoxyCompactList}\small\item\em Define analog input for second five buttons. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__buttons_ga171ef18ea7b584f85234640a918da857}{D\+E\+B\+O\+U\+N\+CE}~20
+\begin{DoxyCompactList}\small\item\em Define delay in ms to debounce button presses. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__buttons_ga0dae655e00097db2f5737cef9f1fe1e6}{S5}~0b0000000001
+\begin{DoxyCompactList}\small\item\em Bit mask for button 5. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__buttons_gac6dd50ea82e237280daf26bd9b562ba9}{S4}~0b0000000010
+\begin{DoxyCompactList}\small\item\em Bit mask for button 4. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__buttons_gab29872af8ce9dc9463b7f7ecfbea02ae}{S3}~0b0000000100
+\begin{DoxyCompactList}\small\item\em Bit mask for button 3. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__buttons_gad5e70dee3c36d645b0eb1743b8a7d2bf}{S2}~0b0000001000
+\begin{DoxyCompactList}\small\item\em Bit mask for button 2. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__buttons_ga690d30e9ad3647835c243368b36d4c41}{S1}~0b0000010000
+\begin{DoxyCompactList}\small\item\em Bit mask for button 1. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__buttons_ga1ff88b4fe56e1c80a371b1fbda4e4e74}{S10}~0b0000100000
+\begin{DoxyCompactList}\small\item\em Bit mask for button 10. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__buttons_ga6eef6bdffd8bac54d6b4be0176dd20ff}{S9}~0b0001000000
+\begin{DoxyCompactList}\small\item\em Bit mask for button 9. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__buttons_ga4516955061f24ae7162de20aff005c9b}{S8}~0b0010000000
+\begin{DoxyCompactList}\small\item\em Bit mask for button 8. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__buttons_ga6580eeddd36d0d97cdde6f6a4695ed12}{S7}~0b0100000000
+\begin{DoxyCompactList}\small\item\em Bit mask for button 7. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__buttons_gab86bfbee3d71830e88c61a3f8d5aebf4}{S6}~0b1000000000
+\begin{DoxyCompactList}\small\item\em Bit mask for button 6. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__buttons_ga77a6549a849f9a9472a367e4148289b7}{T\+O\+G\+G\+L\+E\+M\+A\+SK}~0b1110000000
+\begin{DoxyCompactList}\small\item\em Bit mask for simulated toggle buttons. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactItemize}
+\item 
+uint16\+\_\+t \hyperlink{group__buttons_gac23a04180ca7609f571853499faae915}{lastbuttons} = 0
+\begin{DoxyCompactList}\small\item\em Last read of button pressed. \end{DoxyCompactList}\item 
+uint16\+\_\+t \hyperlink{group__buttons_gaca8bc953fb5340b58c9403b3bf8bbd8e}{stablebuttons} = 0
+\begin{DoxyCompactList}\small\item\em Pressed Buttons after debounce. \end{DoxyCompactList}\item 
+uint16\+\_\+t \hyperlink{group__buttons_gac52f8abe18e87b9ce8cdba2e27bbbf02}{buttonstore} = \hyperlink{group__buttons_ga77a6549a849f9a9472a367e4148289b7}{T\+O\+G\+G\+L\+E\+M\+A\+SK}
+\begin{DoxyCompactList}\small\item\em Stores push buttons as simulated toggle buttons. \end{DoxyCompactList}\item 
+uint16\+\_\+t \hyperlink{group__buttons_gafa19e52bd127439ef22ade9f91753386}{buttonstate} = 0
+\begin{DoxyCompactList}\small\item\em Stores current button state with simulated toggle buttons included. \end{DoxyCompactList}\item 
+uint16\+\_\+t \hyperlink{group__buttons_gacc4c256fa5e75c09f1b3a669d45485ec}{rising} = 0
+\begin{DoxyCompactList}\small\item\em Stores simulated interrupts for rising edge. \end{DoxyCompactList}\item 
+uint16\+\_\+t \hyperlink{group__buttons_ga1861b594f36400f6c17b1f65b2565816}{falling} = 0
+\begin{DoxyCompactList}\small\item\em Stores simulated interrupts for falling edge. \end{DoxyCompactList}\item 
+uint16\+\_\+t \hyperlink{group__buttons_ga541db091bf54e0a51180f3666e5a2ce2}{rfilter} = 0
+\begin{DoxyCompactList}\small\item\em Filter for simulated interrupts for rising edge. \end{DoxyCompactList}\item 
+uint16\+\_\+t \hyperlink{group__buttons_gaaa75cede053f94cf46d7420556af1505}{ffilter} = 0
+\begin{DoxyCompactList}\small\item\em Filter for simulated interrupts for falling edge. \end{DoxyCompactList}\item 
+unsigned long \hyperlink{group__buttons_ga94921f7ca95d518d3deabb1da432c2fb}{dtime} = 0
+\begin{DoxyCompactList}\small\item\em Store the time of the last debounce to calculate delta time to next debounce. \end{DoxyCompactList}\item 
+void \hyperlink{group__buttons_gaf32fa88edc93b34e25f058e331ea1134}{update\+Buttons} ()
+\begin{DoxyCompactList}\small\item\em Read button state and calculate stable button state. \end{DoxyCompactList}\item 
+bool \hyperlink{group__buttons_gad4a8f6035320735a6ed69364c0f29d63}{button\+State} (uint16\+\_\+t mask)
+\begin{DoxyCompactList}\small\item\em Returns the state of a button as boolean. \end{DoxyCompactList}\item 
+uint16\+\_\+t \hyperlink{group__buttons_ga5421761bb5d1c3470d3b17196a438c80}{readr2r} (int pin)
+\begin{DoxyCompactList}\small\item\em Calculated the current button state as a 5 bit mask. \end{DoxyCompactList}\item 
+uint16\+\_\+t \hyperlink{group__buttons_ga0ce7c5a698df341a0f3882378518f562}{debounce} (uint16\+\_\+t curbuttons)
+\begin{DoxyCompactList}\small\item\em Debounce button presses of the R-\/2R resistor ladder network. \end{DoxyCompactList}\item 
+void \hyperlink{group__buttons_ga66c6a02c014dc9acd3af0c816a70fad8}{updintr} (uint16\+\_\+t state)
+\begin{DoxyCompactList}\small\item\em Update the simulated interrupts of the R-\/2R resistor ladder network. \end{DoxyCompactList}\item 
+uint16\+\_\+t \hyperlink{group__buttons_ga9b1decfe9116af4b8853a02aebfa1d14}{get\+Rising} (uint16\+\_\+t mask)
+\begin{DoxyCompactList}\small\item\em Get simulated rising edge interrupt(s) for simulated interrupt service routine. \end{DoxyCompactList}\item 
+uint16\+\_\+t \hyperlink{group__buttons_ga2971d62e0d7420f71836fb86e0fce92f}{get\+Falling} (uint16\+\_\+t mask)
+\begin{DoxyCompactList}\small\item\em Get simulated falling edge interrupt(s) for simulated interrupt service routine. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Use R-\/2R resistor ladder network for more buttons. 
+
+
+
+\subsection{Macro Definition Documentation}
+\index{Buttons@{Buttons}!B\+U\+T\+T\+O\+N\+S1@{B\+U\+T\+T\+O\+N\+S1}}
+\index{B\+U\+T\+T\+O\+N\+S1@{B\+U\+T\+T\+O\+N\+S1}!Buttons@{Buttons}}
+\subsubsection[{\texorpdfstring{B\+U\+T\+T\+O\+N\+S1}{BUTTONS1}}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\+U\+T\+T\+O\+N\+S1~A1}\hypertarget{group__buttons_gab47d09cf51ee6fbdc1b7b255f57ec896}{}\label{group__buttons_gab47d09cf51ee6fbdc1b7b255f57ec896}
+
+
+Define analog input for first five buttons. 
+
+
+
+Definition at line 14 of file config.\+h.
+
+\index{Buttons@{Buttons}!B\+U\+T\+T\+O\+N\+S2@{B\+U\+T\+T\+O\+N\+S2}}
+\index{B\+U\+T\+T\+O\+N\+S2@{B\+U\+T\+T\+O\+N\+S2}!Buttons@{Buttons}}
+\subsubsection[{\texorpdfstring{B\+U\+T\+T\+O\+N\+S2}{BUTTONS2}}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\+U\+T\+T\+O\+N\+S2~A2}\hypertarget{group__buttons_gac3f0a90f8f8169f919f346be1ea485db}{}\label{group__buttons_gac3f0a90f8f8169f919f346be1ea485db}
+
+
+Define analog input for second five buttons. 
+
+
+
+Definition at line 16 of file config.\+h.
+
+\index{Buttons@{Buttons}!D\+E\+B\+O\+U\+N\+CE@{D\+E\+B\+O\+U\+N\+CE}}
+\index{D\+E\+B\+O\+U\+N\+CE@{D\+E\+B\+O\+U\+N\+CE}!Buttons@{Buttons}}
+\subsubsection[{\texorpdfstring{D\+E\+B\+O\+U\+N\+CE}{DEBOUNCE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+E\+B\+O\+U\+N\+CE~20}\hypertarget{group__buttons_ga171ef18ea7b584f85234640a918da857}{}\label{group__buttons_ga171ef18ea7b584f85234640a918da857}
+
+
+Define delay in ms to debounce button presses. 
+
+
+
+Definition at line 18 of file config.\+h.
+
+\index{Buttons@{Buttons}!S1@{S1}}
+\index{S1@{S1}!Buttons@{Buttons}}
+\subsubsection[{\texorpdfstring{S1}{S1}}]{\setlength{\rightskip}{0pt plus 5cm}\#define S1~0b0000010000}\hypertarget{group__buttons_ga690d30e9ad3647835c243368b36d4c41}{}\label{group__buttons_ga690d30e9ad3647835c243368b36d4c41}
+
+
+Bit mask for button 1. 
+
+
+
+Definition at line 29 of file config.\+h.
+
+\index{Buttons@{Buttons}!S10@{S10}}
+\index{S10@{S10}!Buttons@{Buttons}}
+\subsubsection[{\texorpdfstring{S10}{S10}}]{\setlength{\rightskip}{0pt plus 5cm}\#define S10~0b0000100000}\hypertarget{group__buttons_ga1ff88b4fe56e1c80a371b1fbda4e4e74}{}\label{group__buttons_ga1ff88b4fe56e1c80a371b1fbda4e4e74}
+
+
+Bit mask for button 10. 
+
+
+
+Definition at line 31 of file config.\+h.
+
+\index{Buttons@{Buttons}!S2@{S2}}
+\index{S2@{S2}!Buttons@{Buttons}}
+\subsubsection[{\texorpdfstring{S2}{S2}}]{\setlength{\rightskip}{0pt plus 5cm}\#define S2~0b0000001000}\hypertarget{group__buttons_gad5e70dee3c36d645b0eb1743b8a7d2bf}{}\label{group__buttons_gad5e70dee3c36d645b0eb1743b8a7d2bf}
+
+
+Bit mask for button 2. 
+
+
+
+Definition at line 27 of file config.\+h.
+
+\index{Buttons@{Buttons}!S3@{S3}}
+\index{S3@{S3}!Buttons@{Buttons}}
+\subsubsection[{\texorpdfstring{S3}{S3}}]{\setlength{\rightskip}{0pt plus 5cm}\#define S3~0b0000000100}\hypertarget{group__buttons_gab29872af8ce9dc9463b7f7ecfbea02ae}{}\label{group__buttons_gab29872af8ce9dc9463b7f7ecfbea02ae}
+
+
+Bit mask for button 3. 
+
+
+
+Definition at line 25 of file config.\+h.
+
+\index{Buttons@{Buttons}!S4@{S4}}
+\index{S4@{S4}!Buttons@{Buttons}}
+\subsubsection[{\texorpdfstring{S4}{S4}}]{\setlength{\rightskip}{0pt plus 5cm}\#define S4~0b0000000010}\hypertarget{group__buttons_gac6dd50ea82e237280daf26bd9b562ba9}{}\label{group__buttons_gac6dd50ea82e237280daf26bd9b562ba9}
+
+
+Bit mask for button 4. 
+
+
+
+Definition at line 23 of file config.\+h.
+
+\index{Buttons@{Buttons}!S5@{S5}}
+\index{S5@{S5}!Buttons@{Buttons}}
+\subsubsection[{\texorpdfstring{S5}{S5}}]{\setlength{\rightskip}{0pt plus 5cm}\#define S5~0b0000000001}\hypertarget{group__buttons_ga0dae655e00097db2f5737cef9f1fe1e6}{}\label{group__buttons_ga0dae655e00097db2f5737cef9f1fe1e6}
+
+
+Bit mask for button 5. 
+
+
+
+Definition at line 21 of file config.\+h.
+
+\index{Buttons@{Buttons}!S6@{S6}}
+\index{S6@{S6}!Buttons@{Buttons}}
+\subsubsection[{\texorpdfstring{S6}{S6}}]{\setlength{\rightskip}{0pt plus 5cm}\#define S6~0b1000000000}\hypertarget{group__buttons_gab86bfbee3d71830e88c61a3f8d5aebf4}{}\label{group__buttons_gab86bfbee3d71830e88c61a3f8d5aebf4}
+
+
+Bit mask for button 6. 
+
+
+
+Definition at line 39 of file config.\+h.
+
+\index{Buttons@{Buttons}!S7@{S7}}
+\index{S7@{S7}!Buttons@{Buttons}}
+\subsubsection[{\texorpdfstring{S7}{S7}}]{\setlength{\rightskip}{0pt plus 5cm}\#define S7~0b0100000000}\hypertarget{group__buttons_ga6580eeddd36d0d97cdde6f6a4695ed12}{}\label{group__buttons_ga6580eeddd36d0d97cdde6f6a4695ed12}
+
+
+Bit mask for button 7. 
+
+
+
+Definition at line 37 of file config.\+h.
+
+\index{Buttons@{Buttons}!S8@{S8}}
+\index{S8@{S8}!Buttons@{Buttons}}
+\subsubsection[{\texorpdfstring{S8}{S8}}]{\setlength{\rightskip}{0pt plus 5cm}\#define S8~0b0010000000}\hypertarget{group__buttons_ga4516955061f24ae7162de20aff005c9b}{}\label{group__buttons_ga4516955061f24ae7162de20aff005c9b}
+
+
+Bit mask for button 8. 
+
+
+
+Definition at line 35 of file config.\+h.
+
+\index{Buttons@{Buttons}!S9@{S9}}
+\index{S9@{S9}!Buttons@{Buttons}}
+\subsubsection[{\texorpdfstring{S9}{S9}}]{\setlength{\rightskip}{0pt plus 5cm}\#define S9~0b0001000000}\hypertarget{group__buttons_ga6eef6bdffd8bac54d6b4be0176dd20ff}{}\label{group__buttons_ga6eef6bdffd8bac54d6b4be0176dd20ff}
+
+
+Bit mask for button 9. 
+
+
+
+Definition at line 33 of file config.\+h.
+
+\index{Buttons@{Buttons}!T\+O\+G\+G\+L\+E\+M\+A\+SK@{T\+O\+G\+G\+L\+E\+M\+A\+SK}}
+\index{T\+O\+G\+G\+L\+E\+M\+A\+SK@{T\+O\+G\+G\+L\+E\+M\+A\+SK}!Buttons@{Buttons}}
+\subsubsection[{\texorpdfstring{T\+O\+G\+G\+L\+E\+M\+A\+SK}{TOGGLEMASK}}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+O\+G\+G\+L\+E\+M\+A\+SK~0b1110000000}\hypertarget{group__buttons_ga77a6549a849f9a9472a367e4148289b7}{}\label{group__buttons_ga77a6549a849f9a9472a367e4148289b7}
+
+
+Bit mask for simulated toggle buttons. 
+
+
+
+Definition at line 42 of file config.\+h.
+
+
+
+\subsection{Function Documentation}
+\index{Buttons@{Buttons}!button\+State@{button\+State}}
+\index{button\+State@{button\+State}!Buttons@{Buttons}}
+\subsubsection[{\texorpdfstring{button\+State(uint16\+\_\+t mask)}{buttonState(uint16_t mask)}}]{\setlength{\rightskip}{0pt plus 5cm}bool button\+State (
+\begin{DoxyParamCaption}
+\item[{uint16\+\_\+t}]{mask}
+\end{DoxyParamCaption}
+)}\hypertarget{group__buttons_gad4a8f6035320735a6ed69364c0f29d63}{}\label{group__buttons_gad4a8f6035320735a6ed69364c0f29d63}
+
+
+Returns the state of a button as boolean. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mask} & Button of interessed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns true, if button is pressed. Returns flase, if it is not pressed. 
+\end{DoxyReturn}
+
+
+Definition at line 50 of file buttons.\+ino.
+
+\index{Buttons@{Buttons}!debounce@{debounce}}
+\index{debounce@{debounce}!Buttons@{Buttons}}
+\subsubsection[{\texorpdfstring{debounce(uint16\+\_\+t curbuttons)}{debounce(uint16_t curbuttons)}}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t debounce (
+\begin{DoxyParamCaption}
+\item[{uint16\+\_\+t}]{curbuttons}
+\end{DoxyParamCaption}
+)}\hypertarget{group__buttons_ga0ce7c5a698df341a0f3882378518f562}{}\label{group__buttons_ga0ce7c5a698df341a0f3882378518f562}
+
+
+Debounce button presses of the R-\/2R resistor ladder network. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em curbuttons} & Bit mask of current button state. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Bit mask of debounced button state. 
+\end{DoxyReturn}
+
+
+Definition at line 79 of file buttons.\+ino.
+
+\index{Buttons@{Buttons}!get\+Falling@{get\+Falling}}
+\index{get\+Falling@{get\+Falling}!Buttons@{Buttons}}
+\subsubsection[{\texorpdfstring{get\+Falling(uint16\+\_\+t mask)}{getFalling(uint16_t mask)}}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t get\+Falling (
+\begin{DoxyParamCaption}
+\item[{uint16\+\_\+t}]{mask}
+\end{DoxyParamCaption}
+)}\hypertarget{group__buttons_ga2971d62e0d7420f71836fb86e0fce92f}{}\label{group__buttons_ga2971d62e0d7420f71836fb86e0fce92f}
+
+
+Get simulated falling edge interrupt(s) for simulated interrupt service routine. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mask} & Button(s) of interrest. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Bit mask of interrupt(s). 
+\end{DoxyReturn}
+
+
+Definition at line 129 of file buttons.\+ino.
+
+\index{Buttons@{Buttons}!get\+Rising@{get\+Rising}}
+\index{get\+Rising@{get\+Rising}!Buttons@{Buttons}}
+\subsubsection[{\texorpdfstring{get\+Rising(uint16\+\_\+t mask)}{getRising(uint16_t mask)}}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t get\+Rising (
+\begin{DoxyParamCaption}
+\item[{uint16\+\_\+t}]{mask}
+\end{DoxyParamCaption}
+)}\hypertarget{group__buttons_ga9b1decfe9116af4b8853a02aebfa1d14}{}\label{group__buttons_ga9b1decfe9116af4b8853a02aebfa1d14}
+
+
+Get simulated rising edge interrupt(s) for simulated interrupt service routine. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mask} & Button(s) of interrest. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Bit mask of interrupt(s). 
+\end{DoxyReturn}
+
+
+Definition at line 115 of file buttons.\+ino.
+
+\index{Buttons@{Buttons}!readr2r@{readr2r}}
+\index{readr2r@{readr2r}!Buttons@{Buttons}}
+\subsubsection[{\texorpdfstring{readr2r(int pin)}{readr2r(int pin)}}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t readr2r (
+\begin{DoxyParamCaption}
+\item[{int}]{pin}
+\end{DoxyParamCaption}
+)}\hypertarget{group__buttons_ga5421761bb5d1c3470d3b17196a438c80}{}\label{group__buttons_ga5421761bb5d1c3470d3b17196a438c80}
+
+
+Calculated the current button state as a 5 bit mask. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pin} & Analog input pin connected to a R-\/2R resistor ladder network. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Current button state as 5 bit mask. 
+\end{DoxyReturn}
+
+
+Definition at line 61 of file buttons.\+ino.
+
+\index{Buttons@{Buttons}!update\+Buttons@{update\+Buttons}}
+\index{update\+Buttons@{update\+Buttons}!Buttons@{Buttons}}
+\subsubsection[{\texorpdfstring{update\+Buttons()}{updateButtons()}}]{\setlength{\rightskip}{0pt plus 5cm}void update\+Buttons (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{group__buttons_gaf32fa88edc93b34e25f058e331ea1134}{}\label{group__buttons_gaf32fa88edc93b34e25f058e331ea1134}
+
+
+Read button state and calculate stable button state. 
+
+
+
+Definition at line 33 of file buttons.\+ino.
+
+\index{Buttons@{Buttons}!updintr@{updintr}}
+\index{updintr@{updintr}!Buttons@{Buttons}}
+\subsubsection[{\texorpdfstring{updintr(uint16\+\_\+t state)}{updintr(uint16_t state)}}]{\setlength{\rightskip}{0pt plus 5cm}void updintr (
+\begin{DoxyParamCaption}
+\item[{uint16\+\_\+t}]{state}
+\end{DoxyParamCaption}
+)}\hypertarget{group__buttons_ga66c6a02c014dc9acd3af0c816a70fad8}{}\label{group__buttons_ga66c6a02c014dc9acd3af0c816a70fad8}
+
+
+Update the simulated interrupts of the R-\/2R resistor ladder network. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & Bit mask of current button state. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 101 of file buttons.\+ino.
+
+
+
+\subsection{Variable Documentation}
+\index{Buttons@{Buttons}!buttonstate@{buttonstate}}
+\index{buttonstate@{buttonstate}!Buttons@{Buttons}}
+\subsubsection[{\texorpdfstring{buttonstate}{buttonstate}}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t buttonstate = 0}\hypertarget{group__buttons_gafa19e52bd127439ef22ade9f91753386}{}\label{group__buttons_gafa19e52bd127439ef22ade9f91753386}
+
+
+Stores current button state with simulated toggle buttons included. 
+
+
+
+Definition at line 20 of file buttons.\+ino.
+
+\index{Buttons@{Buttons}!buttonstore@{buttonstore}}
+\index{buttonstore@{buttonstore}!Buttons@{Buttons}}
+\subsubsection[{\texorpdfstring{buttonstore}{buttonstore}}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t buttonstore = {\bf T\+O\+G\+G\+L\+E\+M\+A\+SK}}\hypertarget{group__buttons_gac52f8abe18e87b9ce8cdba2e27bbbf02}{}\label{group__buttons_gac52f8abe18e87b9ce8cdba2e27bbbf02}
+
+
+Stores push buttons as simulated toggle buttons. 
+
+
+
+Definition at line 18 of file buttons.\+ino.
+
+\index{Buttons@{Buttons}!dtime@{dtime}}
+\index{dtime@{dtime}!Buttons@{Buttons}}
+\subsubsection[{\texorpdfstring{dtime}{dtime}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long dtime = 0}\hypertarget{group__buttons_ga94921f7ca95d518d3deabb1da432c2fb}{}\label{group__buttons_ga94921f7ca95d518d3deabb1da432c2fb}
+
+
+Store the time of the last debounce to calculate delta time to next debounce. 
+
+
+
+Definition at line 30 of file buttons.\+ino.
+
+\index{Buttons@{Buttons}!falling@{falling}}
+\index{falling@{falling}!Buttons@{Buttons}}
+\subsubsection[{\texorpdfstring{falling}{falling}}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t falling = 0}\hypertarget{group__buttons_ga1861b594f36400f6c17b1f65b2565816}{}\label{group__buttons_ga1861b594f36400f6c17b1f65b2565816}
+
+
+Stores simulated interrupts for falling edge. 
+
+
+
+Definition at line 24 of file buttons.\+ino.
+
+\index{Buttons@{Buttons}!ffilter@{ffilter}}
+\index{ffilter@{ffilter}!Buttons@{Buttons}}
+\subsubsection[{\texorpdfstring{ffilter}{ffilter}}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t ffilter = 0}\hypertarget{group__buttons_gaaa75cede053f94cf46d7420556af1505}{}\label{group__buttons_gaaa75cede053f94cf46d7420556af1505}
+
+
+Filter for simulated interrupts for falling edge. 
+
+
+
+Definition at line 28 of file buttons.\+ino.
+
+\index{Buttons@{Buttons}!lastbuttons@{lastbuttons}}
+\index{lastbuttons@{lastbuttons}!Buttons@{Buttons}}
+\subsubsection[{\texorpdfstring{lastbuttons}{lastbuttons}}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t lastbuttons = 0}\hypertarget{group__buttons_gac23a04180ca7609f571853499faae915}{}\label{group__buttons_gac23a04180ca7609f571853499faae915}
+
+
+Last read of button pressed. 
+
+
+
+Definition at line 14 of file buttons.\+ino.
+
+\index{Buttons@{Buttons}!rfilter@{rfilter}}
+\index{rfilter@{rfilter}!Buttons@{Buttons}}
+\subsubsection[{\texorpdfstring{rfilter}{rfilter}}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t rfilter = 0}\hypertarget{group__buttons_ga541db091bf54e0a51180f3666e5a2ce2}{}\label{group__buttons_ga541db091bf54e0a51180f3666e5a2ce2}
+
+
+Filter for simulated interrupts for rising edge. 
+
+
+
+Definition at line 26 of file buttons.\+ino.
+
+\index{Buttons@{Buttons}!rising@{rising}}
+\index{rising@{rising}!Buttons@{Buttons}}
+\subsubsection[{\texorpdfstring{rising}{rising}}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t rising = 0}\hypertarget{group__buttons_gacc4c256fa5e75c09f1b3a669d45485ec}{}\label{group__buttons_gacc4c256fa5e75c09f1b3a669d45485ec}
+
+
+Stores simulated interrupts for rising edge. 
+
+
+
+Definition at line 22 of file buttons.\+ino.
+
+\index{Buttons@{Buttons}!stablebuttons@{stablebuttons}}
+\index{stablebuttons@{stablebuttons}!Buttons@{Buttons}}
+\subsubsection[{\texorpdfstring{stablebuttons}{stablebuttons}}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t stablebuttons = 0}\hypertarget{group__buttons_gaca8bc953fb5340b58c9403b3bf8bbd8e}{}\label{group__buttons_gaca8bc953fb5340b58c9403b3bf8bbd8e}
+
+
+Pressed Buttons after debounce. 
+
+
+
+Definition at line 16 of file buttons.\+ino.
+

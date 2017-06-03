@@ -1,0 +1,208 @@
+\hypertarget{group__speed}{}\section{Speed}
+\label{group__speed}\index{Speed@{Speed}}
+
+
+Measure speed by interrupts.  
+
+
+\subsection*{Files}
+\begin{DoxyCompactItemize}
+\item 
+file \hyperlink{speed_8ino}{speed.\+ino}
+\begin{DoxyCompactList}\small\item\em Measure speed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__speed_ga984097794e94beb18c01b6fcbd8f399d}{I\+N\+T\+E\+R\+R\+U\+P\+T\+P\+IN}~P\+C\+I\+N\+T1
+\begin{DoxyCompactList}\small\item\em This is P\+B1 per the schematic. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__speed_ga77b45027297b1ff40b5b1249afb852e5}{P\+C\+I\+N\+T\+\_\+\+V\+E\+C\+T\+OR}~P\+C\+I\+N\+T0\+\_\+vect
+\item 
+\#define \hyperlink{group__speed_ga9142f4c677315955ad0ac6266b615d2c}{D\+A\+T\+A\+D\+I\+R\+E\+C\+T\+I\+O\+N\+P\+IN}~D\+D\+B1
+\item 
+\#define \hyperlink{group__speed_gaab113cddfa5f8856918dcb65238882ca}{P\+O\+R\+T\+P\+IN}~P\+B1
+\item 
+\#define \hyperlink{group__speed_ga93a1139e66a97ca289f0f1a73903be06}{R\+E\+A\+D\+P\+IN}~P\+I\+N\+B1
+\end{DoxyCompactItemize}
+\begin{DoxyCompactItemize}
+\item 
+static volatile byte \hyperlink{group__speed_gaded4e91dd554c212e6c75ef7148a7845}{speedidx}
+\item 
+unsigned long \hyperlink{group__speed_ga605bafc427aaa8e9718a112441ba88a7}{speedts}
+\item 
+unsigned int \hyperlink{group__speed_ga63232e097931bc02aa65b3b7dadbb74b}{curspeed}
+\item 
+void \hyperlink{group__speed_gae87a94769934715c309733cfdf2abcb4}{setup\+\_\+interrupt} ()
+\item 
+\hyperlink{group__speed_ga44395845abd4a9c31e4fbe88ed717fa3}{I\+SR} (\hyperlink{group__speed_ga77b45027297b1ff40b5b1249afb852e5}{P\+C\+I\+N\+T\+\_\+\+V\+E\+C\+T\+OR})
+\item 
+unsigned int \hyperlink{group__speed_gafc7b1718f9b23966dfed24056f67996f}{getspeed} ()
+\begin{DoxyCompactList}\small\item\em Get current speed. \end{DoxyCompactList}\item 
+void \hyperlink{group__speed_ga2004678343c1f7b145dc10aae949a4ec}{resetspeed} ()
+\item 
+byte \hyperlink{group__speed_gaa1b4f1cc5cf5ba94e3bc38f44e0c7001}{getspeedidx} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Measure speed by interrupts. 
+
+
+
+\subsection{Macro Definition Documentation}
+\index{Speed@{Speed}!D\+A\+T\+A\+D\+I\+R\+E\+C\+T\+I\+O\+N\+P\+IN@{D\+A\+T\+A\+D\+I\+R\+E\+C\+T\+I\+O\+N\+P\+IN}}
+\index{D\+A\+T\+A\+D\+I\+R\+E\+C\+T\+I\+O\+N\+P\+IN@{D\+A\+T\+A\+D\+I\+R\+E\+C\+T\+I\+O\+N\+P\+IN}!Speed@{Speed}}
+\subsubsection[{\texorpdfstring{D\+A\+T\+A\+D\+I\+R\+E\+C\+T\+I\+O\+N\+P\+IN}{DATADIRECTIONPIN}}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+A\+T\+A\+D\+I\+R\+E\+C\+T\+I\+O\+N\+P\+IN~D\+D\+B1}\hypertarget{group__speed_ga9142f4c677315955ad0ac6266b615d2c}{}\label{group__speed_ga9142f4c677315955ad0ac6266b615d2c}
+\begin{DoxySeeAlso}{See also}
+Page 64 of data sheet 
+\end{DoxySeeAlso}
+
+
+Definition at line 120 of file config.\+h.
+
+\index{Speed@{Speed}!I\+N\+T\+E\+R\+R\+U\+P\+T\+P\+IN@{I\+N\+T\+E\+R\+R\+U\+P\+T\+P\+IN}}
+\index{I\+N\+T\+E\+R\+R\+U\+P\+T\+P\+IN@{I\+N\+T\+E\+R\+R\+U\+P\+T\+P\+IN}!Speed@{Speed}}
+\subsubsection[{\texorpdfstring{I\+N\+T\+E\+R\+R\+U\+P\+T\+P\+IN}{INTERRUPTPIN}}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+N\+T\+E\+R\+R\+U\+P\+T\+P\+IN~P\+C\+I\+N\+T1}\hypertarget{group__speed_ga984097794e94beb18c01b6fcbd8f399d}{}\label{group__speed_ga984097794e94beb18c01b6fcbd8f399d}
+
+
+This is P\+B1 per the schematic. 
+
+
+
+Definition at line 118 of file config.\+h.
+
+\index{Speed@{Speed}!P\+C\+I\+N\+T\+\_\+\+V\+E\+C\+T\+OR@{P\+C\+I\+N\+T\+\_\+\+V\+E\+C\+T\+OR}}
+\index{P\+C\+I\+N\+T\+\_\+\+V\+E\+C\+T\+OR@{P\+C\+I\+N\+T\+\_\+\+V\+E\+C\+T\+OR}!Speed@{Speed}}
+\subsubsection[{\texorpdfstring{P\+C\+I\+N\+T\+\_\+\+V\+E\+C\+T\+OR}{PCINT_VECTOR}}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+C\+I\+N\+T\+\_\+\+V\+E\+C\+T\+OR~P\+C\+I\+N\+T0\+\_\+vect}\hypertarget{group__speed_ga77b45027297b1ff40b5b1249afb852e5}{}\label{group__speed_ga77b45027297b1ff40b5b1249afb852e5}
+\begin{DoxyNote}{Note}
+This step is not necessary 
+\end{DoxyNote}
+
+
+Definition at line 119 of file config.\+h.
+
+\index{Speed@{Speed}!P\+O\+R\+T\+P\+IN@{P\+O\+R\+T\+P\+IN}}
+\index{P\+O\+R\+T\+P\+IN@{P\+O\+R\+T\+P\+IN}!Speed@{Speed}}
+\subsubsection[{\texorpdfstring{P\+O\+R\+T\+P\+IN}{PORTPIN}}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+O\+R\+T\+P\+IN~P\+B1}\hypertarget{group__speed_gaab113cddfa5f8856918dcb65238882ca}{}\label{group__speed_gaab113cddfa5f8856918dcb65238882ca}
+\begin{DoxySeeAlso}{See also}
+Page 64 
+\end{DoxySeeAlso}
+
+
+Definition at line 121 of file config.\+h.
+
+\index{Speed@{Speed}!R\+E\+A\+D\+P\+IN@{R\+E\+A\+D\+P\+IN}}
+\index{R\+E\+A\+D\+P\+IN@{R\+E\+A\+D\+P\+IN}!Speed@{Speed}}
+\subsubsection[{\texorpdfstring{R\+E\+A\+D\+P\+IN}{READPIN}}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+E\+A\+D\+P\+IN~P\+I\+N\+B1}\hypertarget{group__speed_ga93a1139e66a97ca289f0f1a73903be06}{}\label{group__speed_ga93a1139e66a97ca289f0f1a73903be06}
+\begin{DoxySeeAlso}{See also}
+Page 64 
+\end{DoxySeeAlso}
+
+
+Definition at line 122 of file config.\+h.
+
+
+
+\subsection{Function Documentation}
+\index{Speed@{Speed}!getspeed@{getspeed}}
+\index{getspeed@{getspeed}!Speed@{Speed}}
+\subsubsection[{\texorpdfstring{getspeed()}{getspeed()}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int getspeed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{group__speed_gafc7b1718f9b23966dfed24056f67996f}{}\label{group__speed_gafc7b1718f9b23966dfed24056f67996f}
+
+
+Get current speed. 
+
+The speed is measured as integral of interrupts in an interval of at least 256ms. The smallest measurable speed is one interrupt per 256ms. This function returns an unsigned integer, so the smallest value above 0 should be 1. To get this result the count of interrupts is bit shifted by 8.
+
+1$<$$<$8 = 256; 256/256 = 1
+
+But what does 1 represent?
+
+I put 16 interrupt marks to tire of my Bobby Car. One interrupt every 250 ms are 15 rpm (revolutions per minute).
+
+My Bobby Car has a tire diameter of about 153 mm. So the circumference is 478mm (d$\ast$pi).
+
+478mm $\ast$ 15 rpm = 0.\+4302 km/h
+
+\begin{DoxyReturn}{Returns}
+current speed. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{group__speed_ga44395845abd4a9c31e4fbe88ed717fa3}{I\+S\+R(\+P\+C\+I\+N\+T\+\_\+\+V\+E\+C\+T\+O\+R)} 
+
+\hyperlink{group__car_gac7295d1018b2b948084ba5dbacf09d74}{tacho()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 71 of file speed.\+ino.
+
+\index{Speed@{Speed}!getspeedidx@{getspeedidx}}
+\index{getspeedidx@{getspeedidx}!Speed@{Speed}}
+\subsubsection[{\texorpdfstring{getspeedidx()}{getspeedidx()}}]{\setlength{\rightskip}{0pt plus 5cm}byte getspeedidx (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{group__speed_gaa1b4f1cc5cf5ba94e3bc38f44e0c7001}{}\label{group__speed_gaa1b4f1cc5cf5ba94e3bc38f44e0c7001}
+
+
+Definition at line 99 of file speed.\+ino.
+
+\index{Speed@{Speed}!I\+SR@{I\+SR}}
+\index{I\+SR@{I\+SR}!Speed@{Speed}}
+\subsubsection[{\texorpdfstring{I\+S\+R(\+P\+C\+I\+N\+T\+\_\+\+V\+E\+C\+T\+O\+R)}{ISR(PCINT_VECTOR)}}]{\setlength{\rightskip}{0pt plus 5cm}I\+SR (
+\begin{DoxyParamCaption}
+\item[{{\bf P\+C\+I\+N\+T\+\_\+\+V\+E\+C\+T\+OR}}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{group__speed_ga44395845abd4a9c31e4fbe88ed717fa3}{}\label{group__speed_ga44395845abd4a9c31e4fbe88ed717fa3}
+
+
+Definition at line 36 of file speed.\+ino.
+
+\index{Speed@{Speed}!resetspeed@{resetspeed}}
+\index{resetspeed@{resetspeed}!Speed@{Speed}}
+\subsubsection[{\texorpdfstring{resetspeed()}{resetspeed()}}]{\setlength{\rightskip}{0pt plus 5cm}void resetspeed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{group__speed_ga2004678343c1f7b145dc10aae949a4ec}{}\label{group__speed_ga2004678343c1f7b145dc10aae949a4ec}
+
+
+Definition at line 91 of file speed.\+ino.
+
+\index{Speed@{Speed}!setup\+\_\+interrupt@{setup\+\_\+interrupt}}
+\index{setup\+\_\+interrupt@{setup\+\_\+interrupt}!Speed@{Speed}}
+\subsubsection[{\texorpdfstring{setup\+\_\+interrupt()}{setup_interrupt()}}]{\setlength{\rightskip}{0pt plus 5cm}void setup\+\_\+interrupt (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{group__speed_gae87a94769934715c309733cfdf2abcb4}{}\label{group__speed_gae87a94769934715c309733cfdf2abcb4}
+
+
+Definition at line 22 of file speed.\+ino.
+
+
+
+\subsection{Variable Documentation}
+\index{Speed@{Speed}!curspeed@{curspeed}}
+\index{curspeed@{curspeed}!Speed@{Speed}}
+\subsubsection[{\texorpdfstring{curspeed}{curspeed}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int curspeed}\hypertarget{group__speed_ga63232e097931bc02aa65b3b7dadbb74b}{}\label{group__speed_ga63232e097931bc02aa65b3b7dadbb74b}
+
+
+Definition at line 20 of file speed.\+ino.
+
+\index{Speed@{Speed}!speedidx@{speedidx}}
+\index{speedidx@{speedidx}!Speed@{Speed}}
+\subsubsection[{\texorpdfstring{speedidx}{speedidx}}]{\setlength{\rightskip}{0pt plus 5cm}volatile byte speedidx\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{group__speed_gaded4e91dd554c212e6c75ef7148a7845}{}\label{group__speed_gaded4e91dd554c212e6c75ef7148a7845}
+
+
+Definition at line 18 of file speed.\+ino.
+
+\index{Speed@{Speed}!speedts@{speedts}}
+\index{speedts@{speedts}!Speed@{Speed}}
+\subsubsection[{\texorpdfstring{speedts}{speedts}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long speedts}\hypertarget{group__speed_ga605bafc427aaa8e9718a112441ba88a7}{}\label{group__speed_ga605bafc427aaa8e9718a112441ba88a7}
+
+
+Definition at line 19 of file speed.\+ino.
+

@@ -1,3 +1,17 @@
+/**
+ * @file police.ino 
+ * @author copyrights
+ * @brief Police beacon light and front flash.
+ * @ingroup police
+ * @todo May add more flasher.
+ * @todo Extract beacon light as seperate function.
+ */
+ 
+/**
+ * @ingroup police
+ * @{
+ */
+ 
 
 void police(){
   byte so;
@@ -96,3 +110,5 @@ void p_front(boolean ls, boolean rs, boolean left)
       strip.setPixelColor(front_row[i],PRLOW);
   }
 }
+
+/**@}*/
