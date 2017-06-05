@@ -45,7 +45,7 @@
 
 /**
  * @defgroup car Car Basics 
- * @brief Basic car functionallity.
+ * @brief Basic car functionality.
  * 
  * @{
  */
@@ -123,8 +123,8 @@
 /**@}*/
 
 /**
- * @defgroup deployment Deloyment
- * @brief Deloyment of LEDs.
+ * @defgroup deployment Deployment
+ * @brief Deployment of LEDs.
  * 
  * @{
  */
@@ -157,7 +157,7 @@ Adafruit_NeoPixel strip = Adafruit_NeoPixel(NUM_LEDS, PIN, NEO_RGB + NEO_KHZ800)
  */
  
 /**
- * @brief Global accessable variable that stores the current time after program start in ms.
+ * @brief Global accessible variable that stores the current time after program start in ms.
  * @see millis()
  */
 static volatile unsigned long time;

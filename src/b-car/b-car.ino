@@ -16,7 +16,7 @@
  */
  
 /**
- * @brief Inital setup.
+ * @brief Initial setup.
  */
 void setup() {
   // This is for Trinket 5V 16MHz, you can remove these three lines if you are not using a Trinket

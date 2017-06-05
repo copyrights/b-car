@@ -2,6 +2,11 @@
 This project aims to upgrade a classic Big Bobby Car with 32 RGB-LEDs, 11 buttons and a photo sensor.
   ![b-car GIF](res/b-car.gif)
 ## Hardware
+
+![sketch front](res/sketch_front.png)
+
+![Sketch front](res/sketch_back.png)
+
 ![schematic](res/b-car_schematic.png)
 
 ![bread board](res/b-car_breadboard.png)
@@ -9,3 +14,8 @@ This project aims to upgrade a classic Big Bobby Car with 32 RGB-LEDs, 11 button
 ![pcb front side](res/b-car_pcb_front.png)
 
 ![pcb back side](res/b-car_pcb_back.png)
+
+![final board](res/real_pcb.jpg)
+
+## Software
+

@@ -44,8 +44,8 @@ void updateButtons()
 /** 
  * @brief Returns the state of a button as boolean.
  * 
- * @param mask Button of interessed.
- * @return Returns true, if button is pressed. Returns flase, if it is not pressed.
+ * @param mask Button of interested.
+ * @return Returns true, if button is pressed. Returns false, if it is not pressed.
  */
 bool buttonState(uint16_t mask)
 {
@@ -109,7 +109,7 @@ void updintr(uint16_t state)
 /** 
  * @brief Get simulated rising edge interrupt(s) for simulated interrupt service routine.
  * 
- * @param mask Button(s) of interrest.
+ * @param mask Button(s) of interest.
  * @return Bit mask of interrupt(s).
  */
 uint16_t getRising(uint16_t mask)
@@ -123,7 +123,7 @@ uint16_t getRising(uint16_t mask)
 /** 
  * @brief Get simulated falling edge interrupt(s) for simulated interrupt service routine.
  * 
- * @param mask Button(s) of interrest.
+ * @param mask Button(s) of interest.
  * @return Bit mask of interrupt(s).
  */
 uint16_t getFalling(uint16_t mask)

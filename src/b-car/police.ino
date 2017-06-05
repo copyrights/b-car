@@ -4,7 +4,7 @@
  * @brief Police beacon light and front flash.
  * @ingroup police
  * @todo May add more flasher.
- * @todo Extract beacon light as seperate function.
+ * @todo Extract beacon light as separate function.
  */
  
 /**

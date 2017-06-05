@@ -1,7 +1,7 @@
 /**
  * @file car_basics.ino
  * @author copyrights
- * @brief Basic car functionallity.
+ * @brief Basic car functionality.
  * @ingroup car
  * @todo Write a function for brake lights.
  */
@@ -43,7 +43,7 @@ void turn_left(){
 
 /** 
  * @brief Activate low beam or high beam.
- * @todo Rewrite as all LEDs get clear at the begining of the main loop */
+ * @todo Rewrite as all LEDs get clear at the beginning of the main loop */
 void beam(unsigned long state){
   if(state == HIGHBEAM){
     high_beam(true);
@@ -103,13 +103,13 @@ void high_beam(bool on){
  * - Orange (0x110800): medium speed
  * - Red (0x110000): ludicrous speed
  * 
- * The function getspeed returns an unsigned integer with a step size of
+ * The function @ref getspeed() returns an unsigned integer with a step size of
  * 1 equals 0.4302 km/h. As the speed is displayed in three color the
  * maximum speed should be dividable by three. 
  * 
  * The integer value 30 -> 12.9 km/h. 12.9 km/h should be enough for 
  * small children. If you have a older child or use this for different 
- * purposes (e.g. a bycicle), the maximum speed should be higher.
+ * purposes (e.g. a bicycle), the maximum speed should be higher.
  * 
  * 30/3 = 10 -> speed * count of tachometer LEDs / 10
  * @see getspeed()

@@ -3,7 +3,7 @@
  * @author copyrights
  * @brief Measure speed.
  * @ingroup speed
- * @todo Write a function that detects braking via negaive acceleration.
+ * @todo Write a function that detects braking via negative acceleration.
  */
 
 /**
@@ -35,7 +35,7 @@ void setup_interrupt()
 
 ISR(PCINT_VECTOR) {
   //Since the PCINTn triggers on both rising and falling edge let's just looks for rising edge
-  //i.e. pin goes to 5v
+  //i.e. pin goes to 5V
   byte pinState;
   pinState = (PINB >> READPIN)& 1; //PINB is the register to read the state of the pins
   if (pinState >0) //look at the pin state on the pin PINB register- returns 1 if high
