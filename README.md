@@ -1,7 +1,9 @@
 # b-car
-That a classic Big Bobby Car, cut a hole in the underbody, drill some more holes, put some RGB-LEDs, buttons and a sensor through holes, place a battery and a circuit board inside and you ready to go.
+Take a classic Big Bobby Car, cut a hole in the underbody, drill some more holes, put some RGB-LEDs, buttons and a sensor through holes, place a battery and a circuit board inside and you ready to go.
 
   ![b-car GIF](res/b-car.gif) 
+
+You could use project as base for your own Bobby Car, bicycle or what ever. Get creative.
 ## Features
 * Knight Rider like front row
 * full control
