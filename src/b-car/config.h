@@ -4,6 +4,12 @@
  * @brief Adjust your settings here.
  */
 
+/** uncomment the next line to use custom settings instead of mine */
+//#define CUSTOM
+
+#ifdef CUSTOM
+#include "custom.h"
+#else
 /**
  * @defgroup buttons Buttons
  * @brief Use R-2R resistor ladder network for more buttons.
@@ -167,3 +173,4 @@ static volatile unsigned long time;
 /** @brief stores current operation mode */
 byte mode=0;
 /**@}*/
+#endif
