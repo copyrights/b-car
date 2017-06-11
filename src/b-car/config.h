@@ -107,6 +107,8 @@
  */
 /** @brief Rainbow step size between two LEDs. */
 #define RBSTEP 40
+/** @brief If defined more functions are added to rainbow mode. */
+#define MORERAINBOW
 /**@}*/
 
 /**

@@ -14,6 +14,7 @@
 void rainbowmode()
 {
   byte pos = ((time * 255)/1000) % 255;
+#ifdef MORERAINBOW
   //Button2
   if(buttonState(S2))
   {
@@ -50,6 +51,7 @@ void rainbowmode()
     }
   }
   else
+#endif
   {
     for (byte i=0;i<sizeof(rainbowrow_left);i++)
     {
