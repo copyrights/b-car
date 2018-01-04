@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['lastbuttons',['lastbuttons',['../group__buttons.html#gac23a04180ca7609f571853499faae915',1,'buttons.ino']]],
-  ['low_5fbeam_5frow',['low_beam_row',['../group__deployment.html#ga1a25903a2850d9849775664473070489',1,'config.h']]]
+  ['isbraking',['isbraking',['../speed_8h.html#ad13fd9ed7295daa9a51dd2fade080e50',1,'isbraking():&#160;speed.ino'],['../group__speed.html#gad13fd9ed7295daa9a51dd2fade080e50',1,'isbraking():&#160;speed.ino']]]
 ];

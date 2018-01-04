@@ -6,12 +6,12 @@ Main file.
 
 
 {\ttfamily \#include $<$Adafruit\+\_\+\+Neo\+Pixel.\+h$>$}\\*
-{\ttfamily \#include \char`\"{}config.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}b-\/car.\+h\char`\"{}}\\*
 Include dependency graph for b-\/car.ino\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=254pt]{b-car_8ino__incl}
+\includegraphics[width=350pt]{b-car_8ino__incl}
 \end{center}
 \end{figure}
 \subsection*{Functions}
@@ -19,14 +19,18 @@ Include dependency graph for b-\/car.ino\+:\nopagebreak
 \item 
 void \hyperlink{group__car_gaa0a39b0689218537e29a29f9c3f2af47}{normalmode} ()
 \begin{DoxyCompactList}\small\item\em Normal operation mode. \end{DoxyCompactList}\end{DoxyCompactItemize}
-{\bf }\par
 \begin{DoxyCompactItemize}
 \item 
+Adafruit\+\_\+\+Neo\+Pixel \hyperlink{group__main_gacf2771bd8bfaf855bbcc6c30301bf380}{strip} = Adafruit\+\_\+\+Neo\+Pixel(\hyperlink{group__deployment_ga4c4ae9a4146ce8d6a5debc90300d9abd}{N\+U\+M\+\_\+\+L\+E\+DS}, \hyperlink{group__deployment_gae1a27401b7fb01ccb9a82dbddbb54eea}{P\+IN}, N\+E\+O\+\_\+\+R\+GB + N\+E\+O\+\_\+\+K\+H\+Z800)
+\item 
+byte \hyperlink{group__main_ga988166baebc4b27bd18de27cd40f8b5a}{mode} = 0
+\begin{DoxyCompactList}\small\item\em stores current operation mode \end{DoxyCompactList}\item 
+volatile unsigned long \hyperlink{group__main_ga4f944bfefd58754546ebcc7c5143442c}{time}
+\begin{DoxyCompactList}\small\item\em Global accessible variable that stores the current time after program start in ms. \end{DoxyCompactList}\item 
 void \hyperlink{group__main_ga4fc01d736fe50cf5b977f755b675f11d}{setup} ()
 \begin{DoxyCompactList}\small\item\em Initial setup. \end{DoxyCompactList}\item 
 void \hyperlink{group__main_gafe461d27b9c48d5921c00d521181f12f}{loop} ()
 \begin{DoxyCompactList}\small\item\em Main loop. \end{DoxyCompactList}\end{DoxyCompactItemize}
-
 
 
 \subsection{Detailed Description}

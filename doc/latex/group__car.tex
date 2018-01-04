@@ -20,13 +20,35 @@ file \hyperlink{car__basics_8ino}{car\+\_\+basics.\+ino}
 \#define \hyperlink{group__car_ga3f561f12573270e4b5329bc5930ad20f}{H\+I\+G\+H\+B\+E\+AM}~0x7f7f7f
 \begin{DoxyCompactList}\small\item\em Color of high beam. \end{DoxyCompactList}\item 
 \#define \hyperlink{group__car_gae97ccf06dd29b2a0500f378068b678e2}{B\+A\+C\+K\+L\+I\+G\+HT}~0x3f0000
-\begin{DoxyCompactList}\small\item\em Color of back lights. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Color of back lights. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__car_ga95743a8e9ccb3be5a627dd9322806751}{B\+R\+A\+K\+E\+L\+I\+G\+HT}~0xff0000
+\begin{DoxyCompactList}\small\item\em Color of brake lights. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__car_gadbd34b4269ed16bd87a0d13cb17bdf81}{B\+R\+A\+K\+E\+T\+I\+ME}~1000
+\begin{DoxyCompactList}\small\item\em time brake lights glow in ms. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
 void \hyperlink{group__car_gaa0a39b0689218537e29a29f9c3f2af47}{normalmode} ()
 \begin{DoxyCompactList}\small\item\em Normal operation mode. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \begin{DoxyCompactItemize}
+\item 
+const byte \hyperlink{group__car_gac03fd0ab9cbcc53730039ad03e9b094d}{turn\+\_\+light\+\_\+left} \mbox{[}$\,$\mbox{]} =\{17,27\}
+\item 
+const byte \hyperlink{group__car_ga1a25903a2850d9849775664473070489}{low\+\_\+beam\+\_\+row} \mbox{[}$\,$\mbox{]} =\{1,2,16,15\}
+\item 
+const byte \hyperlink{group__car_ga1ecea646e1c5dcdfc643287a5f2041bb}{high\+\_\+beam\+\_\+row} \mbox{[}$\,$\mbox{]} = \{1,2,16,15\}
+\item 
+const byte \hyperlink{group__car_ga5009aa0cbe6b32a72b085489b027800e}{front\+\_\+row} \mbox{[}$\,$\mbox{]} = \{3,4,5,13,14\}
+\item 
+const byte \hyperlink{group__car_ga6ade605406f4c1ce9f03a5a2530f6dbe}{tacho\+\_\+row} \mbox{[}$\,$\mbox{]} = \{12,11,10,9,8,7,6\}
+\item 
+const byte \hyperlink{group__car_gaa5a6ee27fdf1d7c939cdf2a7266d7e84}{turn\+\_\+light\+\_\+right} \mbox{[}$\,$\mbox{]} =\{0,30\}
+\item 
+const byte \hyperlink{group__car_gaac36c9836edd3a125668213f0fb72b5a}{down\+\_\+left\+\_\+row} \mbox{[}$\,$\mbox{]} = \{18,19,20,21\}
+\item 
+const byte \hyperlink{group__car_gadbf10ff9ee353128c568e07c32b1ffa9}{down\+\_\+right\+\_\+row} \mbox{[}$\,$\mbox{]} = \{22,23,24,25\}
+\item 
+const byte \hyperlink{group__car_ga516415cfaebc59b71f822fb4cf86b22c}{back\+\_\+light\+\_\+row} \mbox{[}$\,$\mbox{]} = \{26,28,29,31\}
 \item 
 void \hyperlink{group__car_gaca3b725ebee32d3719a9c02b41002ea3}{turn\+\_\+right} ()
 \begin{DoxyCompactList}\small\item\em Activate right turn lights. \end{DoxyCompactList}\item 
@@ -41,7 +63,9 @@ void \hyperlink{group__car_ga1088d06b4ab015d579e0ac2510d39f25}{high\+\_\+beam} (
 void \hyperlink{group__car_gac7295d1018b2b948084ba5dbacf09d74}{tacho} ()
 \begin{DoxyCompactList}\small\item\em Display the current speed on tacho\+\_\+row L\+E\+Ds. \end{DoxyCompactList}\item 
 void \hyperlink{group__car_gaffb7c011f82f3fb47b39ebb2713a1cd8}{flash} ()
-\begin{DoxyCompactList}\small\item\em Flash light. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Flash light. \end{DoxyCompactList}\item 
+void \hyperlink{group__car_ga1ac48972153097ad7a16fffc032fc5f1}{brakelight} ()
+\begin{DoxyCompactList}\small\item\em Brake light. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -59,7 +83,29 @@ Color of back lights.
 
 
 
-Definition at line 59 of file config.\+h.
+Definition at line 73 of file config.\+h.
+
+\index{Car Basics@{Car Basics}!B\+R\+A\+K\+E\+L\+I\+G\+HT@{B\+R\+A\+K\+E\+L\+I\+G\+HT}}
+\index{B\+R\+A\+K\+E\+L\+I\+G\+HT@{B\+R\+A\+K\+E\+L\+I\+G\+HT}!Car Basics@{Car Basics}}
+\subsubsection[{\texorpdfstring{B\+R\+A\+K\+E\+L\+I\+G\+HT}{BRAKELIGHT}}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\+R\+A\+K\+E\+L\+I\+G\+HT~0xff0000}\hypertarget{group__car_ga95743a8e9ccb3be5a627dd9322806751}{}\label{group__car_ga95743a8e9ccb3be5a627dd9322806751}
+
+
+Color of brake lights. 
+
+
+
+Definition at line 75 of file config.\+h.
+
+\index{Car Basics@{Car Basics}!B\+R\+A\+K\+E\+T\+I\+ME@{B\+R\+A\+K\+E\+T\+I\+ME}}
+\index{B\+R\+A\+K\+E\+T\+I\+ME@{B\+R\+A\+K\+E\+T\+I\+ME}!Car Basics@{Car Basics}}
+\subsubsection[{\texorpdfstring{B\+R\+A\+K\+E\+T\+I\+ME}{BRAKETIME}}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\+R\+A\+K\+E\+T\+I\+ME~1000}\hypertarget{group__car_gadbd34b4269ed16bd87a0d13cb17bdf81}{}\label{group__car_gadbd34b4269ed16bd87a0d13cb17bdf81}
+
+
+time brake lights glow in ms. 
+
+
+
+Definition at line 77 of file config.\+h.
 
 \index{Car Basics@{Car Basics}!H\+I\+G\+H\+B\+E\+AM@{H\+I\+G\+H\+B\+E\+AM}}
 \index{H\+I\+G\+H\+B\+E\+AM@{H\+I\+G\+H\+B\+E\+AM}!Car Basics@{Car Basics}}
@@ -70,7 +116,7 @@ Color of high beam.
 
 
 
-Definition at line 57 of file config.\+h.
+Definition at line 71 of file config.\+h.
 
 \index{Car Basics@{Car Basics}!L\+O\+W\+B\+E\+AM@{L\+O\+W\+B\+E\+AM}}
 \index{L\+O\+W\+B\+E\+AM@{L\+O\+W\+B\+E\+AM}!Car Basics@{Car Basics}}
@@ -81,7 +127,7 @@ Color of low beam.
 
 
 
-Definition at line 55 of file config.\+h.
+Definition at line 69 of file config.\+h.
 
 \index{Car Basics@{Car Basics}!T\+U\+R\+N\+L\+I\+G\+HT@{T\+U\+R\+N\+L\+I\+G\+HT}}
 \index{T\+U\+R\+N\+L\+I\+G\+HT@{T\+U\+R\+N\+L\+I\+G\+HT}!Car Basics@{Car Basics}}
@@ -92,7 +138,7 @@ Color of turn lights.
 
 
 
-Definition at line 53 of file config.\+h.
+Definition at line 67 of file config.\+h.
 
 
 
@@ -112,7 +158,22 @@ Activate low beam or high beam.
 \item[\hyperlink{todo__todo000002}{Todo}]Rewrite as all L\+E\+Ds get clear at the beginning of the main loop \end{DoxyRefDesc}
 
 
-Definition at line 47 of file car\+\_\+basics.\+ino.
+Definition at line 59 of file car\+\_\+basics.\+ino.
+
+\index{Car Basics@{Car Basics}!brakelight@{brakelight}}
+\index{brakelight@{brakelight}!Car Basics@{Car Basics}}
+\subsubsection[{\texorpdfstring{brakelight()}{brakelight()}}]{\setlength{\rightskip}{0pt plus 5cm}void brakelight (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{group__car_ga1ac48972153097ad7a16fffc032fc5f1}{}\label{group__car_ga1ac48972153097ad7a16fffc032fc5f1}
+
+
+Brake light. 
+
+Put \hyperlink{group__deployment_ga3a2101866267bf0af2559a241cdb7cc6}{back\+\_\+light\+\_\+row} to \hyperlink{group__car_ga95743a8e9ccb3be5a627dd9322806751}{B\+R\+A\+K\+E\+L\+I\+G\+HT}. 
+
+Definition at line 184 of file car\+\_\+basics.\+ino.
 
 \index{Car Basics@{Car Basics}!flash@{flash}}
 \index{flash@{flash}!Car Basics@{Car Basics}}
@@ -125,9 +186,9 @@ Definition at line 47 of file car\+\_\+basics.\+ino.
 
 Flash light. 
 
-Put \hyperlink{group__deployment_ga1ecea646e1c5dcdfc643287a5f2041bb}{high\+\_\+beam\+\_\+row}, \hyperlink{group__deployment_ga5009aa0cbe6b32a72b085489b027800e}{front\+\_\+row} and \hyperlink{group__deployment_ga516415cfaebc59b71f822fb4cf86b22c}{back\+\_\+light\+\_\+row} to \hyperlink{group__car_ga3f561f12573270e4b5329bc5930ad20f}{H\+I\+G\+H\+B\+E\+AM}. 
+Put \hyperlink{group__deployment_ga8b165874b487053cb404215a7f42e33e}{high\+\_\+beam\+\_\+row}, \hyperlink{group__deployment_ga848556a6e145736d917b4f0a67ee60ae}{front\+\_\+row} and \hyperlink{group__deployment_ga3a2101866267bf0af2559a241cdb7cc6}{back\+\_\+light\+\_\+row} to \hyperlink{group__car_ga3f561f12573270e4b5329bc5930ad20f}{H\+I\+G\+H\+B\+E\+AM}. 
 
-Definition at line 152 of file car\+\_\+basics.\+ino.
+Definition at line 164 of file car\+\_\+basics.\+ino.
 
 \index{Car Basics@{Car Basics}!high\+\_\+beam@{high\+\_\+beam}}
 \index{high\+\_\+beam@{high\+\_\+beam}!Car Basics@{Car Basics}}
@@ -138,7 +199,7 @@ Definition at line 152 of file car\+\_\+basics.\+ino.
 )}\hypertarget{group__car_ga1088d06b4ab015d579e0ac2510d39f25}{}\label{group__car_ga1088d06b4ab015d579e0ac2510d39f25}
 
 
-Definition at line 79 of file car\+\_\+basics.\+ino.
+Definition at line 91 of file car\+\_\+basics.\+ino.
 
 \index{Car Basics@{Car Basics}!low\+\_\+beam@{low\+\_\+beam}}
 \index{low\+\_\+beam@{low\+\_\+beam}!Car Basics@{Car Basics}}
@@ -149,7 +210,7 @@ Definition at line 79 of file car\+\_\+basics.\+ino.
 )}\hypertarget{group__car_ga29d5eff542aae0196b8e84b8a752e1df}{}\label{group__car_ga29d5eff542aae0196b8e84b8a752e1df}
 
 
-Definition at line 61 of file car\+\_\+basics.\+ino.
+Definition at line 73 of file car\+\_\+basics.\+ino.
 
 \index{Car Basics@{Car Basics}!normalmode@{normalmode}}
 \index{normalmode@{normalmode}!Car Basics@{Car Basics}}
@@ -164,7 +225,7 @@ Normal operation mode.
 
 
 
-Definition at line 61 of file b-\/car.\+ino.
+Definition at line 62 of file b-\/car.\+ino.
 
 \index{Car Basics@{Car Basics}!tacho@{tacho}}
 \index{tacho@{tacho}!Car Basics@{Car Basics}}
@@ -186,16 +247,16 @@ It is show from left to right in three different color.
 \item Red (0x110000)\+: ludicrous speed
 \end{DoxyItemize}
 
-The function \hyperlink{group__speed_gafc7b1718f9b23966dfed24056f67996f}{getspeed()} returns an unsigned integer with a step size of 1 equals 0.\+4302 km/h. As the speed is displayed in three color the maximum speed should be dividable by three.
+The function \hyperlink{speed_8h_afc7b1718f9b23966dfed24056f67996f}{getspeed()} returns an unsigned integer with a step size of 1 equals 0.\+4302 km/h. As the speed is displayed in three color the maximum speed should be dividable by three.
 
 The integer value 30 -\/$>$ 12.\+9 km/h. 12.\+9 km/h should be enough for small children. If you have a older child or use this for different purposes (e.\+g. a bicycle), the maximum speed should be higher.
 
 30/3 = 10 -\/$>$ speed $\ast$ count of tachometer L\+E\+Ds / 10 \begin{DoxySeeAlso}{See also}
-\hyperlink{group__speed_gafc7b1718f9b23966dfed24056f67996f}{getspeed()} 
+\hyperlink{speed_8h_afc7b1718f9b23966dfed24056f67996f}{getspeed()} 
 \end{DoxySeeAlso}
 
 
-Definition at line 117 of file car\+\_\+basics.\+ino.
+Definition at line 129 of file car\+\_\+basics.\+ino.
 
 \index{Car Basics@{Car Basics}!turn\+\_\+left@{turn\+\_\+left}}
 \index{turn\+\_\+left@{turn\+\_\+left}!Car Basics@{Car Basics}}
@@ -210,7 +271,7 @@ Activate left turn lights.
 
 
 
-Definition at line 30 of file car\+\_\+basics.\+ino.
+Definition at line 42 of file car\+\_\+basics.\+ino.
 
 \index{Car Basics@{Car Basics}!turn\+\_\+right@{turn\+\_\+right}}
 \index{turn\+\_\+right@{turn\+\_\+right}!Car Basics@{Car Basics}}
@@ -225,5 +286,71 @@ Activate right turn lights.
 
 
 
-Definition at line 15 of file car\+\_\+basics.\+ino.
+Definition at line 27 of file car\+\_\+basics.\+ino.
+
+
+
+\subsection{Variable Documentation}
+\index{Car Basics@{Car Basics}!back\+\_\+light\+\_\+row@{back\+\_\+light\+\_\+row}}
+\index{back\+\_\+light\+\_\+row@{back\+\_\+light\+\_\+row}!Car Basics@{Car Basics}}
+\subsubsection[{\texorpdfstring{back\+\_\+light\+\_\+row}{back_light_row}}]{\setlength{\rightskip}{0pt plus 5cm}const byte back\+\_\+light\+\_\+row\mbox{[}$\,$\mbox{]} = \{26,28,29,31\}}\hypertarget{group__car_ga516415cfaebc59b71f822fb4cf86b22c}{}\label{group__car_ga516415cfaebc59b71f822fb4cf86b22c}
+
+
+Definition at line 24 of file car\+\_\+basics.\+ino.
+
+\index{Car Basics@{Car Basics}!down\+\_\+left\+\_\+row@{down\+\_\+left\+\_\+row}}
+\index{down\+\_\+left\+\_\+row@{down\+\_\+left\+\_\+row}!Car Basics@{Car Basics}}
+\subsubsection[{\texorpdfstring{down\+\_\+left\+\_\+row}{down_left_row}}]{\setlength{\rightskip}{0pt plus 5cm}const byte down\+\_\+left\+\_\+row\mbox{[}$\,$\mbox{]} = \{18,19,20,21\}}\hypertarget{group__car_gaac36c9836edd3a125668213f0fb72b5a}{}\label{group__car_gaac36c9836edd3a125668213f0fb72b5a}
+
+
+Definition at line 22 of file car\+\_\+basics.\+ino.
+
+\index{Car Basics@{Car Basics}!down\+\_\+right\+\_\+row@{down\+\_\+right\+\_\+row}}
+\index{down\+\_\+right\+\_\+row@{down\+\_\+right\+\_\+row}!Car Basics@{Car Basics}}
+\subsubsection[{\texorpdfstring{down\+\_\+right\+\_\+row}{down_right_row}}]{\setlength{\rightskip}{0pt plus 5cm}const byte down\+\_\+right\+\_\+row\mbox{[}$\,$\mbox{]} = \{22,23,24,25\}}\hypertarget{group__car_gadbf10ff9ee353128c568e07c32b1ffa9}{}\label{group__car_gadbf10ff9ee353128c568e07c32b1ffa9}
+
+
+Definition at line 23 of file car\+\_\+basics.\+ino.
+
+\index{Car Basics@{Car Basics}!front\+\_\+row@{front\+\_\+row}}
+\index{front\+\_\+row@{front\+\_\+row}!Car Basics@{Car Basics}}
+\subsubsection[{\texorpdfstring{front\+\_\+row}{front_row}}]{\setlength{\rightskip}{0pt plus 5cm}const byte front\+\_\+row\mbox{[}$\,$\mbox{]} = \{3,4,5,13,14\}}\hypertarget{group__car_ga5009aa0cbe6b32a72b085489b027800e}{}\label{group__car_ga5009aa0cbe6b32a72b085489b027800e}
+
+
+Definition at line 19 of file car\+\_\+basics.\+ino.
+
+\index{Car Basics@{Car Basics}!high\+\_\+beam\+\_\+row@{high\+\_\+beam\+\_\+row}}
+\index{high\+\_\+beam\+\_\+row@{high\+\_\+beam\+\_\+row}!Car Basics@{Car Basics}}
+\subsubsection[{\texorpdfstring{high\+\_\+beam\+\_\+row}{high_beam_row}}]{\setlength{\rightskip}{0pt plus 5cm}const byte high\+\_\+beam\+\_\+row\mbox{[}$\,$\mbox{]} = \{1,2,16,15\}}\hypertarget{group__car_ga1ecea646e1c5dcdfc643287a5f2041bb}{}\label{group__car_ga1ecea646e1c5dcdfc643287a5f2041bb}
+
+
+Definition at line 18 of file car\+\_\+basics.\+ino.
+
+\index{Car Basics@{Car Basics}!low\+\_\+beam\+\_\+row@{low\+\_\+beam\+\_\+row}}
+\index{low\+\_\+beam\+\_\+row@{low\+\_\+beam\+\_\+row}!Car Basics@{Car Basics}}
+\subsubsection[{\texorpdfstring{low\+\_\+beam\+\_\+row}{low_beam_row}}]{\setlength{\rightskip}{0pt plus 5cm}const byte low\+\_\+beam\+\_\+row\mbox{[}$\,$\mbox{]} =\{1,2,16,15\}}\hypertarget{group__car_ga1a25903a2850d9849775664473070489}{}\label{group__car_ga1a25903a2850d9849775664473070489}
+
+
+Definition at line 17 of file car\+\_\+basics.\+ino.
+
+\index{Car Basics@{Car Basics}!tacho\+\_\+row@{tacho\+\_\+row}}
+\index{tacho\+\_\+row@{tacho\+\_\+row}!Car Basics@{Car Basics}}
+\subsubsection[{\texorpdfstring{tacho\+\_\+row}{tacho_row}}]{\setlength{\rightskip}{0pt plus 5cm}const byte tacho\+\_\+row\mbox{[}$\,$\mbox{]} = \{12,11,10,9,8,7,6\}}\hypertarget{group__car_ga6ade605406f4c1ce9f03a5a2530f6dbe}{}\label{group__car_ga6ade605406f4c1ce9f03a5a2530f6dbe}
+
+
+Definition at line 20 of file car\+\_\+basics.\+ino.
+
+\index{Car Basics@{Car Basics}!turn\+\_\+light\+\_\+left@{turn\+\_\+light\+\_\+left}}
+\index{turn\+\_\+light\+\_\+left@{turn\+\_\+light\+\_\+left}!Car Basics@{Car Basics}}
+\subsubsection[{\texorpdfstring{turn\+\_\+light\+\_\+left}{turn_light_left}}]{\setlength{\rightskip}{0pt plus 5cm}const byte turn\+\_\+light\+\_\+left\mbox{[}$\,$\mbox{]} =\{17,27\}}\hypertarget{group__car_gac03fd0ab9cbcc53730039ad03e9b094d}{}\label{group__car_gac03fd0ab9cbcc53730039ad03e9b094d}
+
+
+Definition at line 16 of file car\+\_\+basics.\+ino.
+
+\index{Car Basics@{Car Basics}!turn\+\_\+light\+\_\+right@{turn\+\_\+light\+\_\+right}}
+\index{turn\+\_\+light\+\_\+right@{turn\+\_\+light\+\_\+right}!Car Basics@{Car Basics}}
+\subsubsection[{\texorpdfstring{turn\+\_\+light\+\_\+right}{turn_light_right}}]{\setlength{\rightskip}{0pt plus 5cm}const byte turn\+\_\+light\+\_\+right\mbox{[}$\,$\mbox{]} =\{0,30\}}\hypertarget{group__car_gaa5a6ee27fdf1d7c939cdf2a7266d7e84}{}\label{group__car_gaa5a6ee27fdf1d7c939cdf2a7266d7e84}
+
+
+Definition at line 21 of file car\+\_\+basics.\+ino.
 

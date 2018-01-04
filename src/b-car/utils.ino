@@ -3,7 +3,7 @@
  * @author copyrights
  * @brief Collection of utils.
  */
-
+#include "utils.h"
 
 void clearAll()
 {
@@ -26,13 +26,6 @@ uint8_t percent8(uint8_t full, uint8_t fac)
   return (uint8_t) value;
 }
 
-/**
- * @defgroup FastLED FastLED
- * @brief @ref sin8 and @ref cos8 are copied from FastLED 
- * @see https://github.com/FastLED/FastLED/blob/master/lib8tion/trig8.h
- * @{
- */
-const uint8_t b_m16_interleave[] = { 0, 49, 49, 41, 90, 27, 117, 10 };
 /// Fast 8-bit approximation of sin(x). This approximation never varies more than
 /// 2% from the floating point value you'd get by doing
 ///

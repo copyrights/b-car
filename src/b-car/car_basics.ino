@@ -10,7 +10,19 @@
   * @ingroup car
   * @{
   */
-
+#include "car_basics.h"
+#include "speed.h"
+#ifndef CUSTOM
+const byte turn_light_left[]={17,27};
+const byte low_beam_row[] ={1,2,16,15};
+const byte high_beam_row[] = {1,2,16,15};
+const byte front_row[] = {3,4,5,13,14};
+const byte tacho_row[] = {12,11,10,9,8,7,6};
+const byte turn_light_right[]={0,30};
+const byte down_left_row[] = {18,19,20,21};
+const byte down_right_row[] = {22,23,24,25};
+const byte back_light_row[] = {26,28,29,31};
+#endif
 /** @brief Activate right turn lights */
 void turn_right(){
   unsigned long t;
@@ -161,6 +173,18 @@ void flash(){
   for(byte i=0;i<sizeof(back_light_row);i++)
   {
     strip.setPixelColor(back_light_row[i],HIGHBEAM);
+  }
+}
+
+/**
+ * @brief Brake light.
+ * 
+ * Put @ref back_light_row to @ref BRAKELIGHT.
+ */
+void brakelight()
+{
+  for(byte i=0;i<sizeof(back_light_row);i++){
+    strip.setPixelColor(back_light_row[i],BRAKELIGHT);
   }
 }
 

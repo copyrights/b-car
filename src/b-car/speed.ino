@@ -10,20 +10,19 @@
  * @ingroup speed
  * @{
  */
-
-#ifdef __AVR__
-  #include <avr/interrupt.h>
-#endif
-
-static volatile byte speedidx;
+#include "speed.h"
 unsigned long speedts;
+unsigned long braketime;
 unsigned int curspeed;
+bool isbraking;
 
 void setup_interrupt()
 {
   speedidx = 0;
   curspeed =0;
   speedts=0;
+  braketime = 0;
+  isbraking = false;
   //pinMode(IPIN,INPUT);
   cli();//disable interrupts during setup
   PCMSK |= _BV(INTERRUPTPIN); // Use PB1 as interrupt pin
@@ -81,11 +80,42 @@ unsigned int getspeed()
        s = s<<8;
        v = s/dt;
      }
+     acceleration(v);
      curspeed = v;
      resetspeed();
 
   }
   return curspeed;
+}
+
+/**
+ * @brief Test for negative accelaration (braking)
+ * 
+ * @param newspeed current speed.
+ */
+void acceleration(unsigned int newspeed)
+{
+  if (curspeed==0) return;
+  if (newspeed > curspeed)
+  {
+    isbraking = false;
+  }
+  if ((curspeed/2) > newspeed)
+  {
+    isbraking = true;
+    braketime = time;
+  }
+}
+
+/**
+ * @brief Braking information
+ * 
+ * Return true if car is braking.
+ * @return braking state.
+ */
+bool braking()
+{
+  return (isbraking && (time-braketime) < BRAKETIME);
 }
 
 void resetspeed()
@@ -102,49 +132,3 @@ byte getspeedidx()
 }
 
 /**@}*/
-/*
-static unsigned long volatile measures[INCR*2];
-
-void setup_interrupt()
-{
-  speedidx = 0;
-  for(int i=0;i<INCR;i++)measures[i]=0;
-  pinMode(IPIN,INPUT);
-  cli();//disable interrupts during setup
-  PCMSK |= _BV(INTERRUPTPIN); // Use PB1 as interrupt pin
-  GIMSK |= _BV(PCIE);   // Enable Pin Change Interrupts
-  sei(); // Enable interrupts
-}
-
-ISR(PCINT0_vect) {
-  if(digitalRead(IPIN) == LOW)
-  {
-    if((time - measures[((INCR*2)+speedidx-1)%(INCR*2)]) > 50)
-    {
-      speedidx=(speedidx+1)%(INCR*2);
-      measures[speedidx] = time;
-    }
-  }
-}
-
-//mm/s 
-unsigned int getspeed()
-{
-  unsigned long p, cur_speed;
-  p = period();
-  if (p == 0) return 0;
-  cur_speed = (CF*1000)/p;
-  return cur_speed;
-}
-
-unsigned int period(){
-  byte nidx, lidx;
-  nidx = speedidx;
-  lidx = (INCR*2 + nidx-1) % (INCR*2);
-  return (measures[nidx] - measures[lidx]);
-}
-byte getspeedidx()
-{
-  return speedidx;
-}
-*/

@@ -11,12 +11,13 @@ var searchData=
   ['s8',['S8',['../group__buttons.html#ga4516955061f24ae7162de20aff005c9b',1,'config.h']]],
   ['s9',['S9',['../group__buttons.html#ga6eef6bdffd8bac54d6b4be0176dd20ff',1,'config.h']]],
   ['setup',['setup',['../group__main.html#ga4fc01d736fe50cf5b977f755b675f11d',1,'b-car.ino']]],
-  ['setup_5finterrupt',['setup_interrupt',['../group__speed.html#gae87a94769934715c309733cfdf2abcb4',1,'speed.ino']]],
-  ['sin8',['sin8',['../group___fast_l_e_d.html#ga538b510f61cc75c8e4491f9f2797ee7c',1,'utils.ino']]],
+  ['setup_5finterrupt',['setup_interrupt',['../speed_8h.html#ae87a94769934715c309733cfdf2abcb4',1,'setup_interrupt():&#160;speed.ino'],['../group__speed.html#gae87a94769934715c309733cfdf2abcb4',1,'setup_interrupt():&#160;speed.ino']]],
+  ['sin8',['sin8',['../group___fast_l_e_d.html#ga538b510f61cc75c8e4491f9f2797ee7c',1,'sin8(uint8_t theta):&#160;utils.ino'],['../group___fast_l_e_d.html#ga538b510f61cc75c8e4491f9f2797ee7c',1,'sin8(uint8_t theta):&#160;utils.ino']]],
   ['speed',['Speed',['../group__speed.html',1,'']]],
+  ['speed_2eh',['speed.h',['../speed_8h.html',1,'']]],
   ['speed_2eino',['speed.ino',['../speed_8ino.html',1,'']]],
-  ['speedidx',['speedidx',['../group__speed.html#gaded4e91dd554c212e6c75ef7148a7845',1,'speed.ino']]],
-  ['speedts',['speedts',['../group__speed.html#ga605bafc427aaa8e9718a112441ba88a7',1,'speed.ino']]],
-  ['stablebuttons',['stablebuttons',['../group__buttons.html#gaca8bc953fb5340b58c9403b3bf8bbd8e',1,'buttons.ino']]],
-  ['strip',['strip',['../group__deployment.html#gacf2771bd8bfaf855bbcc6c30301bf380',1,'config.h']]]
+  ['speedidx',['speedidx',['../speed_8h.html#aded4e91dd554c212e6c75ef7148a7845',1,'speed.h']]],
+  ['speedts',['speedts',['../group__speed.html#ga605bafc427aaa8e9718a112441ba88a7',1,'speedts():&#160;speed.ino'],['../group__speed.html#ga605bafc427aaa8e9718a112441ba88a7',1,'speedts():&#160;speed.ino']]],
+  ['stablebuttons',['stablebuttons',['../buttons_8h.html#aca8bc953fb5340b58c9403b3bf8bbd8e',1,'stablebuttons():&#160;buttons.ino'],['../group__buttons.html#gaca8bc953fb5340b58c9403b3bf8bbd8e',1,'stablebuttons():&#160;buttons.ino']]],
+  ['strip',['strip',['../group__main.html#gacf2771bd8bfaf855bbcc6c30301bf380',1,'strip():&#160;b-car.ino'],['../group__deployment.html#gacf2771bd8bfaf855bbcc6c30301bf380',1,'strip():&#160;b-car.ino']]]
 ];

@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['tacho',['tacho',['../group__car.html#gac7295d1018b2b948084ba5dbacf09d74',1,'car_basics.ino']]],
-  ['turn_5fleft',['turn_left',['../group__car.html#ga0565ad7a822d9d334bb50c088af22361',1,'car_basics.ino']]],
-  ['turn_5fright',['turn_right',['../group__car.html#gaca3b725ebee32d3719a9c02b41002ea3',1,'car_basics.ino']]]
+  ['setup',['setup',['../group__main.html#ga4fc01d736fe50cf5b977f755b675f11d',1,'b-car.ino']]],
+  ['setup_5finterrupt',['setup_interrupt',['../speed_8h.html#ae87a94769934715c309733cfdf2abcb4',1,'setup_interrupt():&#160;speed.ino'],['../group__speed.html#gae87a94769934715c309733cfdf2abcb4',1,'setup_interrupt():&#160;speed.ino']]],
+  ['sin8',['sin8',['../group___fast_l_e_d.html#ga538b510f61cc75c8e4491f9f2797ee7c',1,'sin8(uint8_t theta):&#160;utils.ino'],['../group___fast_l_e_d.html#ga538b510f61cc75c8e4491f9f2797ee7c',1,'sin8(uint8_t theta):&#160;utils.ino']]]
 ];

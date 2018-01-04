@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['fade8',['fade8',['../utils_8ino.html#ab5a87ca857f392dbad3bf3a4582c3f0e',1,'utils.ino']]],
-  ['flash',['flash',['../group__car.html#gaffb7c011f82f3fb47b39ebb2713a1cd8',1,'car_basics.ino']]]
+  ['debounce',['debounce',['../buttons_8h.html#a0ce7c5a698df341a0f3882378518f562',1,'debounce(uint16_t curbuttons):&#160;buttons.ino'],['../group__buttons.html#ga0ce7c5a698df341a0f3882378518f562',1,'debounce(uint16_t curbuttons):&#160;buttons.ino']]]
 ];

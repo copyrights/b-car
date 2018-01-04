@@ -5,13 +5,23 @@
 Measure speed.  
 
 
+{\ttfamily \#include \char`\"{}speed.\+h\char`\"{}}\\*
+Include dependency graph for speed.\+ino\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=260pt]{speed_8ino__incl}
+\end{center}
+\end{figure}
 \begin{DoxyCompactItemize}
-\item 
-static volatile byte \hyperlink{group__speed_gaded4e91dd554c212e6c75ef7148a7845}{speedidx}
 \item 
 unsigned long \hyperlink{group__speed_ga605bafc427aaa8e9718a112441ba88a7}{speedts}
 \item 
+unsigned long \hyperlink{group__speed_ga66ce79a1ea6b700d56211c146f679649}{braketime}
+\item 
 unsigned int \hyperlink{group__speed_ga63232e097931bc02aa65b3b7dadbb74b}{curspeed}
+\item 
+bool \hyperlink{group__speed_gad13fd9ed7295daa9a51dd2fade080e50}{isbraking}
 \item 
 void \hyperlink{group__speed_gae87a94769934715c309733cfdf2abcb4}{setup\+\_\+interrupt} ()
 \item 
@@ -19,6 +29,10 @@ void \hyperlink{group__speed_gae87a94769934715c309733cfdf2abcb4}{setup\+\_\+inte
 \item 
 unsigned int \hyperlink{group__speed_gafc7b1718f9b23966dfed24056f67996f}{getspeed} ()
 \begin{DoxyCompactList}\small\item\em Get current speed. \end{DoxyCompactList}\item 
+void \hyperlink{group__speed_gaa41dbc9d264f533090ac3c808c43171f}{acceleration} (unsigned int newspeed)
+\begin{DoxyCompactList}\small\item\em Test for negative accelaration (braking) \end{DoxyCompactList}\item 
+bool \hyperlink{group__speed_ga3ad56507af5eec4c270def2058efbc3b}{braking} ()
+\begin{DoxyCompactList}\small\item\em Braking information. \end{DoxyCompactList}\item 
 void \hyperlink{group__speed_ga2004678343c1f7b145dc10aae949a4ec}{resetspeed} ()
 \item 
 byte \hyperlink{group__speed_gaa1b4f1cc5cf5ba94e3bc38f44e0c7001}{getspeedidx} ()

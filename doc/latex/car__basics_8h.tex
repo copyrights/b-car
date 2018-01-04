@@ -1,0 +1,169 @@
+\hypertarget{car__basics_8h}{}\section{car\+\_\+basics.\+h File Reference}
+\label{car__basics_8h}\index{car\+\_\+basics.\+h@{car\+\_\+basics.\+h}}
+{\ttfamily \#include \char`\"{}config.\+h\char`\"{}}\\*
+Include dependency graph for car\+\_\+basics.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=260pt]{car__basics_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{car__basics_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{car__basics_8h_aca3b725ebee32d3719a9c02b41002ea3}{turn\+\_\+right} ()
+\begin{DoxyCompactList}\small\item\em Activate right turn lights. \end{DoxyCompactList}\item 
+void \hyperlink{car__basics_8h_a0565ad7a822d9d334bb50c088af22361}{turn\+\_\+left} ()
+\begin{DoxyCompactList}\small\item\em Activate left turn lights. \end{DoxyCompactList}\item 
+void \hyperlink{car__basics_8h_a6b1fd674445dd1c654dfe8b8b65f168e}{beam} (unsigned long state)
+\begin{DoxyCompactList}\small\item\em Activate low beam or high beam. \end{DoxyCompactList}\item 
+void \hyperlink{car__basics_8h_a29d5eff542aae0196b8e84b8a752e1df}{low\+\_\+beam} (bool on)
+\item 
+void \hyperlink{car__basics_8h_a1088d06b4ab015d579e0ac2510d39f25}{high\+\_\+beam} (bool on)
+\item 
+void \hyperlink{car__basics_8h_ac7295d1018b2b948084ba5dbacf09d74}{tacho} ()
+\begin{DoxyCompactList}\small\item\em Display the current speed on tacho\+\_\+row L\+E\+Ds. \end{DoxyCompactList}\item 
+void \hyperlink{car__basics_8h_affb7c011f82f3fb47b39ebb2713a1cd8}{flash} ()
+\begin{DoxyCompactList}\small\item\em Flash light. \end{DoxyCompactList}\item 
+void \hyperlink{car__basics_8h_a1ac48972153097ad7a16fffc032fc5f1}{brakelight} ()
+\begin{DoxyCompactList}\small\item\em Brake light. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{car\+\_\+basics.\+h@{car\+\_\+basics.\+h}!beam@{beam}}
+\index{beam@{beam}!car\+\_\+basics.\+h@{car\+\_\+basics.\+h}}
+\subsubsection[{\texorpdfstring{beam(unsigned long state)}{beam(unsigned long state)}}]{\setlength{\rightskip}{0pt plus 5cm}void beam (
+\begin{DoxyParamCaption}
+\item[{unsigned long}]{state}
+\end{DoxyParamCaption}
+)}\hypertarget{car__basics_8h_a6b1fd674445dd1c654dfe8b8b65f168e}{}\label{car__basics_8h_a6b1fd674445dd1c654dfe8b8b65f168e}
+
+
+Activate low beam or high beam. 
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000002}{Todo}]Rewrite as all L\+E\+Ds get clear at the beginning of the main loop \end{DoxyRefDesc}
+
+
+Definition at line 59 of file car\+\_\+basics.\+ino.
+
+\index{car\+\_\+basics.\+h@{car\+\_\+basics.\+h}!brakelight@{brakelight}}
+\index{brakelight@{brakelight}!car\+\_\+basics.\+h@{car\+\_\+basics.\+h}}
+\subsubsection[{\texorpdfstring{brakelight()}{brakelight()}}]{\setlength{\rightskip}{0pt plus 5cm}void brakelight (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{car__basics_8h_a1ac48972153097ad7a16fffc032fc5f1}{}\label{car__basics_8h_a1ac48972153097ad7a16fffc032fc5f1}
+
+
+Brake light. 
+
+Put \hyperlink{group__deployment_ga3a2101866267bf0af2559a241cdb7cc6}{back\+\_\+light\+\_\+row} to \hyperlink{group__car_ga95743a8e9ccb3be5a627dd9322806751}{B\+R\+A\+K\+E\+L\+I\+G\+HT}. 
+
+Definition at line 184 of file car\+\_\+basics.\+ino.
+
+\index{car\+\_\+basics.\+h@{car\+\_\+basics.\+h}!flash@{flash}}
+\index{flash@{flash}!car\+\_\+basics.\+h@{car\+\_\+basics.\+h}}
+\subsubsection[{\texorpdfstring{flash()}{flash()}}]{\setlength{\rightskip}{0pt plus 5cm}void flash (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{car__basics_8h_affb7c011f82f3fb47b39ebb2713a1cd8}{}\label{car__basics_8h_affb7c011f82f3fb47b39ebb2713a1cd8}
+
+
+Flash light. 
+
+Put \hyperlink{group__deployment_ga8b165874b487053cb404215a7f42e33e}{high\+\_\+beam\+\_\+row}, \hyperlink{group__deployment_ga848556a6e145736d917b4f0a67ee60ae}{front\+\_\+row} and \hyperlink{group__deployment_ga3a2101866267bf0af2559a241cdb7cc6}{back\+\_\+light\+\_\+row} to \hyperlink{group__car_ga3f561f12573270e4b5329bc5930ad20f}{H\+I\+G\+H\+B\+E\+AM}. 
+
+Definition at line 164 of file car\+\_\+basics.\+ino.
+
+\index{car\+\_\+basics.\+h@{car\+\_\+basics.\+h}!high\+\_\+beam@{high\+\_\+beam}}
+\index{high\+\_\+beam@{high\+\_\+beam}!car\+\_\+basics.\+h@{car\+\_\+basics.\+h}}
+\subsubsection[{\texorpdfstring{high\+\_\+beam(bool on)}{high_beam(bool on)}}]{\setlength{\rightskip}{0pt plus 5cm}void high\+\_\+beam (
+\begin{DoxyParamCaption}
+\item[{bool}]{on}
+\end{DoxyParamCaption}
+)}\hypertarget{car__basics_8h_a1088d06b4ab015d579e0ac2510d39f25}{}\label{car__basics_8h_a1088d06b4ab015d579e0ac2510d39f25}
+
+
+Definition at line 91 of file car\+\_\+basics.\+ino.
+
+\index{car\+\_\+basics.\+h@{car\+\_\+basics.\+h}!low\+\_\+beam@{low\+\_\+beam}}
+\index{low\+\_\+beam@{low\+\_\+beam}!car\+\_\+basics.\+h@{car\+\_\+basics.\+h}}
+\subsubsection[{\texorpdfstring{low\+\_\+beam(bool on)}{low_beam(bool on)}}]{\setlength{\rightskip}{0pt plus 5cm}void low\+\_\+beam (
+\begin{DoxyParamCaption}
+\item[{bool}]{on}
+\end{DoxyParamCaption}
+)}\hypertarget{car__basics_8h_a29d5eff542aae0196b8e84b8a752e1df}{}\label{car__basics_8h_a29d5eff542aae0196b8e84b8a752e1df}
+
+
+Definition at line 73 of file car\+\_\+basics.\+ino.
+
+\index{car\+\_\+basics.\+h@{car\+\_\+basics.\+h}!tacho@{tacho}}
+\index{tacho@{tacho}!car\+\_\+basics.\+h@{car\+\_\+basics.\+h}}
+\subsubsection[{\texorpdfstring{tacho()}{tacho()}}]{\setlength{\rightskip}{0pt plus 5cm}void tacho (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{car__basics_8h_ac7295d1018b2b948084ba5dbacf09d74}{}\label{car__basics_8h_ac7295d1018b2b948084ba5dbacf09d74}
+
+
+Display the current speed on tacho\+\_\+row L\+E\+Ds. 
+
+It is show from left to right in three different color.
+
+
+\begin{DoxyItemize}
+\item Green (0x001100)\+: low speed
+\item Orange (0x110800)\+: medium speed
+\item Red (0x110000)\+: ludicrous speed
+\end{DoxyItemize}
+
+The function \hyperlink{speed_8h_afc7b1718f9b23966dfed24056f67996f}{getspeed()} returns an unsigned integer with a step size of 1 equals 0.\+4302 km/h. As the speed is displayed in three color the maximum speed should be dividable by three.
+
+The integer value 30 -\/$>$ 12.\+9 km/h. 12.\+9 km/h should be enough for small children. If you have a older child or use this for different purposes (e.\+g. a bicycle), the maximum speed should be higher.
+
+30/3 = 10 -\/$>$ speed $\ast$ count of tachometer L\+E\+Ds / 10 \begin{DoxySeeAlso}{See also}
+\hyperlink{speed_8h_afc7b1718f9b23966dfed24056f67996f}{getspeed()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 129 of file car\+\_\+basics.\+ino.
+
+\index{car\+\_\+basics.\+h@{car\+\_\+basics.\+h}!turn\+\_\+left@{turn\+\_\+left}}
+\index{turn\+\_\+left@{turn\+\_\+left}!car\+\_\+basics.\+h@{car\+\_\+basics.\+h}}
+\subsubsection[{\texorpdfstring{turn\+\_\+left()}{turn_left()}}]{\setlength{\rightskip}{0pt plus 5cm}void turn\+\_\+left (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{car__basics_8h_a0565ad7a822d9d334bb50c088af22361}{}\label{car__basics_8h_a0565ad7a822d9d334bb50c088af22361}
+
+
+Activate left turn lights. 
+
+
+
+Definition at line 42 of file car\+\_\+basics.\+ino.
+
+\index{car\+\_\+basics.\+h@{car\+\_\+basics.\+h}!turn\+\_\+right@{turn\+\_\+right}}
+\index{turn\+\_\+right@{turn\+\_\+right}!car\+\_\+basics.\+h@{car\+\_\+basics.\+h}}
+\subsubsection[{\texorpdfstring{turn\+\_\+right()}{turn_right()}}]{\setlength{\rightskip}{0pt plus 5cm}void turn\+\_\+right (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{car__basics_8h_aca3b725ebee32d3719a9c02b41002ea3}{}\label{car__basics_8h_aca3b725ebee32d3719a9c02b41002ea3}
+
+
+Activate right turn lights. 
+
+
+
+Definition at line 27 of file car\+\_\+basics.\+ino.
+

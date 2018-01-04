@@ -1,10 +1,18 @@
 /**
  * @file config.h
- * @author copyrights
  * @brief Adjust your settings here.
+ *
+ * Create a custom.h file and copy line 15 to second last line of config.h to it. Then uncomment line 10 of config.h file.
+ * @author copyrights
  */
-
-/** uncomment the next line to use custom settings instead of mine */
+#ifndef CONFIGH
+#define CONFIGH
+#include <Arduino.h> 
+#ifdef __AVR__
+  #include <avr/power.h>
+#endif
+#include <Adafruit_NeoPixel.h>
+/* uncomment the next line to use custom settings instead of mine */
 //#define CUSTOM
 
 #ifdef CUSTOM
@@ -63,6 +71,10 @@
 #define HIGHBEAM 0x7f7f7f
 /** @brief Color of back lights. */
 #define BACKLIGHT 0x3f0000
+/** @brief Color of brake lights. */
+#define BRAKELIGHT 0xff0000
+/** @brief time brake lights glow in ms. */
+#define BRAKETIME 1000
 /**@}*/
 
 /**
@@ -114,7 +126,7 @@
 /** @brief Rainbow step size between two LEDs. */
 #define RBSTEP 40
 /** @brief If defined more functions are added to rainbow mode. */
-#define MORERAINBOW
+//#define MORERAINBOW
 /**@}*/
 
 /**
@@ -141,20 +153,20 @@
 #define PIN 0
 /** NUM_LEDS is the count of LEDs use in b-car.*/
 #define NUM_LEDS 32
-const byte turn_light_left[]={17,27};
-const byte low_beam_row[] ={1,2,16,15};
-const byte high_beam_row[] = {1,2,16,15};
-const byte front_row[] = {3,4,5,13,14};
-const byte tacho_row[] = {12,11,10,9,8,7,6};
-const byte turn_light_right[]={0,30};
-const byte down_left_row[] = {18,19,20,21};
-const byte down_right_row[] = {22,23,24,25};
-const byte back_light_row[] = {26,28,29,31};
+extern const byte turn_light_left[2];
+extern const byte low_beam_row[4];
+extern const byte high_beam_row[4];
+extern const byte front_row[5];
+extern const byte tacho_row[7];
+extern const byte turn_light_right[2];
+extern const byte down_left_row[4];
+extern const byte down_right_row[4];
+extern const byte back_light_row[4];
 
-const byte rainbowrow_left[]  = {5,13,14,17,15,16,18,19,20,21,30,31,29, 9,10,11,12};
-const byte rainbowrow_right[] = {5, 4, 3, 0, 2, 1,22,23,24,25,27,26,28, 9, 8, 7, 6};
+extern const byte rainbowrow_left[17];
+extern const byte rainbowrow_right[17];
 
-Adafruit_NeoPixel strip = Adafruit_NeoPixel(NUM_LEDS, PIN, NEO_RGB + NEO_KHZ800);
+extern Adafruit_NeoPixel strip;
 /**@}*/
 
 /**
@@ -168,9 +180,10 @@ Adafruit_NeoPixel strip = Adafruit_NeoPixel(NUM_LEDS, PIN, NEO_RGB + NEO_KHZ800)
  * @brief Global accessible variable that stores the current time after program start in ms.
  * @see millis()
  */
-static volatile unsigned long time;
+extern volatile unsigned long time;
 
 /** @brief stores current operation mode */
-byte mode=0;
+extern byte mode;
 /**@}*/
+#endif
 #endif

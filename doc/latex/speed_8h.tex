@@ -1,0 +1,200 @@
+\hypertarget{speed_8h}{}\section{speed.\+h File Reference}
+\label{speed_8h}\index{speed.\+h@{speed.\+h}}
+{\ttfamily \#include \char`\"{}config.\+h\char`\"{}}\\*
+Include dependency graph for speed.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=260pt]{speed_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=307pt]{speed_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{speed_8h_adbd34b4269ed16bd87a0d13cb17bdf81}{B\+R\+A\+K\+E\+T\+I\+ME}~1000
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{speed_8h_ae87a94769934715c309733cfdf2abcb4}{setup\+\_\+interrupt} ()
+\item 
+unsigned int \hyperlink{speed_8h_afc7b1718f9b23966dfed24056f67996f}{getspeed} ()
+\begin{DoxyCompactList}\small\item\em Get current speed. \end{DoxyCompactList}\item 
+void \hyperlink{speed_8h_aa41dbc9d264f533090ac3c808c43171f}{acceleration} (unsigned int newspeed)
+\begin{DoxyCompactList}\small\item\em Test for negative accelaration (braking) \end{DoxyCompactList}\item 
+bool \hyperlink{speed_8h_a3ad56507af5eec4c270def2058efbc3b}{braking} ()
+\begin{DoxyCompactList}\small\item\em Braking information. \end{DoxyCompactList}\item 
+void \hyperlink{speed_8h_a2004678343c1f7b145dc10aae949a4ec}{resetspeed} ()
+\item 
+byte \hyperlink{speed_8h_aa1b4f1cc5cf5ba94e3bc38f44e0c7001}{getspeedidx} ()
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static volatile byte \hyperlink{speed_8h_aded4e91dd554c212e6c75ef7148a7845}{speedidx}
+\item 
+unsigned long \hyperlink{group__speed_ga605bafc427aaa8e9718a112441ba88a7}{speedts}
+\item 
+unsigned long \hyperlink{speed_8h_a66ce79a1ea6b700d56211c146f679649}{braketime}
+\item 
+unsigned int \hyperlink{speed_8h_a63232e097931bc02aa65b3b7dadbb74b}{curspeed}
+\item 
+bool \hyperlink{speed_8h_ad13fd9ed7295daa9a51dd2fade080e50}{isbraking}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{speed.\+h@{speed.\+h}!B\+R\+A\+K\+E\+T\+I\+ME@{B\+R\+A\+K\+E\+T\+I\+ME}}
+\index{B\+R\+A\+K\+E\+T\+I\+ME@{B\+R\+A\+K\+E\+T\+I\+ME}!speed.\+h@{speed.\+h}}
+\subsubsection[{\texorpdfstring{B\+R\+A\+K\+E\+T\+I\+ME}{BRAKETIME}}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\+R\+A\+K\+E\+T\+I\+ME~1000}\hypertarget{speed_8h_adbd34b4269ed16bd87a0d13cb17bdf81}{}\label{speed_8h_adbd34b4269ed16bd87a0d13cb17bdf81}
+
+
+Definition at line 8 of file speed.\+h.
+
+
+
+\subsection{Function Documentation}
+\index{speed.\+h@{speed.\+h}!acceleration@{acceleration}}
+\index{acceleration@{acceleration}!speed.\+h@{speed.\+h}}
+\subsubsection[{\texorpdfstring{acceleration(unsigned int newspeed)}{acceleration(unsigned int newspeed)}}]{\setlength{\rightskip}{0pt plus 5cm}void acceleration (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{newspeed}
+\end{DoxyParamCaption}
+)}\hypertarget{speed_8h_aa41dbc9d264f533090ac3c808c43171f}{}\label{speed_8h_aa41dbc9d264f533090ac3c808c43171f}
+
+
+Test for negative accelaration (braking) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em newspeed} & current speed. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 96 of file speed.\+ino.
+
+\index{speed.\+h@{speed.\+h}!braking@{braking}}
+\index{braking@{braking}!speed.\+h@{speed.\+h}}
+\subsubsection[{\texorpdfstring{braking()}{braking()}}]{\setlength{\rightskip}{0pt plus 5cm}bool braking (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{speed_8h_a3ad56507af5eec4c270def2058efbc3b}{}\label{speed_8h_a3ad56507af5eec4c270def2058efbc3b}
+
+
+Braking information. 
+
+Return true if car is braking. \begin{DoxyReturn}{Returns}
+braking state. 
+\end{DoxyReturn}
+
+
+Definition at line 116 of file speed.\+ino.
+
+\index{speed.\+h@{speed.\+h}!getspeed@{getspeed}}
+\index{getspeed@{getspeed}!speed.\+h@{speed.\+h}}
+\subsubsection[{\texorpdfstring{getspeed()}{getspeed()}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int getspeed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{speed_8h_afc7b1718f9b23966dfed24056f67996f}{}\label{speed_8h_afc7b1718f9b23966dfed24056f67996f}
+
+
+Get current speed. 
+
+The speed is measured as integral of interrupts in an interval of at least 256ms. The smallest measurable speed is one interrupt per 256ms. This function returns an unsigned integer, so the smallest value above 0 should be 1. To get this result the count of interrupts is bit shifted by 8.
+
+1$<$$<$8 = 256; 256/256 = 1
+
+But what does 1 represent?
+
+I put 16 interrupt marks to tire of my Bobby Car. One interrupt every 250 ms are 15 rpm (revolutions per minute).
+
+My Bobby Car has a tire diameter of about 153 mm. So the circumference is 478mm (d$\ast$pi).
+
+478mm $\ast$ 15 rpm = 0.\+4302 km/h
+
+\begin{DoxyReturn}{Returns}
+current speed. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{group__speed_ga44395845abd4a9c31e4fbe88ed717fa3}{I\+S\+R(\+P\+C\+I\+N\+T\+\_\+\+V\+E\+C\+T\+O\+R)} 
+
+\hyperlink{car__basics_8h_ac7295d1018b2b948084ba5dbacf09d74}{tacho()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 70 of file speed.\+ino.
+
+\index{speed.\+h@{speed.\+h}!getspeedidx@{getspeedidx}}
+\index{getspeedidx@{getspeedidx}!speed.\+h@{speed.\+h}}
+\subsubsection[{\texorpdfstring{getspeedidx()}{getspeedidx()}}]{\setlength{\rightskip}{0pt plus 5cm}byte getspeedidx (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{speed_8h_aa1b4f1cc5cf5ba94e3bc38f44e0c7001}{}\label{speed_8h_aa1b4f1cc5cf5ba94e3bc38f44e0c7001}
+
+
+Definition at line 129 of file speed.\+ino.
+
+\index{speed.\+h@{speed.\+h}!resetspeed@{resetspeed}}
+\index{resetspeed@{resetspeed}!speed.\+h@{speed.\+h}}
+\subsubsection[{\texorpdfstring{resetspeed()}{resetspeed()}}]{\setlength{\rightskip}{0pt plus 5cm}void resetspeed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{speed_8h_a2004678343c1f7b145dc10aae949a4ec}{}\label{speed_8h_a2004678343c1f7b145dc10aae949a4ec}
+
+
+Definition at line 121 of file speed.\+ino.
+
+\index{speed.\+h@{speed.\+h}!setup\+\_\+interrupt@{setup\+\_\+interrupt}}
+\index{setup\+\_\+interrupt@{setup\+\_\+interrupt}!speed.\+h@{speed.\+h}}
+\subsubsection[{\texorpdfstring{setup\+\_\+interrupt()}{setup_interrupt()}}]{\setlength{\rightskip}{0pt plus 5cm}void setup\+\_\+interrupt (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{speed_8h_ae87a94769934715c309733cfdf2abcb4}{}\label{speed_8h_ae87a94769934715c309733cfdf2abcb4}
+
+
+Definition at line 19 of file speed.\+ino.
+
+
+
+\subsection{Variable Documentation}
+\index{speed.\+h@{speed.\+h}!braketime@{braketime}}
+\index{braketime@{braketime}!speed.\+h@{speed.\+h}}
+\subsubsection[{\texorpdfstring{braketime}{braketime}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long braketime}\hypertarget{speed_8h_a66ce79a1ea6b700d56211c146f679649}{}\label{speed_8h_a66ce79a1ea6b700d56211c146f679649}
+
+
+Definition at line 15 of file speed.\+ino.
+
+\index{speed.\+h@{speed.\+h}!curspeed@{curspeed}}
+\index{curspeed@{curspeed}!speed.\+h@{speed.\+h}}
+\subsubsection[{\texorpdfstring{curspeed}{curspeed}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int curspeed}\hypertarget{speed_8h_a63232e097931bc02aa65b3b7dadbb74b}{}\label{speed_8h_a63232e097931bc02aa65b3b7dadbb74b}
+
+
+Definition at line 16 of file speed.\+ino.
+
+\index{speed.\+h@{speed.\+h}!isbraking@{isbraking}}
+\index{isbraking@{isbraking}!speed.\+h@{speed.\+h}}
+\subsubsection[{\texorpdfstring{isbraking}{isbraking}}]{\setlength{\rightskip}{0pt plus 5cm}bool isbraking}\hypertarget{speed_8h_ad13fd9ed7295daa9a51dd2fade080e50}{}\label{speed_8h_ad13fd9ed7295daa9a51dd2fade080e50}
+
+
+Definition at line 17 of file speed.\+ino.
+
+\index{speed.\+h@{speed.\+h}!speedidx@{speedidx}}
+\index{speedidx@{speedidx}!speed.\+h@{speed.\+h}}
+\subsubsection[{\texorpdfstring{speedidx}{speedidx}}]{\setlength{\rightskip}{0pt plus 5cm}volatile byte speedidx\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{speed_8h_aded4e91dd554c212e6c75ef7148a7845}{}\label{speed_8h_aded4e91dd554c212e6c75ef7148a7845}
+
+
+Definition at line 9 of file speed.\+h.
+

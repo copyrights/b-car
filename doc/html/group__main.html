@@ -94,12 +94,20 @@ Files</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:ga4f944bfefd58754546ebcc7c5143442c"><td class="memItemLeft" align="right" valign="top">static volatile unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__main.html#ga4f944bfefd58754546ebcc7c5143442c">time</a></td></tr>
+<tr class="memitem:ga4f944bfefd58754546ebcc7c5143442c"><td class="memItemLeft" align="right" valign="top">volatile unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__main.html#ga4f944bfefd58754546ebcc7c5143442c">time</a></td></tr>
 <tr class="memdesc:ga4f944bfefd58754546ebcc7c5143442c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global accessible variable that stores the current time after program start in ms.  <a href="#ga4f944bfefd58754546ebcc7c5143442c">More...</a><br /></td></tr>
 <tr class="separator:ga4f944bfefd58754546ebcc7c5143442c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga988166baebc4b27bd18de27cd40f8b5a"><td class="memItemLeft" align="right" valign="top">byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__main.html#ga988166baebc4b27bd18de27cd40f8b5a">mode</a> =0</td></tr>
+<tr class="memitem:ga988166baebc4b27bd18de27cd40f8b5a"><td class="memItemLeft" align="right" valign="top">byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__main.html#ga988166baebc4b27bd18de27cd40f8b5a">mode</a></td></tr>
 <tr class="memdesc:ga988166baebc4b27bd18de27cd40f8b5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">stores current operation mode  <a href="#ga988166baebc4b27bd18de27cd40f8b5a">More...</a><br /></td></tr>
 <tr class="separator:ga988166baebc4b27bd18de27cd40f8b5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacf2771bd8bfaf855bbcc6c30301bf380"><td class="memItemLeft" align="right" valign="top">Adafruit_NeoPixel&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__main.html#gacf2771bd8bfaf855bbcc6c30301bf380">strip</a> = Adafruit_NeoPixel(<a class="el" href="group__deployment.html#ga4c4ae9a4146ce8d6a5debc90300d9abd">NUM_LEDS</a>, <a class="el" href="group__deployment.html#gae1a27401b7fb01ccb9a82dbddbb54eea">PIN</a>, NEO_RGB + NEO_KHZ800)</td></tr>
+<tr class="separator:gacf2771bd8bfaf855bbcc6c30301bf380"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga988166baebc4b27bd18de27cd40f8b5a"><td class="memItemLeft" align="right" valign="top">byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__main.html#ga988166baebc4b27bd18de27cd40f8b5a">mode</a> = 0</td></tr>
+<tr class="memdesc:ga988166baebc4b27bd18de27cd40f8b5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">stores current operation mode  <a href="#ga988166baebc4b27bd18de27cd40f8b5a">More...</a><br /></td></tr>
+<tr class="separator:ga988166baebc4b27bd18de27cd40f8b5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4f944bfefd58754546ebcc7c5143442c"><td class="memItemLeft" align="right" valign="top">volatile unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__main.html#ga4f944bfefd58754546ebcc7c5143442c">time</a></td></tr>
+<tr class="memdesc:ga4f944bfefd58754546ebcc7c5143442c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global accessible variable that stores the current time after program start in ms.  <a href="#ga4f944bfefd58754546ebcc7c5143442c">More...</a><br /></td></tr>
+<tr class="separator:ga4f944bfefd58754546ebcc7c5143442c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga4fc01d736fe50cf5b977f755b675f11d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__main.html#ga4fc01d736fe50cf5b977f755b675f11d">setup</a> ()</td></tr>
 <tr class="memdesc:ga4fc01d736fe50cf5b977f755b675f11d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initial setup.  <a href="#ga4fc01d736fe50cf5b977f755b675f11d">More...</a><br /></td></tr>
 <tr class="separator:ga4fc01d736fe50cf5b977f755b675f11d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -144,7 +152,7 @@ Variables</h2></td></tr>
 
 <p>Initial setup. </p>
 
-<p>Definition at line <a class="el" href="b-car_8ino_source.html#l00021">21</a> of file <a class="el" href="b-car_8ino_source.html">b-car.ino</a>.</p>
+<p>Definition at line <a class="el" href="b-car_8ino_source.html#l00020">20</a> of file <a class="el" href="b-car_8ino_source.html">b-car.ino</a>.</p>
 
 </div>
 </div>
@@ -154,39 +162,78 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">byte mode =0</td>
+          <td class="memname">byte mode = 0</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>stores current operation mode </p>
 
-<p>Definition at line <a class="el" href="config_8h_source.html#l00168">168</a> of file <a class="el" href="config_8h_source.html">config.h</a>.</p>
+<p>Definition at line <a class="el" href="b-car_8ino_source.html#l00015">15</a> of file <a class="el" href="b-car_8ino_source.html">b-car.ino</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga988166baebc4b27bd18de27cd40f8b5a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">byte mode</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>stores current operation mode </p>
+
+<p>Definition at line <a class="el" href="b-car_8ino_source.html#l00015">15</a> of file <a class="el" href="b-car_8ino_source.html">b-car.ino</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gacf2771bd8bfaf855bbcc6c30301bf380"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Adafruit_NeoPixel strip = Adafruit_NeoPixel(<a class="el" href="group__deployment.html#ga4c4ae9a4146ce8d6a5debc90300d9abd">NUM_LEDS</a>, <a class="el" href="group__deployment.html#gae1a27401b7fb01ccb9a82dbddbb54eea">PIN</a>, NEO_RGB + NEO_KHZ800)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="b-car_8ino_source.html#l00014">14</a> of file <a class="el" href="b-car_8ino_source.html">b-car.ino</a>.</p>
 
 </div>
 </div>
 <a class="anchor" id="ga4f944bfefd58754546ebcc7c5143442c"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">volatile unsigned long time</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Global accessible variable that stores the current time after program start in ms. </p>
 <dl class="section see"><dt>See also</dt><dd>millis() </dd></dl>
 
-<p>Definition at line <a class="el" href="config_8h_source.html#l00165">165</a> of file <a class="el" href="config_8h_source.html">config.h</a>.</p>
+<p>Definition at line <a class="el" href="b-car_8ino_source.html#l00016">16</a> of file <a class="el" href="b-car_8ino_source.html">b-car.ino</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga4f944bfefd58754546ebcc7c5143442c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile unsigned long time</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Global accessible variable that stores the current time after program start in ms. </p>
+<dl class="section see"><dt>See also</dt><dd>millis() </dd></dl>
+
+<p>Definition at line <a class="el" href="b-car_8ino_source.html#l00016">16</a> of file <a class="el" href="b-car_8ino_source.html">b-car.ino</a>.</p>
 
 </div>
 </div>

@@ -4,7 +4,8 @@
  * @brief Knight Rider like front row.
  * @ingroup knightrider
  */
-
+#include "knightrider.h"
+#include "utils.h"
 /**
  * @ingroup knightrider
  * @{

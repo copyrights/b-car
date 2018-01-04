@@ -13,12 +13,18 @@ file \hyperlink{b-car_8ino}{b-\/car.\+ino}
 \subsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-static volatile unsigned long \hyperlink{group__main_ga4f944bfefd58754546ebcc7c5143442c}{time}
+volatile unsigned long \hyperlink{group__main_ga4f944bfefd58754546ebcc7c5143442c}{time}
 \begin{DoxyCompactList}\small\item\em Global accessible variable that stores the current time after program start in ms. \end{DoxyCompactList}\item 
-byte \hyperlink{group__main_ga988166baebc4b27bd18de27cd40f8b5a}{mode} =0
+byte \hyperlink{group__main_ga988166baebc4b27bd18de27cd40f8b5a}{mode}
 \begin{DoxyCompactList}\small\item\em stores current operation mode \end{DoxyCompactList}\end{DoxyCompactItemize}
 \begin{DoxyCompactItemize}
 \item 
+Adafruit\+\_\+\+Neo\+Pixel \hyperlink{group__main_gacf2771bd8bfaf855bbcc6c30301bf380}{strip} = Adafruit\+\_\+\+Neo\+Pixel(\hyperlink{group__deployment_ga4c4ae9a4146ce8d6a5debc90300d9abd}{N\+U\+M\+\_\+\+L\+E\+DS}, \hyperlink{group__deployment_gae1a27401b7fb01ccb9a82dbddbb54eea}{P\+IN}, N\+E\+O\+\_\+\+R\+GB + N\+E\+O\+\_\+\+K\+H\+Z800)
+\item 
+byte \hyperlink{group__main_ga988166baebc4b27bd18de27cd40f8b5a}{mode} = 0
+\begin{DoxyCompactList}\small\item\em stores current operation mode \end{DoxyCompactList}\item 
+volatile unsigned long \hyperlink{group__main_ga4f944bfefd58754546ebcc7c5143442c}{time}
+\begin{DoxyCompactList}\small\item\em Global accessible variable that stores the current time after program start in ms. \end{DoxyCompactList}\item 
 void \hyperlink{group__main_ga4fc01d736fe50cf5b977f755b675f11d}{setup} ()
 \begin{DoxyCompactList}\small\item\em Initial setup. \end{DoxyCompactList}\item 
 void \hyperlink{group__main_gafe461d27b9c48d5921c00d521181f12f}{loop} ()
@@ -59,25 +65,43 @@ Initial setup.
 
 
 
-Definition at line 21 of file b-\/car.\+ino.
+Definition at line 20 of file b-\/car.\+ino.
 
 
 
 \subsection{Variable Documentation}
 \index{Main@{Main}!mode@{mode}}
 \index{mode@{mode}!Main@{Main}}
-\subsubsection[{\texorpdfstring{mode}{mode}}]{\setlength{\rightskip}{0pt plus 5cm}byte mode =0}\hypertarget{group__main_ga988166baebc4b27bd18de27cd40f8b5a}{}\label{group__main_ga988166baebc4b27bd18de27cd40f8b5a}
+\subsubsection[{\texorpdfstring{mode}{mode}}]{\setlength{\rightskip}{0pt plus 5cm}byte mode = 0}\hypertarget{group__main_ga988166baebc4b27bd18de27cd40f8b5a}{}\label{group__main_ga988166baebc4b27bd18de27cd40f8b5a}
 
 
 stores current operation mode 
 
 
 
-Definition at line 168 of file config.\+h.
+Definition at line 15 of file b-\/car.\+ino.
+
+\index{Main@{Main}!mode@{mode}}
+\index{mode@{mode}!Main@{Main}}
+\subsubsection[{\texorpdfstring{mode}{mode}}]{\setlength{\rightskip}{0pt plus 5cm}byte mode}\hypertarget{group__main_ga988166baebc4b27bd18de27cd40f8b5a}{}\label{group__main_ga988166baebc4b27bd18de27cd40f8b5a}
+
+
+stores current operation mode 
+
+
+
+Definition at line 15 of file b-\/car.\+ino.
+
+\index{Main@{Main}!strip@{strip}}
+\index{strip@{strip}!Main@{Main}}
+\subsubsection[{\texorpdfstring{strip}{strip}}]{\setlength{\rightskip}{0pt plus 5cm}Adafruit\+\_\+\+Neo\+Pixel strip = Adafruit\+\_\+\+Neo\+Pixel({\bf N\+U\+M\+\_\+\+L\+E\+DS}, {\bf P\+IN}, N\+E\+O\+\_\+\+R\+GB + N\+E\+O\+\_\+\+K\+H\+Z800)}\hypertarget{group__main_gacf2771bd8bfaf855bbcc6c30301bf380}{}\label{group__main_gacf2771bd8bfaf855bbcc6c30301bf380}
+
+
+Definition at line 14 of file b-\/car.\+ino.
 
 \index{Main@{Main}!time@{time}}
 \index{time@{time}!Main@{Main}}
-\subsubsection[{\texorpdfstring{time}{time}}]{\setlength{\rightskip}{0pt plus 5cm}volatile unsigned long time\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{group__main_ga4f944bfefd58754546ebcc7c5143442c}{}\label{group__main_ga4f944bfefd58754546ebcc7c5143442c}
+\subsubsection[{\texorpdfstring{time}{time}}]{\setlength{\rightskip}{0pt plus 5cm}volatile unsigned long time}\hypertarget{group__main_ga4f944bfefd58754546ebcc7c5143442c}{}\label{group__main_ga4f944bfefd58754546ebcc7c5143442c}
 
 
 Global accessible variable that stores the current time after program start in ms. 
@@ -87,5 +111,19 @@ millis()
 \end{DoxySeeAlso}
 
 
-Definition at line 165 of file config.\+h.
+Definition at line 16 of file b-\/car.\+ino.
+
+\index{Main@{Main}!time@{time}}
+\index{time@{time}!Main@{Main}}
+\subsubsection[{\texorpdfstring{time}{time}}]{\setlength{\rightskip}{0pt plus 5cm}volatile unsigned long time}\hypertarget{group__main_ga4f944bfefd58754546ebcc7c5143442c}{}\label{group__main_ga4f944bfefd58754546ebcc7c5143442c}
+
+
+Global accessible variable that stores the current time after program start in ms. 
+
+\begin{DoxySeeAlso}{See also}
+millis() 
+\end{DoxySeeAlso}
+
+
+Definition at line 16 of file b-\/car.\+ino.
 

@@ -5,11 +5,20 @@
 Adjust your settings here.  
 
 
+{\ttfamily \#include $<$Arduino.\+h$>$}\\*
+{\ttfamily \#include $<$Adafruit\+\_\+\+Neo\+Pixel.\+h$>$}\\*
+Include dependency graph for config.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=260pt]{config_8h__incl}
+\end{center}
+\end{figure}
 This graph shows which files directly or indirectly include this file\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=134pt]{config_8h__dep__incl}
+\includegraphics[width=350pt]{config_8h__dep__incl}
 \end{center}
 \end{figure}
 \subsection*{Macros}
@@ -51,6 +60,10 @@ This graph shows which files directly or indirectly include this file\+:\nopageb
 \begin{DoxyCompactList}\small\item\em Color of high beam. \end{DoxyCompactList}\item 
 \#define \hyperlink{group__car_gae97ccf06dd29b2a0500f378068b678e2}{B\+A\+C\+K\+L\+I\+G\+HT}~0x3f0000
 \begin{DoxyCompactList}\small\item\em Color of back lights. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__car_ga95743a8e9ccb3be5a627dd9322806751}{B\+R\+A\+K\+E\+L\+I\+G\+HT}~0xff0000
+\begin{DoxyCompactList}\small\item\em Color of brake lights. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__car_gadbd34b4269ed16bd87a0d13cb17bdf81}{B\+R\+A\+K\+E\+T\+I\+ME}~1000
+\begin{DoxyCompactList}\small\item\em time brake lights glow in ms. \end{DoxyCompactList}\item 
 \#define \hyperlink{group__knightrider_ga5d96b8b7a94cd393a11cca853832350f}{K\+RR}~0x7f
 \begin{DoxyCompactList}\small\item\em Red part of Knight Rider like front row. \end{DoxyCompactList}\item 
 \#define \hyperlink{group__knightrider_ga47a5cb8daecea854270c0d09c3ebc24c}{K\+RG}~0x00
@@ -81,8 +94,6 @@ This graph shows which files directly or indirectly include this file\+:\nopageb
 \begin{DoxyCompactList}\small\item\em Right side low light color of the police front row. \end{DoxyCompactList}\item 
 \#define \hyperlink{group__rainbow_ga36ae3bd3da884ff03d7306f674f70dea}{R\+B\+S\+T\+EP}~40
 \begin{DoxyCompactList}\small\item\em Rainbow step size between two L\+E\+Ds. \end{DoxyCompactList}\item 
-\#define \hyperlink{group__rainbow_ga815390be3470e0d4a56652e315c86dd3}{M\+O\+R\+E\+R\+A\+I\+N\+B\+OW}
-\begin{DoxyCompactList}\small\item\em If defined more functions are added to rainbow mode. \end{DoxyCompactList}\item 
 \#define \hyperlink{group__speed_ga984097794e94beb18c01b6fcbd8f399d}{I\+N\+T\+E\+R\+R\+U\+P\+T\+P\+IN}~P\+C\+I\+N\+T1
 \begin{DoxyCompactList}\small\item\em This is P\+B1 per the schematic. \end{DoxyCompactList}\item 
 \#define \hyperlink{group__speed_ga77b45027297b1ff40b5b1249afb852e5}{P\+C\+I\+N\+T\+\_\+\+V\+E\+C\+T\+OR}~P\+C\+I\+N\+T0\+\_\+vect
@@ -100,39 +111,39 @@ This graph shows which files directly or indirectly include this file\+:\nopageb
 \subsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-const byte \hyperlink{group__deployment_gac03fd0ab9cbcc53730039ad03e9b094d}{turn\+\_\+light\+\_\+left} \mbox{[}$\,$\mbox{]} =\{17,27\}
+const byte \hyperlink{group__deployment_gaa66783b35924c2be3ec318934f0d479f}{turn\+\_\+light\+\_\+left} \mbox{[}2\mbox{]}
 \item 
-const byte \hyperlink{group__deployment_ga1a25903a2850d9849775664473070489}{low\+\_\+beam\+\_\+row} \mbox{[}$\,$\mbox{]} =\{1,2,16,15\}
+const byte \hyperlink{group__deployment_ga89eb753b2bc73cbce90666cfe4331634}{low\+\_\+beam\+\_\+row} \mbox{[}4\mbox{]}
 \item 
-const byte \hyperlink{group__deployment_ga1ecea646e1c5dcdfc643287a5f2041bb}{high\+\_\+beam\+\_\+row} \mbox{[}$\,$\mbox{]} = \{1,2,16,15\}
+const byte \hyperlink{group__deployment_ga8b165874b487053cb404215a7f42e33e}{high\+\_\+beam\+\_\+row} \mbox{[}4\mbox{]}
 \item 
-const byte \hyperlink{group__deployment_ga5009aa0cbe6b32a72b085489b027800e}{front\+\_\+row} \mbox{[}$\,$\mbox{]} = \{3,4,5,13,14\}
+const byte \hyperlink{group__deployment_ga848556a6e145736d917b4f0a67ee60ae}{front\+\_\+row} \mbox{[}5\mbox{]}
 \item 
-const byte \hyperlink{group__deployment_ga6ade605406f4c1ce9f03a5a2530f6dbe}{tacho\+\_\+row} \mbox{[}$\,$\mbox{]} = \{12,11,10,9,8,7,6\}
+const byte \hyperlink{group__deployment_gae646a1734cc95ba36b0998697da68878}{tacho\+\_\+row} \mbox{[}7\mbox{]}
 \item 
-const byte \hyperlink{group__deployment_gaa5a6ee27fdf1d7c939cdf2a7266d7e84}{turn\+\_\+light\+\_\+right} \mbox{[}$\,$\mbox{]} =\{0,30\}
+const byte \hyperlink{group__deployment_ga2c04f83f019c3bf8feeaae688dbbc164}{turn\+\_\+light\+\_\+right} \mbox{[}2\mbox{]}
 \item 
-const byte \hyperlink{group__deployment_gaac36c9836edd3a125668213f0fb72b5a}{down\+\_\+left\+\_\+row} \mbox{[}$\,$\mbox{]} = \{18,19,20,21\}
+const byte \hyperlink{group__deployment_gac8900a0d9fa4f35f99c82be1db05199d}{down\+\_\+left\+\_\+row} \mbox{[}4\mbox{]}
 \item 
-const byte \hyperlink{group__deployment_gadbf10ff9ee353128c568e07c32b1ffa9}{down\+\_\+right\+\_\+row} \mbox{[}$\,$\mbox{]} = \{22,23,24,25\}
+const byte \hyperlink{group__deployment_gac32ac62cf68805d76bf34bdd3c83fb0c}{down\+\_\+right\+\_\+row} \mbox{[}4\mbox{]}
 \item 
-const byte \hyperlink{group__deployment_ga516415cfaebc59b71f822fb4cf86b22c}{back\+\_\+light\+\_\+row} \mbox{[}$\,$\mbox{]} = \{26,28,29,31\}
+const byte \hyperlink{group__deployment_ga3a2101866267bf0af2559a241cdb7cc6}{back\+\_\+light\+\_\+row} \mbox{[}4\mbox{]}
 \item 
-const byte \hyperlink{group__deployment_gad4e8497757364dbc8187298bd87acc44}{rainbowrow\+\_\+left} \mbox{[}$\,$\mbox{]} = \{5,13,14,17,15,16,18,19,20,21,30,31,29, 9,10,11,12\}
+const byte \hyperlink{group__deployment_ga61c28c043183f54a51db2a5175940b86}{rainbowrow\+\_\+left} \mbox{[}17\mbox{]}
 \item 
-const byte \hyperlink{group__deployment_ga00c047fede9a8b6c020ba1d108d63cea}{rainbowrow\+\_\+right} \mbox{[}$\,$\mbox{]} = \{5, 4, 3, 0, 2, 1,22,23,24,25,27,26,28, 9, 8, 7, 6\}
+const byte \hyperlink{group__deployment_gaa16b875157c2f58794ae5136b851c078}{rainbowrow\+\_\+right} \mbox{[}17\mbox{]}
 \item 
-Adafruit\+\_\+\+Neo\+Pixel \hyperlink{group__deployment_gacf2771bd8bfaf855bbcc6c30301bf380}{strip} = Adafruit\+\_\+\+Neo\+Pixel(\hyperlink{group__deployment_ga4c4ae9a4146ce8d6a5debc90300d9abd}{N\+U\+M\+\_\+\+L\+E\+DS}, \hyperlink{group__deployment_gae1a27401b7fb01ccb9a82dbddbb54eea}{P\+IN}, N\+E\+O\+\_\+\+R\+GB + N\+E\+O\+\_\+\+K\+H\+Z800)
+Adafruit\+\_\+\+Neo\+Pixel \hyperlink{group__deployment_gacf2771bd8bfaf855bbcc6c30301bf380}{strip}
 \item 
-static volatile unsigned long \hyperlink{group__main_ga4f944bfefd58754546ebcc7c5143442c}{time}
+volatile unsigned long \hyperlink{group__main_ga4f944bfefd58754546ebcc7c5143442c}{time}
 \begin{DoxyCompactList}\small\item\em Global accessible variable that stores the current time after program start in ms. \end{DoxyCompactList}\item 
-byte \hyperlink{group__main_ga988166baebc4b27bd18de27cd40f8b5a}{mode} =0
+byte \hyperlink{group__main_ga988166baebc4b27bd18de27cd40f8b5a}{mode}
 \begin{DoxyCompactList}\small\item\em stores current operation mode \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 Adjust your settings here. 
 
-\begin{DoxyAuthor}{Author}
+Create a custom.\+h file and copy line 15 to second last line of \hyperlink{config_8h}{config.\+h} to it. Then uncomment line 10 of \hyperlink{config_8h}{config.\+h} file. \begin{DoxyAuthor}{Author}
 copyrights 
 \end{DoxyAuthor}

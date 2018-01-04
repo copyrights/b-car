@@ -83,7 +83,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
-<p>Measure speed by interrupts.  
+<p>If defined more functions are added to rainbow mode.  
 <a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="files"></a>
@@ -105,12 +105,14 @@ Macros</h2></td></tr>
 <tr class="separator:gaab113cddfa5f8856918dcb65238882ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga93a1139e66a97ca289f0f1a73903be06"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__speed.html#ga93a1139e66a97ca289f0f1a73903be06">READPIN</a>&#160;&#160;&#160;PINB1</td></tr>
 <tr class="separator:ga93a1139e66a97ca289f0f1a73903be06"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaded4e91dd554c212e6c75ef7148a7845"><td class="memItemLeft" align="right" valign="top">static volatile byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__speed.html#gaded4e91dd554c212e6c75ef7148a7845">speedidx</a></td></tr>
-<tr class="separator:gaded4e91dd554c212e6c75ef7148a7845"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga605bafc427aaa8e9718a112441ba88a7"><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__speed.html#ga605bafc427aaa8e9718a112441ba88a7">speedts</a></td></tr>
 <tr class="separator:ga605bafc427aaa8e9718a112441ba88a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga66ce79a1ea6b700d56211c146f679649"><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__speed.html#ga66ce79a1ea6b700d56211c146f679649">braketime</a></td></tr>
+<tr class="separator:ga66ce79a1ea6b700d56211c146f679649"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga63232e097931bc02aa65b3b7dadbb74b"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__speed.html#ga63232e097931bc02aa65b3b7dadbb74b">curspeed</a></td></tr>
 <tr class="separator:ga63232e097931bc02aa65b3b7dadbb74b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad13fd9ed7295daa9a51dd2fade080e50"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__speed.html#gad13fd9ed7295daa9a51dd2fade080e50">isbraking</a></td></tr>
+<tr class="separator:gad13fd9ed7295daa9a51dd2fade080e50"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gae87a94769934715c309733cfdf2abcb4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__speed.html#gae87a94769934715c309733cfdf2abcb4">setup_interrupt</a> ()</td></tr>
 <tr class="separator:gae87a94769934715c309733cfdf2abcb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga44395845abd4a9c31e4fbe88ed717fa3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__speed.html#ga44395845abd4a9c31e4fbe88ed717fa3">ISR</a> (<a class="el" href="group__speed.html#ga77b45027297b1ff40b5b1249afb852e5">PCINT_VECTOR</a>)</td></tr>
@@ -118,12 +120,19 @@ Macros</h2></td></tr>
 <tr class="memitem:gafc7b1718f9b23966dfed24056f67996f"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__speed.html#gafc7b1718f9b23966dfed24056f67996f">getspeed</a> ()</td></tr>
 <tr class="memdesc:gafc7b1718f9b23966dfed24056f67996f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get current speed.  <a href="#gafc7b1718f9b23966dfed24056f67996f">More...</a><br /></td></tr>
 <tr class="separator:gafc7b1718f9b23966dfed24056f67996f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa41dbc9d264f533090ac3c808c43171f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__speed.html#gaa41dbc9d264f533090ac3c808c43171f">acceleration</a> (unsigned int newspeed)</td></tr>
+<tr class="memdesc:gaa41dbc9d264f533090ac3c808c43171f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test for negative accelaration (braking)  <a href="#gaa41dbc9d264f533090ac3c808c43171f">More...</a><br /></td></tr>
+<tr class="separator:gaa41dbc9d264f533090ac3c808c43171f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3ad56507af5eec4c270def2058efbc3b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__speed.html#ga3ad56507af5eec4c270def2058efbc3b">braking</a> ()</td></tr>
+<tr class="memdesc:ga3ad56507af5eec4c270def2058efbc3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Braking information.  <a href="#ga3ad56507af5eec4c270def2058efbc3b">More...</a><br /></td></tr>
+<tr class="separator:ga3ad56507af5eec4c270def2058efbc3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga2004678343c1f7b145dc10aae949a4ec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__speed.html#ga2004678343c1f7b145dc10aae949a4ec">resetspeed</a> ()</td></tr>
 <tr class="separator:ga2004678343c1f7b145dc10aae949a4ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaa1b4f1cc5cf5ba94e3bc38f44e0c7001"><td class="memItemLeft" align="right" valign="top">byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__speed.html#gaa1b4f1cc5cf5ba94e3bc38f44e0c7001">getspeedidx</a> ()</td></tr>
 <tr class="separator:gaa1b4f1cc5cf5ba94e3bc38f44e0c7001"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>If defined more functions are added to rainbow mode. </p>
 <p>Measure speed by interrupts. </p>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a class="anchor" id="ga9142f4c677315955ad0ac6266b615d2c"></a>
@@ -137,7 +146,7 @@ Macros</h2></td></tr>
 </div><div class="memdoc">
 <dl class="section see"><dt>See also</dt><dd>Page 64 of data sheet </dd></dl>
 
-<p>Definition at line <a class="el" href="config_8h_source.html#l00122">122</a> of file <a class="el" href="config_8h_source.html">config.h</a>.</p>
+<p>Definition at line <a class="el" href="config_8h_source.html#l00140">140</a> of file <a class="el" href="config_8h_source.html">config.h</a>.</p>
 
 </div>
 </div>
@@ -153,7 +162,7 @@ Macros</h2></td></tr>
 
 <p>This is PB1 per the schematic. </p>
 
-<p>Definition at line <a class="el" href="config_8h_source.html#l00120">120</a> of file <a class="el" href="config_8h_source.html">config.h</a>.</p>
+<p>Definition at line <a class="el" href="config_8h_source.html#l00138">138</a> of file <a class="el" href="config_8h_source.html">config.h</a>.</p>
 
 </div>
 </div>
@@ -168,7 +177,7 @@ Macros</h2></td></tr>
 </div><div class="memdoc">
 <dl class="section note"><dt>Note</dt><dd>This step is not necessary </dd></dl>
 
-<p>Definition at line <a class="el" href="config_8h_source.html#l00121">121</a> of file <a class="el" href="config_8h_source.html">config.h</a>.</p>
+<p>Definition at line <a class="el" href="config_8h_source.html#l00139">139</a> of file <a class="el" href="config_8h_source.html">config.h</a>.</p>
 
 </div>
 </div>
@@ -183,7 +192,7 @@ Macros</h2></td></tr>
 </div><div class="memdoc">
 <dl class="section see"><dt>See also</dt><dd>Page 64 </dd></dl>
 
-<p>Definition at line <a class="el" href="config_8h_source.html#l00123">123</a> of file <a class="el" href="config_8h_source.html">config.h</a>.</p>
+<p>Definition at line <a class="el" href="config_8h_source.html#l00141">141</a> of file <a class="el" href="config_8h_source.html">config.h</a>.</p>
 
 </div>
 </div>
@@ -198,11 +207,57 @@ Macros</h2></td></tr>
 </div><div class="memdoc">
 <dl class="section see"><dt>See also</dt><dd>Page 64 </dd></dl>
 
-<p>Definition at line <a class="el" href="config_8h_source.html#l00124">124</a> of file <a class="el" href="config_8h_source.html">config.h</a>.</p>
+<p>Definition at line <a class="el" href="config_8h_source.html#l00142">142</a> of file <a class="el" href="config_8h_source.html">config.h</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="gaa41dbc9d264f533090ac3c808c43171f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void acceleration </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>newspeed</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Test for negative accelaration (braking) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">newspeed</td><td>current speed. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="speed_8ino_source.html#l00096">96</a> of file <a class="el" href="speed_8ino_source.html">speed.ino</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga3ad56507af5eec4c270def2058efbc3b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool braking </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Braking information. </p>
+<p>Return true if car is braking. </p><dl class="section return"><dt>Returns</dt><dd>braking state. </dd></dl>
+
+<p>Definition at line <a class="el" href="speed_8ino_source.html#l00116">116</a> of file <a class="el" href="speed_8ino_source.html">speed.ino</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="gafc7b1718f9b23966dfed24056f67996f"></a>
 <div class="memitem">
 <div class="memproto">
@@ -226,9 +281,9 @@ Macros</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>current speed. </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="group__speed.html#ga44395845abd4a9c31e4fbe88ed717fa3">ISR(PCINT_VECTOR)</a> </dd>
 <dd>
-<a class="el" href="group__car.html#gac7295d1018b2b948084ba5dbacf09d74" title="Display the current speed on tacho_row LEDs. ">tacho()</a> </dd></dl>
+<a class="el" href="car__basics_8h.html#ac7295d1018b2b948084ba5dbacf09d74" title="Display the current speed on tacho_row LEDs. ">tacho()</a> </dd></dl>
 
-<p>Definition at line <a class="el" href="speed_8ino_source.html#l00071">71</a> of file <a class="el" href="speed_8ino_source.html">speed.ino</a>.</p>
+<p>Definition at line <a class="el" href="speed_8ino_source.html#l00070">70</a> of file <a class="el" href="speed_8ino_source.html">speed.ino</a>.</p>
 
 </div>
 </div>
@@ -245,7 +300,7 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="speed_8ino_source.html#l00099">99</a> of file <a class="el" href="speed_8ino_source.html">speed.ino</a>.</p>
+<p>Definition at line <a class="el" href="speed_8ino_source.html#l00129">129</a> of file <a class="el" href="speed_8ino_source.html">speed.ino</a>.</p>
 
 </div>
 </div>
@@ -263,7 +318,7 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="speed_8ino_source.html#l00036">36</a> of file <a class="el" href="speed_8ino_source.html">speed.ino</a>.</p>
+<p>Definition at line <a class="el" href="speed_8ino_source.html#l00035">35</a> of file <a class="el" href="speed_8ino_source.html">speed.ino</a>.</p>
 
 </div>
 </div>
@@ -280,7 +335,7 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="speed_8ino_source.html#l00091">91</a> of file <a class="el" href="speed_8ino_source.html">speed.ino</a>.</p>
+<p>Definition at line <a class="el" href="speed_8ino_source.html#l00121">121</a> of file <a class="el" href="speed_8ino_source.html">speed.ino</a>.</p>
 
 </div>
 </div>
@@ -297,11 +352,25 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="speed_8ino_source.html#l00022">22</a> of file <a class="el" href="speed_8ino_source.html">speed.ino</a>.</p>
+<p>Definition at line <a class="el" href="speed_8ino_source.html#l00019">19</a> of file <a class="el" href="speed_8ino_source.html">speed.ino</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
+<a class="anchor" id="ga66ce79a1ea6b700d56211c146f679649"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned long braketime</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="speed_8ino_source.html#l00015">15</a> of file <a class="el" href="speed_8ino_source.html">speed.ino</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="ga63232e097931bc02aa65b3b7dadbb74b"></a>
 <div class="memitem">
 <div class="memproto">
@@ -312,29 +381,21 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="speed_8ino_source.html#l00020">20</a> of file <a class="el" href="speed_8ino_source.html">speed.ino</a>.</p>
+<p>Definition at line <a class="el" href="speed_8ino_source.html#l00016">16</a> of file <a class="el" href="speed_8ino_source.html">speed.ino</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="gaded4e91dd554c212e6c75ef7148a7845"></a>
+<a class="anchor" id="gad13fd9ed7295daa9a51dd2fade080e50"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">volatile byte speedidx</td>
+          <td class="memname">bool isbraking</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="speed_8ino_source.html#l00018">18</a> of file <a class="el" href="speed_8ino_source.html">speed.ino</a>.</p>
+<p>Definition at line <a class="el" href="speed_8ino_source.html#l00017">17</a> of file <a class="el" href="speed_8ino_source.html">speed.ino</a>.</p>
 
 </div>
 </div>
@@ -348,7 +409,7 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="speed_8ino_source.html#l00019">19</a> of file <a class="el" href="speed_8ino_source.html">speed.ino</a>.</p>
+<p>Definition at line <a class="el" href="speed_8ino_source.html#l00014">14</a> of file <a class="el" href="speed_8ino_source.html">speed.ino</a>.</p>
 
 </div>
 </div>

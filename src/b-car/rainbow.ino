@@ -10,6 +10,13 @@
  * @ingroup rainbow
  * @{
  */
+#include "rainbow.h"
+#include "utils.h"
+
+#ifndef CUSTOM
+const byte rainbowrow_left[]  = {5,13,14,17,15,16,18,19,20,21,30,31,29, 9,10,11,12};
+const byte rainbowrow_right[] = {5, 4, 3, 0, 2, 1,22,23,24,25,27,26,28, 9, 8, 7, 6};
+#endif
 
 void rainbowmode()
 {

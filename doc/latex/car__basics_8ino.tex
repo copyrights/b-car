@@ -5,9 +5,34 @@
 Basic car functionality.  
 
 
-\subsection*{Functions}
-{\bf }\par
+{\ttfamily \#include \char`\"{}car\+\_\+basics.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}speed.\+h\char`\"{}}\\*
+Include dependency graph for car\+\_\+basics.\+ino\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=260pt]{car__basics_8ino__incl}
+\end{center}
+\end{figure}
 \begin{DoxyCompactItemize}
+\item 
+const byte \hyperlink{group__car_gac03fd0ab9cbcc53730039ad03e9b094d}{turn\+\_\+light\+\_\+left} \mbox{[}$\,$\mbox{]} =\{17,27\}
+\item 
+const byte \hyperlink{group__car_ga1a25903a2850d9849775664473070489}{low\+\_\+beam\+\_\+row} \mbox{[}$\,$\mbox{]} =\{1,2,16,15\}
+\item 
+const byte \hyperlink{group__car_ga1ecea646e1c5dcdfc643287a5f2041bb}{high\+\_\+beam\+\_\+row} \mbox{[}$\,$\mbox{]} = \{1,2,16,15\}
+\item 
+const byte \hyperlink{group__car_ga5009aa0cbe6b32a72b085489b027800e}{front\+\_\+row} \mbox{[}$\,$\mbox{]} = \{3,4,5,13,14\}
+\item 
+const byte \hyperlink{group__car_ga6ade605406f4c1ce9f03a5a2530f6dbe}{tacho\+\_\+row} \mbox{[}$\,$\mbox{]} = \{12,11,10,9,8,7,6\}
+\item 
+const byte \hyperlink{group__car_gaa5a6ee27fdf1d7c939cdf2a7266d7e84}{turn\+\_\+light\+\_\+right} \mbox{[}$\,$\mbox{]} =\{0,30\}
+\item 
+const byte \hyperlink{group__car_gaac36c9836edd3a125668213f0fb72b5a}{down\+\_\+left\+\_\+row} \mbox{[}$\,$\mbox{]} = \{18,19,20,21\}
+\item 
+const byte \hyperlink{group__car_gadbf10ff9ee353128c568e07c32b1ffa9}{down\+\_\+right\+\_\+row} \mbox{[}$\,$\mbox{]} = \{22,23,24,25\}
+\item 
+const byte \hyperlink{group__car_ga516415cfaebc59b71f822fb4cf86b22c}{back\+\_\+light\+\_\+row} \mbox{[}$\,$\mbox{]} = \{26,28,29,31\}
 \item 
 void \hyperlink{group__car_gaca3b725ebee32d3719a9c02b41002ea3}{turn\+\_\+right} ()
 \begin{DoxyCompactList}\small\item\em Activate right turn lights. \end{DoxyCompactList}\item 
@@ -22,8 +47,9 @@ void \hyperlink{group__car_ga1088d06b4ab015d579e0ac2510d39f25}{high\+\_\+beam} (
 void \hyperlink{group__car_gac7295d1018b2b948084ba5dbacf09d74}{tacho} ()
 \begin{DoxyCompactList}\small\item\em Display the current speed on tacho\+\_\+row L\+E\+Ds. \end{DoxyCompactList}\item 
 void \hyperlink{group__car_gaffb7c011f82f3fb47b39ebb2713a1cd8}{flash} ()
-\begin{DoxyCompactList}\small\item\em Flash light. \end{DoxyCompactList}\end{DoxyCompactItemize}
-
+\begin{DoxyCompactList}\small\item\em Flash light. \end{DoxyCompactList}\item 
+void \hyperlink{group__car_ga1ac48972153097ad7a16fffc032fc5f1}{brakelight} ()
+\begin{DoxyCompactList}\small\item\em Brake light. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}

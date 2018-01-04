@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['beam',['beam',['../group__car.html#ga6b1fd674445dd1c654dfe8b8b65f168e',1,'car_basics.ino']]],
-  ['buttonstate',['buttonState',['../group__buttons.html#gad4a8f6035320735a6ed69364c0f29d63',1,'buttons.ino']]]
+  ['acceleration',['acceleration',['../speed_8h.html#aa41dbc9d264f533090ac3c808c43171f',1,'acceleration(unsigned int newspeed):&#160;speed.ino'],['../group__speed.html#gaa41dbc9d264f533090ac3c808c43171f',1,'acceleration(unsigned int newspeed):&#160;speed.ino']]]
 ];

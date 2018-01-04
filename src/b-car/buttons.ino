@@ -9,7 +9,7 @@
 /** @ingroup buttons
  * @{
  */
-
+#include "buttons.h"
 /** @brief Last read of button pressed. */
 uint16_t lastbuttons = 0;
 /** @brief Pressed Buttons after debounce. */

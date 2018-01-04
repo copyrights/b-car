@@ -1,3 +1,18 @@
 <map id="config.h" name="config.h">
-<area shape="rect" id="node2" href="$b-car_8ino.html" title="Main file. " alt="" coords="5,80,77,107"/>
+<area shape="rect" id="node2" href="$b-car_8h.html" title="b&#45;car.h" alt="" coords="438,155,501,181"/>
+<area shape="rect" id="node4" href="$utils_8h.html" title="utils.h" alt="" coords="86,80,143,107"/>
+<area shape="rect" id="node9" href="$speed_8h.html" title="speed.h" alt="" coords="651,80,719,107"/>
+<area shape="rect" id="node12" href="$buttons_8h.html" title="buttons.h" alt="" coords="743,80,819,107"/>
+<area shape="rect" id="node14" href="$car__basics_8h.html" title="car_basics.h" alt="" coords="531,80,627,107"/>
+<area shape="rect" id="node15" href="$knightrider_8h.html" title="knightrider.h" alt="" coords="168,80,261,107"/>
+<area shape="rect" id="node16" href="$police_8h.html" title="police.h" alt="" coords="285,80,352,107"/>
+<area shape="rect" id="node17" href="$rainbow_8h.html" title="rainbow.h" alt="" coords="377,80,455,107"/>
+<area shape="rect" id="node3" href="$b-car_8ino.html" title="Main file. " alt="" coords="433,229,505,256"/>
+<area shape="rect" id="node5" href="$knightrider_8ino.html" title="Knight Rider like front row. " alt="" coords="97,155,199,181"/>
+<area shape="rect" id="node6" href="$police_8ino.html" title="Police beacon light and front flash. " alt="" coords="224,155,301,181"/>
+<area shape="rect" id="node7" href="$rainbow_8ino.html" title="Rainbow effect functions. " alt="" coords="325,155,413,181"/>
+<area shape="rect" id="node8" href="$utils_8ino.html" title="Collection of utils. " alt="" coords="5,155,72,181"/>
+<area shape="rect" id="node10" href="$car__basics_8ino.html" title="Basic car functionality. " alt="" coords="525,155,632,181"/>
+<area shape="rect" id="node11" href="$speed_8ino.html" title="Measure speed. " alt="" coords="657,155,735,181"/>
+<area shape="rect" id="node13" href="$buttons_8ino.html" title="Use two R&#45;2R resistor ladder networks to connect up to 10 buttons on two analog inputs. " alt="" coords="759,155,846,181"/>
 </map>

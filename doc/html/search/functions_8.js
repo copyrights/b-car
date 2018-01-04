@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['loop',['loop',['../group__main.html#gafe461d27b9c48d5921c00d521181f12f',1,'b-car.ino']]],
-  ['low_5fbeam',['low_beam',['../group__car.html#ga29d5eff542aae0196b8e84b8a752e1df',1,'car_basics.ino']]]
+  ['knightrider',['knightrider',['../group__knightrider.html#ga58bfb7b9f8fcf7a4b02700359057a6f4',1,'knightrider():&#160;knightrider.ino'],['../group__knightrider.html#ga58bfb7b9f8fcf7a4b02700359057a6f4',1,'knightrider():&#160;knightrider.ino']]]
 ];

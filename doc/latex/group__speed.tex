@@ -2,7 +2,7 @@
 \label{group__speed}\index{Speed@{Speed}}
 
 
-Measure speed by interrupts.  
+If defined more functions are added to rainbow mode.  
 
 
 \subsection*{Files}
@@ -25,11 +25,13 @@ file \hyperlink{speed_8ino}{speed.\+ino}
 \end{DoxyCompactItemize}
 \begin{DoxyCompactItemize}
 \item 
-static volatile byte \hyperlink{group__speed_gaded4e91dd554c212e6c75ef7148a7845}{speedidx}
-\item 
 unsigned long \hyperlink{group__speed_ga605bafc427aaa8e9718a112441ba88a7}{speedts}
 \item 
+unsigned long \hyperlink{group__speed_ga66ce79a1ea6b700d56211c146f679649}{braketime}
+\item 
 unsigned int \hyperlink{group__speed_ga63232e097931bc02aa65b3b7dadbb74b}{curspeed}
+\item 
+bool \hyperlink{group__speed_gad13fd9ed7295daa9a51dd2fade080e50}{isbraking}
 \item 
 void \hyperlink{group__speed_gae87a94769934715c309733cfdf2abcb4}{setup\+\_\+interrupt} ()
 \item 
@@ -37,6 +39,10 @@ void \hyperlink{group__speed_gae87a94769934715c309733cfdf2abcb4}{setup\+\_\+inte
 \item 
 unsigned int \hyperlink{group__speed_gafc7b1718f9b23966dfed24056f67996f}{getspeed} ()
 \begin{DoxyCompactList}\small\item\em Get current speed. \end{DoxyCompactList}\item 
+void \hyperlink{group__speed_gaa41dbc9d264f533090ac3c808c43171f}{acceleration} (unsigned int newspeed)
+\begin{DoxyCompactList}\small\item\em Test for negative accelaration (braking) \end{DoxyCompactList}\item 
+bool \hyperlink{group__speed_ga3ad56507af5eec4c270def2058efbc3b}{braking} ()
+\begin{DoxyCompactList}\small\item\em Braking information. \end{DoxyCompactList}\item 
 void \hyperlink{group__speed_ga2004678343c1f7b145dc10aae949a4ec}{resetspeed} ()
 \item 
 byte \hyperlink{group__speed_gaa1b4f1cc5cf5ba94e3bc38f44e0c7001}{getspeedidx} ()
@@ -44,9 +50,9 @@ byte \hyperlink{group__speed_gaa1b4f1cc5cf5ba94e3bc38f44e0c7001}{getspeedidx} ()
 
 
 \subsection{Detailed Description}
+If defined more functions are added to rainbow mode. 
+
 Measure speed by interrupts. 
-
-
 
 \subsection{Macro Definition Documentation}
 \index{Speed@{Speed}!D\+A\+T\+A\+D\+I\+R\+E\+C\+T\+I\+O\+N\+P\+IN@{D\+A\+T\+A\+D\+I\+R\+E\+C\+T\+I\+O\+N\+P\+IN}}
@@ -57,7 +63,7 @@ Page 64 of data sheet
 \end{DoxySeeAlso}
 
 
-Definition at line 122 of file config.\+h.
+Definition at line 140 of file config.\+h.
 
 \index{Speed@{Speed}!I\+N\+T\+E\+R\+R\+U\+P\+T\+P\+IN@{I\+N\+T\+E\+R\+R\+U\+P\+T\+P\+IN}}
 \index{I\+N\+T\+E\+R\+R\+U\+P\+T\+P\+IN@{I\+N\+T\+E\+R\+R\+U\+P\+T\+P\+IN}!Speed@{Speed}}
@@ -68,7 +74,7 @@ This is P\+B1 per the schematic.
 
 
 
-Definition at line 120 of file config.\+h.
+Definition at line 138 of file config.\+h.
 
 \index{Speed@{Speed}!P\+C\+I\+N\+T\+\_\+\+V\+E\+C\+T\+OR@{P\+C\+I\+N\+T\+\_\+\+V\+E\+C\+T\+OR}}
 \index{P\+C\+I\+N\+T\+\_\+\+V\+E\+C\+T\+OR@{P\+C\+I\+N\+T\+\_\+\+V\+E\+C\+T\+OR}!Speed@{Speed}}
@@ -78,7 +84,7 @@ This step is not necessary
 \end{DoxyNote}
 
 
-Definition at line 121 of file config.\+h.
+Definition at line 139 of file config.\+h.
 
 \index{Speed@{Speed}!P\+O\+R\+T\+P\+IN@{P\+O\+R\+T\+P\+IN}}
 \index{P\+O\+R\+T\+P\+IN@{P\+O\+R\+T\+P\+IN}!Speed@{Speed}}
@@ -88,7 +94,7 @@ Page 64
 \end{DoxySeeAlso}
 
 
-Definition at line 123 of file config.\+h.
+Definition at line 141 of file config.\+h.
 
 \index{Speed@{Speed}!R\+E\+A\+D\+P\+IN@{R\+E\+A\+D\+P\+IN}}
 \index{R\+E\+A\+D\+P\+IN@{R\+E\+A\+D\+P\+IN}!Speed@{Speed}}
@@ -98,11 +104,49 @@ Page 64
 \end{DoxySeeAlso}
 
 
-Definition at line 124 of file config.\+h.
+Definition at line 142 of file config.\+h.
 
 
 
 \subsection{Function Documentation}
+\index{Speed@{Speed}!acceleration@{acceleration}}
+\index{acceleration@{acceleration}!Speed@{Speed}}
+\subsubsection[{\texorpdfstring{acceleration(unsigned int newspeed)}{acceleration(unsigned int newspeed)}}]{\setlength{\rightskip}{0pt plus 5cm}void acceleration (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{newspeed}
+\end{DoxyParamCaption}
+)}\hypertarget{group__speed_gaa41dbc9d264f533090ac3c808c43171f}{}\label{group__speed_gaa41dbc9d264f533090ac3c808c43171f}
+
+
+Test for negative accelaration (braking) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em newspeed} & current speed. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 96 of file speed.\+ino.
+
+\index{Speed@{Speed}!braking@{braking}}
+\index{braking@{braking}!Speed@{Speed}}
+\subsubsection[{\texorpdfstring{braking()}{braking()}}]{\setlength{\rightskip}{0pt plus 5cm}bool braking (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{group__speed_ga3ad56507af5eec4c270def2058efbc3b}{}\label{group__speed_ga3ad56507af5eec4c270def2058efbc3b}
+
+
+Braking information. 
+
+Return true if car is braking. \begin{DoxyReturn}{Returns}
+braking state. 
+\end{DoxyReturn}
+
+
+Definition at line 116 of file speed.\+ino.
+
 \index{Speed@{Speed}!getspeed@{getspeed}}
 \index{getspeed@{getspeed}!Speed@{Speed}}
 \subsubsection[{\texorpdfstring{getspeed()}{getspeed()}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int getspeed (
@@ -132,11 +176,11 @@ current speed.
 \begin{DoxySeeAlso}{See also}
 \hyperlink{group__speed_ga44395845abd4a9c31e4fbe88ed717fa3}{I\+S\+R(\+P\+C\+I\+N\+T\+\_\+\+V\+E\+C\+T\+O\+R)} 
 
-\hyperlink{group__car_gac7295d1018b2b948084ba5dbacf09d74}{tacho()} 
+\hyperlink{car__basics_8h_ac7295d1018b2b948084ba5dbacf09d74}{tacho()} 
 \end{DoxySeeAlso}
 
 
-Definition at line 71 of file speed.\+ino.
+Definition at line 70 of file speed.\+ino.
 
 \index{Speed@{Speed}!getspeedidx@{getspeedidx}}
 \index{getspeedidx@{getspeedidx}!Speed@{Speed}}
@@ -147,7 +191,7 @@ Definition at line 71 of file speed.\+ino.
 )}\hypertarget{group__speed_gaa1b4f1cc5cf5ba94e3bc38f44e0c7001}{}\label{group__speed_gaa1b4f1cc5cf5ba94e3bc38f44e0c7001}
 
 
-Definition at line 99 of file speed.\+ino.
+Definition at line 129 of file speed.\+ino.
 
 \index{Speed@{Speed}!I\+SR@{I\+SR}}
 \index{I\+SR@{I\+SR}!Speed@{Speed}}
@@ -158,7 +202,7 @@ Definition at line 99 of file speed.\+ino.
 )}\hypertarget{group__speed_ga44395845abd4a9c31e4fbe88ed717fa3}{}\label{group__speed_ga44395845abd4a9c31e4fbe88ed717fa3}
 
 
-Definition at line 36 of file speed.\+ino.
+Definition at line 35 of file speed.\+ino.
 
 \index{Speed@{Speed}!resetspeed@{resetspeed}}
 \index{resetspeed@{resetspeed}!Speed@{Speed}}
@@ -169,7 +213,7 @@ Definition at line 36 of file speed.\+ino.
 )}\hypertarget{group__speed_ga2004678343c1f7b145dc10aae949a4ec}{}\label{group__speed_ga2004678343c1f7b145dc10aae949a4ec}
 
 
-Definition at line 91 of file speed.\+ino.
+Definition at line 121 of file speed.\+ino.
 
 \index{Speed@{Speed}!setup\+\_\+interrupt@{setup\+\_\+interrupt}}
 \index{setup\+\_\+interrupt@{setup\+\_\+interrupt}!Speed@{Speed}}
@@ -180,29 +224,36 @@ Definition at line 91 of file speed.\+ino.
 )}\hypertarget{group__speed_gae87a94769934715c309733cfdf2abcb4}{}\label{group__speed_gae87a94769934715c309733cfdf2abcb4}
 
 
-Definition at line 22 of file speed.\+ino.
+Definition at line 19 of file speed.\+ino.
 
 
 
 \subsection{Variable Documentation}
+\index{Speed@{Speed}!braketime@{braketime}}
+\index{braketime@{braketime}!Speed@{Speed}}
+\subsubsection[{\texorpdfstring{braketime}{braketime}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long braketime}\hypertarget{group__speed_ga66ce79a1ea6b700d56211c146f679649}{}\label{group__speed_ga66ce79a1ea6b700d56211c146f679649}
+
+
+Definition at line 15 of file speed.\+ino.
+
 \index{Speed@{Speed}!curspeed@{curspeed}}
 \index{curspeed@{curspeed}!Speed@{Speed}}
 \subsubsection[{\texorpdfstring{curspeed}{curspeed}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int curspeed}\hypertarget{group__speed_ga63232e097931bc02aa65b3b7dadbb74b}{}\label{group__speed_ga63232e097931bc02aa65b3b7dadbb74b}
 
 
-Definition at line 20 of file speed.\+ino.
+Definition at line 16 of file speed.\+ino.
 
-\index{Speed@{Speed}!speedidx@{speedidx}}
-\index{speedidx@{speedidx}!Speed@{Speed}}
-\subsubsection[{\texorpdfstring{speedidx}{speedidx}}]{\setlength{\rightskip}{0pt plus 5cm}volatile byte speedidx\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{group__speed_gaded4e91dd554c212e6c75ef7148a7845}{}\label{group__speed_gaded4e91dd554c212e6c75ef7148a7845}
+\index{Speed@{Speed}!isbraking@{isbraking}}
+\index{isbraking@{isbraking}!Speed@{Speed}}
+\subsubsection[{\texorpdfstring{isbraking}{isbraking}}]{\setlength{\rightskip}{0pt plus 5cm}bool isbraking}\hypertarget{group__speed_gad13fd9ed7295daa9a51dd2fade080e50}{}\label{group__speed_gad13fd9ed7295daa9a51dd2fade080e50}
 
 
-Definition at line 18 of file speed.\+ino.
+Definition at line 17 of file speed.\+ino.
 
 \index{Speed@{Speed}!speedts@{speedts}}
 \index{speedts@{speedts}!Speed@{Speed}}
 \subsubsection[{\texorpdfstring{speedts}{speedts}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long speedts}\hypertarget{group__speed_ga605bafc427aaa8e9718a112441ba88a7}{}\label{group__speed_ga605bafc427aaa8e9718a112441ba88a7}
 
 
-Definition at line 19 of file speed.\+ino.
+Definition at line 14 of file speed.\+ino.
 

@@ -92,15 +92,27 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <p>Measure speed.  
 <a href="#details">More...</a></p>
-
+<div class="textblock"><code>#include &quot;<a class="el" href="speed_8h_source.html">speed.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Include dependency graph for speed.ino:</div>
+<div class="dyncontent">
+<div class="center"><img src="speed_8ino__incl.png" border="0" usemap="#speed_8ino" alt=""/></div>
+<map name="speed_8ino" id="speed_8ino">
+<area shape="rect" id="node2" href="speed_8h.html" title="speed.h" alt="" coords="75,80,143,107"/>
+<area shape="rect" id="node3" href="config_8h.html" title="Adjust your settings here. " alt="" coords="75,155,143,181"/>
+</map>
+</div>
+</div>
 <p><a href="speed_8ino_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="memitem:gaded4e91dd554c212e6c75ef7148a7845"><td class="memItemLeft" align="right" valign="top">static volatile byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__speed.html#gaded4e91dd554c212e6c75ef7148a7845">speedidx</a></td></tr>
-<tr class="separator:gaded4e91dd554c212e6c75ef7148a7845"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga605bafc427aaa8e9718a112441ba88a7"><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__speed.html#ga605bafc427aaa8e9718a112441ba88a7">speedts</a></td></tr>
 <tr class="separator:ga605bafc427aaa8e9718a112441ba88a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga66ce79a1ea6b700d56211c146f679649"><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__speed.html#ga66ce79a1ea6b700d56211c146f679649">braketime</a></td></tr>
+<tr class="separator:ga66ce79a1ea6b700d56211c146f679649"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga63232e097931bc02aa65b3b7dadbb74b"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__speed.html#ga63232e097931bc02aa65b3b7dadbb74b">curspeed</a></td></tr>
 <tr class="separator:ga63232e097931bc02aa65b3b7dadbb74b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad13fd9ed7295daa9a51dd2fade080e50"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__speed.html#gad13fd9ed7295daa9a51dd2fade080e50">isbraking</a></td></tr>
+<tr class="separator:gad13fd9ed7295daa9a51dd2fade080e50"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gae87a94769934715c309733cfdf2abcb4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__speed.html#gae87a94769934715c309733cfdf2abcb4">setup_interrupt</a> ()</td></tr>
 <tr class="separator:gae87a94769934715c309733cfdf2abcb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga44395845abd4a9c31e4fbe88ed717fa3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__speed.html#ga44395845abd4a9c31e4fbe88ed717fa3">ISR</a> (<a class="el" href="group__speed.html#ga77b45027297b1ff40b5b1249afb852e5">PCINT_VECTOR</a>)</td></tr>
@@ -108,6 +120,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr class="memitem:gafc7b1718f9b23966dfed24056f67996f"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__speed.html#gafc7b1718f9b23966dfed24056f67996f">getspeed</a> ()</td></tr>
 <tr class="memdesc:gafc7b1718f9b23966dfed24056f67996f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get current speed.  <a href="group__speed.html#gafc7b1718f9b23966dfed24056f67996f">More...</a><br /></td></tr>
 <tr class="separator:gafc7b1718f9b23966dfed24056f67996f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa41dbc9d264f533090ac3c808c43171f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__speed.html#gaa41dbc9d264f533090ac3c808c43171f">acceleration</a> (unsigned int newspeed)</td></tr>
+<tr class="memdesc:gaa41dbc9d264f533090ac3c808c43171f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test for negative accelaration (braking)  <a href="group__speed.html#gaa41dbc9d264f533090ac3c808c43171f">More...</a><br /></td></tr>
+<tr class="separator:gaa41dbc9d264f533090ac3c808c43171f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3ad56507af5eec4c270def2058efbc3b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__speed.html#ga3ad56507af5eec4c270def2058efbc3b">braking</a> ()</td></tr>
+<tr class="memdesc:ga3ad56507af5eec4c270def2058efbc3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Braking information.  <a href="group__speed.html#ga3ad56507af5eec4c270def2058efbc3b">More...</a><br /></td></tr>
+<tr class="separator:ga3ad56507af5eec4c270def2058efbc3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga2004678343c1f7b145dc10aae949a4ec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__speed.html#ga2004678343c1f7b145dc10aae949a4ec">resetspeed</a> ()</td></tr>
 <tr class="separator:ga2004678343c1f7b145dc10aae949a4ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaa1b4f1cc5cf5ba94e3bc38f44e0c7001"><td class="memItemLeft" align="right" valign="top">byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__speed.html#gaa1b4f1cc5cf5ba94e3bc38f44e0c7001">getspeedidx</a> ()</td></tr>

@@ -95,12 +95,34 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <p>Adjust your settings here.  
 <a href="#details">More...</a></p>
-<div class="textblock"><div class="dynheader">
+<div class="textblock"><code>#include &lt;Arduino.h&gt;</code><br />
+<code>#include &lt;Adafruit_NeoPixel.h&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Include dependency graph for config.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="config_8h__incl.png" border="0" usemap="#config_8h" alt=""/></div>
+</div>
+</div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="config_8h__dep__incl.png" border="0" usemap="#config_8hdep" alt=""/></div>
 <map name="config_8hdep" id="config_8hdep">
-<area shape="rect" id="node2" href="b-car_8ino.html" title="Main file. " alt="" coords="5,80,77,107"/>
+<area shape="rect" id="node2" href="b-car_8h.html" title="b&#45;car.h" alt="" coords="438,155,501,181"/>
+<area shape="rect" id="node4" href="utils_8h.html" title="utils.h" alt="" coords="86,80,143,107"/>
+<area shape="rect" id="node9" href="speed_8h.html" title="speed.h" alt="" coords="651,80,719,107"/>
+<area shape="rect" id="node12" href="buttons_8h.html" title="buttons.h" alt="" coords="743,80,819,107"/>
+<area shape="rect" id="node14" href="car__basics_8h.html" title="car_basics.h" alt="" coords="531,80,627,107"/>
+<area shape="rect" id="node15" href="knightrider_8h.html" title="knightrider.h" alt="" coords="168,80,261,107"/>
+<area shape="rect" id="node16" href="police_8h.html" title="police.h" alt="" coords="285,80,352,107"/>
+<area shape="rect" id="node17" href="rainbow_8h.html" title="rainbow.h" alt="" coords="377,80,455,107"/>
+<area shape="rect" id="node3" href="b-car_8ino.html" title="Main file. " alt="" coords="433,229,505,256"/>
+<area shape="rect" id="node5" href="knightrider_8ino.html" title="Knight Rider like front row. " alt="" coords="97,155,199,181"/>
+<area shape="rect" id="node6" href="police_8ino.html" title="Police beacon light and front flash. " alt="" coords="224,155,301,181"/>
+<area shape="rect" id="node7" href="rainbow_8ino.html" title="Rainbow effect functions. " alt="" coords="325,155,413,181"/>
+<area shape="rect" id="node8" href="utils_8ino.html" title="Collection of utils. " alt="" coords="5,155,72,181"/>
+<area shape="rect" id="node10" href="car__basics_8ino.html" title="Basic car functionality. " alt="" coords="525,155,632,181"/>
+<area shape="rect" id="node11" href="speed_8ino.html" title="Measure speed. " alt="" coords="657,155,735,181"/>
+<area shape="rect" id="node13" href="buttons_8ino.html" title="Use two R&#45;2R resistor ladder networks to connect up to 10 buttons on two analog inputs. " alt="" coords="759,155,846,181"/>
 </map>
 </div>
 </div>
@@ -162,6 +184,12 @@ Macros</h2></td></tr>
 <tr class="memitem:gae97ccf06dd29b2a0500f378068b678e2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__car.html#gae97ccf06dd29b2a0500f378068b678e2">BACKLIGHT</a>&#160;&#160;&#160;0x3f0000</td></tr>
 <tr class="memdesc:gae97ccf06dd29b2a0500f378068b678e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Color of back lights.  <a href="group__car.html#gae97ccf06dd29b2a0500f378068b678e2">More...</a><br /></td></tr>
 <tr class="separator:gae97ccf06dd29b2a0500f378068b678e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga95743a8e9ccb3be5a627dd9322806751"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__car.html#ga95743a8e9ccb3be5a627dd9322806751">BRAKELIGHT</a>&#160;&#160;&#160;0xff0000</td></tr>
+<tr class="memdesc:ga95743a8e9ccb3be5a627dd9322806751"><td class="mdescLeft">&#160;</td><td class="mdescRight">Color of brake lights.  <a href="group__car.html#ga95743a8e9ccb3be5a627dd9322806751">More...</a><br /></td></tr>
+<tr class="separator:ga95743a8e9ccb3be5a627dd9322806751"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadbd34b4269ed16bd87a0d13cb17bdf81"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__car.html#gadbd34b4269ed16bd87a0d13cb17bdf81">BRAKETIME</a>&#160;&#160;&#160;1000</td></tr>
+<tr class="memdesc:gadbd34b4269ed16bd87a0d13cb17bdf81"><td class="mdescLeft">&#160;</td><td class="mdescRight">time brake lights glow in ms.  <a href="group__car.html#gadbd34b4269ed16bd87a0d13cb17bdf81">More...</a><br /></td></tr>
+<tr class="separator:gadbd34b4269ed16bd87a0d13cb17bdf81"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga5d96b8b7a94cd393a11cca853832350f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__knightrider.html#ga5d96b8b7a94cd393a11cca853832350f">KRR</a>&#160;&#160;&#160;0x7f</td></tr>
 <tr class="memdesc:ga5d96b8b7a94cd393a11cca853832350f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Red part of Knight Rider like front row.  <a href="group__knightrider.html#ga5d96b8b7a94cd393a11cca853832350f">More...</a><br /></td></tr>
 <tr class="separator:ga5d96b8b7a94cd393a11cca853832350f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -207,9 +235,6 @@ Macros</h2></td></tr>
 <tr class="memitem:ga36ae3bd3da884ff03d7306f674f70dea"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rainbow.html#ga36ae3bd3da884ff03d7306f674f70dea">RBSTEP</a>&#160;&#160;&#160;40</td></tr>
 <tr class="memdesc:ga36ae3bd3da884ff03d7306f674f70dea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rainbow step size between two LEDs.  <a href="group__rainbow.html#ga36ae3bd3da884ff03d7306f674f70dea">More...</a><br /></td></tr>
 <tr class="separator:ga36ae3bd3da884ff03d7306f674f70dea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga815390be3470e0d4a56652e315c86dd3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rainbow.html#ga815390be3470e0d4a56652e315c86dd3">MORERAINBOW</a></td></tr>
-<tr class="memdesc:ga815390be3470e0d4a56652e315c86dd3"><td class="mdescLeft">&#160;</td><td class="mdescRight">If defined more functions are added to rainbow mode.  <a href="group__rainbow.html#ga815390be3470e0d4a56652e315c86dd3">More...</a><br /></td></tr>
-<tr class="separator:ga815390be3470e0d4a56652e315c86dd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga984097794e94beb18c01b6fcbd8f399d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__speed.html#ga984097794e94beb18c01b6fcbd8f399d">INTERRUPTPIN</a>&#160;&#160;&#160;PCINT1</td></tr>
 <tr class="memdesc:ga984097794e94beb18c01b6fcbd8f399d"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is PB1 per the schematic.  <a href="group__speed.html#ga984097794e94beb18c01b6fcbd8f399d">More...</a><br /></td></tr>
 <tr class="separator:ga984097794e94beb18c01b6fcbd8f399d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -228,40 +253,40 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:gac03fd0ab9cbcc53730039ad03e9b094d"><td class="memItemLeft" align="right" valign="top">const byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__deployment.html#gac03fd0ab9cbcc53730039ad03e9b094d">turn_light_left</a> [] ={17,27}</td></tr>
-<tr class="separator:gac03fd0ab9cbcc53730039ad03e9b094d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga1a25903a2850d9849775664473070489"><td class="memItemLeft" align="right" valign="top">const byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__deployment.html#ga1a25903a2850d9849775664473070489">low_beam_row</a> [] ={1,2,16,15}</td></tr>
-<tr class="separator:ga1a25903a2850d9849775664473070489"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga1ecea646e1c5dcdfc643287a5f2041bb"><td class="memItemLeft" align="right" valign="top">const byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__deployment.html#ga1ecea646e1c5dcdfc643287a5f2041bb">high_beam_row</a> [] = {1,2,16,15}</td></tr>
-<tr class="separator:ga1ecea646e1c5dcdfc643287a5f2041bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga5009aa0cbe6b32a72b085489b027800e"><td class="memItemLeft" align="right" valign="top">const byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__deployment.html#ga5009aa0cbe6b32a72b085489b027800e">front_row</a> [] = {3,4,5,13,14}</td></tr>
-<tr class="separator:ga5009aa0cbe6b32a72b085489b027800e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga6ade605406f4c1ce9f03a5a2530f6dbe"><td class="memItemLeft" align="right" valign="top">const byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__deployment.html#ga6ade605406f4c1ce9f03a5a2530f6dbe">tacho_row</a> [] = {12,11,10,9,8,7,6}</td></tr>
-<tr class="separator:ga6ade605406f4c1ce9f03a5a2530f6dbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa5a6ee27fdf1d7c939cdf2a7266d7e84"><td class="memItemLeft" align="right" valign="top">const byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__deployment.html#gaa5a6ee27fdf1d7c939cdf2a7266d7e84">turn_light_right</a> [] ={0,30}</td></tr>
-<tr class="separator:gaa5a6ee27fdf1d7c939cdf2a7266d7e84"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaac36c9836edd3a125668213f0fb72b5a"><td class="memItemLeft" align="right" valign="top">const byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__deployment.html#gaac36c9836edd3a125668213f0fb72b5a">down_left_row</a> [] = {18,19,20,21}</td></tr>
-<tr class="separator:gaac36c9836edd3a125668213f0fb72b5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gadbf10ff9ee353128c568e07c32b1ffa9"><td class="memItemLeft" align="right" valign="top">const byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__deployment.html#gadbf10ff9ee353128c568e07c32b1ffa9">down_right_row</a> [] = {22,23,24,25}</td></tr>
-<tr class="separator:gadbf10ff9ee353128c568e07c32b1ffa9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga516415cfaebc59b71f822fb4cf86b22c"><td class="memItemLeft" align="right" valign="top">const byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__deployment.html#ga516415cfaebc59b71f822fb4cf86b22c">back_light_row</a> [] = {26,28,29,31}</td></tr>
-<tr class="separator:ga516415cfaebc59b71f822fb4cf86b22c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad4e8497757364dbc8187298bd87acc44"><td class="memItemLeft" align="right" valign="top">const byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__deployment.html#gad4e8497757364dbc8187298bd87acc44">rainbowrow_left</a> [] = {5,13,14,17,15,16,18,19,20,21,30,31,29, 9,10,11,12}</td></tr>
-<tr class="separator:gad4e8497757364dbc8187298bd87acc44"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga00c047fede9a8b6c020ba1d108d63cea"><td class="memItemLeft" align="right" valign="top">const byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__deployment.html#ga00c047fede9a8b6c020ba1d108d63cea">rainbowrow_right</a> [] = {5, 4, 3, 0, 2, 1,22,23,24,25,27,26,28, 9, 8, 7, 6}</td></tr>
-<tr class="separator:ga00c047fede9a8b6c020ba1d108d63cea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gacf2771bd8bfaf855bbcc6c30301bf380"><td class="memItemLeft" align="right" valign="top">Adafruit_NeoPixel&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__deployment.html#gacf2771bd8bfaf855bbcc6c30301bf380">strip</a> = Adafruit_NeoPixel(<a class="el" href="group__deployment.html#ga4c4ae9a4146ce8d6a5debc90300d9abd">NUM_LEDS</a>, <a class="el" href="group__deployment.html#gae1a27401b7fb01ccb9a82dbddbb54eea">PIN</a>, NEO_RGB + NEO_KHZ800)</td></tr>
+<tr class="memitem:gaa66783b35924c2be3ec318934f0d479f"><td class="memItemLeft" align="right" valign="top">const byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__deployment.html#gaa66783b35924c2be3ec318934f0d479f">turn_light_left</a> [2]</td></tr>
+<tr class="separator:gaa66783b35924c2be3ec318934f0d479f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga89eb753b2bc73cbce90666cfe4331634"><td class="memItemLeft" align="right" valign="top">const byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__deployment.html#ga89eb753b2bc73cbce90666cfe4331634">low_beam_row</a> [4]</td></tr>
+<tr class="separator:ga89eb753b2bc73cbce90666cfe4331634"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8b165874b487053cb404215a7f42e33e"><td class="memItemLeft" align="right" valign="top">const byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__deployment.html#ga8b165874b487053cb404215a7f42e33e">high_beam_row</a> [4]</td></tr>
+<tr class="separator:ga8b165874b487053cb404215a7f42e33e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga848556a6e145736d917b4f0a67ee60ae"><td class="memItemLeft" align="right" valign="top">const byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__deployment.html#ga848556a6e145736d917b4f0a67ee60ae">front_row</a> [5]</td></tr>
+<tr class="separator:ga848556a6e145736d917b4f0a67ee60ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae646a1734cc95ba36b0998697da68878"><td class="memItemLeft" align="right" valign="top">const byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__deployment.html#gae646a1734cc95ba36b0998697da68878">tacho_row</a> [7]</td></tr>
+<tr class="separator:gae646a1734cc95ba36b0998697da68878"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2c04f83f019c3bf8feeaae688dbbc164"><td class="memItemLeft" align="right" valign="top">const byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__deployment.html#ga2c04f83f019c3bf8feeaae688dbbc164">turn_light_right</a> [2]</td></tr>
+<tr class="separator:ga2c04f83f019c3bf8feeaae688dbbc164"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac8900a0d9fa4f35f99c82be1db05199d"><td class="memItemLeft" align="right" valign="top">const byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__deployment.html#gac8900a0d9fa4f35f99c82be1db05199d">down_left_row</a> [4]</td></tr>
+<tr class="separator:gac8900a0d9fa4f35f99c82be1db05199d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac32ac62cf68805d76bf34bdd3c83fb0c"><td class="memItemLeft" align="right" valign="top">const byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__deployment.html#gac32ac62cf68805d76bf34bdd3c83fb0c">down_right_row</a> [4]</td></tr>
+<tr class="separator:gac32ac62cf68805d76bf34bdd3c83fb0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3a2101866267bf0af2559a241cdb7cc6"><td class="memItemLeft" align="right" valign="top">const byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__deployment.html#ga3a2101866267bf0af2559a241cdb7cc6">back_light_row</a> [4]</td></tr>
+<tr class="separator:ga3a2101866267bf0af2559a241cdb7cc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga61c28c043183f54a51db2a5175940b86"><td class="memItemLeft" align="right" valign="top">const byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__deployment.html#ga61c28c043183f54a51db2a5175940b86">rainbowrow_left</a> [17]</td></tr>
+<tr class="separator:ga61c28c043183f54a51db2a5175940b86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa16b875157c2f58794ae5136b851c078"><td class="memItemLeft" align="right" valign="top">const byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__deployment.html#gaa16b875157c2f58794ae5136b851c078">rainbowrow_right</a> [17]</td></tr>
+<tr class="separator:gaa16b875157c2f58794ae5136b851c078"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacf2771bd8bfaf855bbcc6c30301bf380"><td class="memItemLeft" align="right" valign="top">Adafruit_NeoPixel&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__deployment.html#gacf2771bd8bfaf855bbcc6c30301bf380">strip</a></td></tr>
 <tr class="separator:gacf2771bd8bfaf855bbcc6c30301bf380"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga4f944bfefd58754546ebcc7c5143442c"><td class="memItemLeft" align="right" valign="top">static volatile unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__main.html#ga4f944bfefd58754546ebcc7c5143442c">time</a></td></tr>
+<tr class="memitem:ga4f944bfefd58754546ebcc7c5143442c"><td class="memItemLeft" align="right" valign="top">volatile unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__main.html#ga4f944bfefd58754546ebcc7c5143442c">time</a></td></tr>
 <tr class="memdesc:ga4f944bfefd58754546ebcc7c5143442c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global accessible variable that stores the current time after program start in ms.  <a href="group__main.html#ga4f944bfefd58754546ebcc7c5143442c">More...</a><br /></td></tr>
 <tr class="separator:ga4f944bfefd58754546ebcc7c5143442c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga988166baebc4b27bd18de27cd40f8b5a"><td class="memItemLeft" align="right" valign="top">byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__main.html#ga988166baebc4b27bd18de27cd40f8b5a">mode</a> =0</td></tr>
+<tr class="memitem:ga988166baebc4b27bd18de27cd40f8b5a"><td class="memItemLeft" align="right" valign="top">byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__main.html#ga988166baebc4b27bd18de27cd40f8b5a">mode</a></td></tr>
 <tr class="memdesc:ga988166baebc4b27bd18de27cd40f8b5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">stores current operation mode  <a href="group__main.html#ga988166baebc4b27bd18de27cd40f8b5a">More...</a><br /></td></tr>
 <tr class="separator:ga988166baebc4b27bd18de27cd40f8b5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Adjust your settings here. </p>
-<dl class="section author"><dt>Author</dt><dd>copyrights </dd></dl>
+<p>Create a custom.h file and copy line 15 to second last line of <a class="el" href="config_8h.html" title="Adjust your settings here. ">config.h</a> to it. Then uncomment line 10 of <a class="el" href="config_8h.html" title="Adjust your settings here. ">config.h</a> file. </p><dl class="section author"><dt>Author</dt><dd>copyrights </dd></dl>
 
 <p>Definition in file <a class="el" href="config_8h_source.html">config.h</a>.</p>
 </div></div><!-- contents -->

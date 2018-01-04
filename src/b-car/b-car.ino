@@ -5,16 +5,15 @@
  * @ingroup main
  */
 #include <Adafruit_NeoPixel.h>
-#include "config.h"
-#ifdef __AVR__
-  #include <avr/power.h>
-#endif
+#include "b-car.h"
 
 /**
  * @ingroup main
  * @{
  */
- 
+Adafruit_NeoPixel strip = Adafruit_NeoPixel(NUM_LEDS, PIN, NEO_RGB + NEO_KHZ800);
+byte mode = 0;
+volatile unsigned long time;
 /**
  * @brief Initial setup.
  */
@@ -26,6 +25,7 @@ void setup() {
   // End of trinket special code
   pinMode(BUTTONS1, INPUT);
   pinMode(BUTTONS2, INPUT);
+  
   strip.begin();
   strip.show();
   setup_interrupt();
@@ -35,6 +35,7 @@ void setup() {
  * @brief Main loop
  */
 void loop() {
+  
   updateButtons();
   time = millis();
   if(mode == 0){
@@ -95,4 +96,7 @@ void normalmode(){
   //Button 10 horn
   if (buttonState(S10))
     flash();
+  
+  if(braking())
+    brakelight();
 }
